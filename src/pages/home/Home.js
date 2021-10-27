@@ -14,7 +14,7 @@ import ParallaxUpDownButtons from "./components/ParallaxUpDownButtons"
 
 import cabernet from "../../images/wine/cabernet.png"
 import chardonnay from "../../images/wine/chardonnay.png"
-import wtpLogoWhite from "../images/wtp-logo-white.png"
+import wtpLogoWhite from "../../images/logos/wtp-logo-white.png"
 
 
 
