@@ -1,0 +1,23 @@
+.social-icons {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 33.33%);
+}
+
+.social-icons > a > img {
+  width: 30%;
+  display: inline-flex;
+  justify-self: center;
+  align-self: center;
+  margin: 2rem;
+}
+
+.social-icon {
+  transition: transform .2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.3);
+}
