@@ -2,10 +2,12 @@ import React from 'react';
 
 export default function UpArrowButton(props) {
 
-  const stopVideoPlay = () => {
+  const handleLastPage = () => {
     props.handleUpClick(props.offset, props.navFocus)
 
     if (props.setVideoPlay) props.setVideoPlay(false)
+
+    if (props.handleLastPageClick) props.handleLastPageClick(false)
   }
 
   return (
@@ -14,7 +16,7 @@ export default function UpArrowButton(props) {
         viewBox="0 0 166.854 166.854"
         stroke='#fff'
         style={{ transform: 'rotate(180deg)' }}
-        onClick={() => stopVideoPlay()}
+        onClick={() => handleLastPage()}
       >
         <g>
           <g>

@@ -11,6 +11,7 @@ export default function ParallaxUpDownButtons(props) {
         offset={props.offset}
         navFocus={props.navFocus}
         setVideoPlay={props.setVideoPlay ? props.setVideoPlay : null}
+        handleLastPageClick={props.setParaNav}
       />
 
       <DownArrowButton
