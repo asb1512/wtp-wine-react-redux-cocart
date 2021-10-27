@@ -72,12 +72,6 @@ export default function Home() {
     setPageFocus('video')
   }
 
-  const handlePage4Click = () => {
-    parallax.current.scrollTo(0)
-    setVideoPlay(false)
-    setParaNav(false)
-  }
-
   const videoStyle = useSpring({
     delay: 500,
     opacity: playVideo ? 0.2 : 0,
@@ -221,6 +215,7 @@ export default function Home() {
             navFocus={''}
             handleDownClick={null}
             setVideoPlay={setVideoPlay}
+            handleLastPageClick={setParaNav}
           />
 
           <ParallaxLayer
