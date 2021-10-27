@@ -43,9 +43,6 @@ const Nav = () => {
           <Hamburger
             toggled={isOpen}
             toggle={setOpen}
-            style={{
-              color: '#ffffff',
-            }}
             onClick={() => setOpen(!isOpen)}
           />
         </div>
