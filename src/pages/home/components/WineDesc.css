@@ -1,0 +1,29 @@
+.wine-desc {
+  position: absolute;
+  right: 10vw;
+  width: 50%;
+  z-index: 800;
+}
+
+.wine-desc > h1 {
+  font-size: 6rem;
+  font-weight: 100;
+}
+
+.wine-desc > div {
+  font-size: 2rem;
+  font-weight: 300;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  padding-top: 2rem;
+}
+
+.wine-desc-span-cab {
+  color: #FF4949;
+  font-weight: 400;
+}
+
+.wine-desc-span-chard {
+  color: #ECBD14;
+  font-weight: 400;
+}

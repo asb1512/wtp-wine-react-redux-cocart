@@ -1,0 +1,18 @@
+.parallax-arrow-container {
+  position: fixed;
+  bottom: 10vh;
+  width: 25vh;
+  padding: 1rem 0;
+  z-index: 900;
+}
+
+.parallax-arrow {
+  width: 20%;
+  margin: 1rem auto;
+  opacity: 0.3;
+  transition: transform .3s ease-in-out;
+}
+
+.parallax-arrow:hover {
+  transform: scale(1.2);
+}
