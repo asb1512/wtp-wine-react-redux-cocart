@@ -1,8 +1,8 @@
 const defaultState = {
-
+  currentUser: {}
 }
 
-function reducer(state = defaultState, action) {
+export default function mainReducer(state = defaultState, action) {
   switch (action.type) {
     case "SET_USER":
       return {
@@ -24,5 +24,3 @@ function reducer(state = defaultState, action) {
     default: return state
   }
 }
-
-export default reducer;
