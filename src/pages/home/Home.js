@@ -12,8 +12,8 @@ import ChardDesc from "./components/ChardDesc"
 import WelcomeButton from "./components/WelcomeButton"
 import ParallaxUpDownButtons from "./components/ParallaxUpDownButtons"
 
-import cabernet from "../images/wine/cabernet.png"
-import chardonnay from "../images/wine/chardonnay.png"
+import cabernet from "../../images/wine/cabernet.png"
+import chardonnay from "../../images/wine/chardonnay.png"
 import wtpLogoWhite from "../images/wtp-logo-white.png"
 
 
