@@ -1,0 +1,92 @@
+.parallax-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  z-index: 0;
+}
+
+.parallax-heading {
+  display: block;
+  text-align: center;
+  font-weight: 100;
+  color: #fff;
+  font-size: 6rem;
+}
+
+.parallax-cab-style {
+  background: linear-gradient(207deg, rgba(0,0,0,1) 0%, rgba(158,26,26,1) 100%);
+}
+
+.parallax-chard-style {
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(207deg, rgba(0,0,0,1) 0%, rgba(203,168,27,1) 100%);
+}
+
+.parallax-brand-style {
+  background: rgb(0,0,0);
+  background: linear-gradient(207deg, rgba(0,0,0,1) 0%, rgba(126,126,126,1) 100%);
+  width: 100vw;
+  bottom: 0;
+}
+
+.wine-bottle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 82vh;
+  margin-bottom: 14vh;
+  margin-left: 25vw;
+  z-index: 500;
+}
+
+.wtp-logo {
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-top: 20%;
+}
+
+.wtp-brand-stamp {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.08;
+  z-index: 400;
+}
+
+.parallax-button {
+  display: block;
+  margin: 2rem auto;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  border-color: #fff;
+  font-weight: 100;
+  color: #fff;
+  background-color: transparent;
+  transition: background-color .2s ease-in-out;
+  transition: transform .4s ease-in-out;
+}
+
+.parallax-button:hover {
+  color: red;
+  background-color: #fff;
+  transform: scale(1.1);
+  cursor: none;
+}
+
+.wine-description {
+  position: absolute;
+  right: 10vw;
+  width: 50%;
+  z-index: 800;
+}
