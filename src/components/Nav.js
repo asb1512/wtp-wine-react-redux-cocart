@@ -1,10 +1,10 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SocialIcons from "./SocialIcons";
 import "./Nav.css"
 import { useSpring, animated } from 'react-spring';
 import { Squash as Hamburger } from 'hamburger-react';
-import logo from '../images/wtp-logo-white.png'
+import logo from '../images/logos/wtp-logo-white.png';
 
 const Nav = () => {
 
