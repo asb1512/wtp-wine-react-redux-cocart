@@ -1,7 +1,5 @@
 import React from 'react'
 import { useSpring, animated } from 'react-spring'
-import UpArrowButton from './UpArrowButton'
-import DownArrowButton from './DownArrowButton'
 
 import './ParallaxNav.css'
 

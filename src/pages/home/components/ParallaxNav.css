@@ -1,0 +1,20 @@
+.parallax-nav {
+  position: fixed;
+  top: 10vh;
+  height: 20vh;
+  width: 25vh;
+  margin: 5vh 0 0 0;
+  font-weight: 100;
+  color: #fff;
+  font-size: 1rem;
+  z-index: 1000;
+}
+
+.parallax-nav-item {
+  margin: 0.5rem 0;
+}
+
+.parallax-nav-item-focused {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
