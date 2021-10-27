@@ -1,0 +1,95 @@
+.nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+  background-color: #000;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: #222222;
+  z-index: 1000;
+}
+
+.nav-left {
+  float: left;
+  height: 100%;
+}
+
+.nav-right {
+  float: right;
+  margin: auto;
+  height: 100%;
+}
+
+.nav-wtp-logo {
+  display: block;
+  height: 3vh;
+  margin: 2rem 0 0 2rem;
+}
+
+.hamburger-react {
+  margin: 1.5rem 2rem 0 0;
+}
+
+.side-nav {
+  position: fixed;
+  width: 20vw;
+  height: 90vh;
+  top: 10vh;
+  right: 0;
+  background-color: #000;
+  opacity: 0.95;
+  backdrop-filter: blur(10rem);
+  border-style: solid;
+  border-width: 0 0 0 5px;
+  border-color: #fff;
+  color: #fff;
+  z-index: 900;
+  cursor: default;
+}
+
+.side-nav-content {
+  height: 100%;
+  text-decoration: none;
+}
+
+.side-nav-item {
+  font-size: 3rem;
+  font-weight: 100;
+  padding: 1rem 0 1rem 2rem;
+  transition: background .5s ease-in-out;
+  transition: color .5s ease-in;
+  
+}
+
+.side-nav-item:hover {
+  background-color: #fff;
+  color: red;
+}
+
+.side-nav-link {
+  text-decoration: none;
+  color: #fff;
+  cursor: none;
+  transition: background .25s ease-in-out;
+  transition: color .25s ease-in;
+  cursor: none;
+}
+
+.side-nav-link:hover {
+  background-color: #fff;
+  color: red;
+}
+
+.contact-item {
+  padding: 1rem;
+  padding-left: 4rem;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.contact-item:hover {
+  background-color: #fff;
+  color: red;
+}
