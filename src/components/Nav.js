@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SocialIcons from "./SocialIcons";
+
 import "./Nav.css"
+
 import { useSpring, animated } from 'react-spring';
 import { Squash as Hamburger } from 'hamburger-react';
+
 import logo from '../images/logos/wtp-logo-white.png';
+import account from '../images/nav-icons/user-icon-white.png';
 
 const Nav = () => {
 
@@ -29,22 +33,30 @@ const Nav = () => {
   return (
     <>
       <header className="nav">
-        <Link to="/">
-          <div className="nav-left">
+        <div className="nav-left">
+          <Link to="/">
             <img
               src={logo}
               alt="We The People Wine"
               className="nav-wtp-logo"
             />
-          </div>
-        </Link>
+          </Link>
+        </div>
 
         <div className="nav-right">
-          <Hamburger
-            toggled={isOpen}
-            toggle={setOpen}
-            onClick={() => setOpen(!isOpen)}
-          />
+          <div className="nav-flex-right">
+            <img
+              src={account}
+              alt="Login or signup. View your account here."
+              className="user-icon"
+            />
+
+            <Hamburger
+              toggled={isOpen}
+              toggle={setOpen}
+              onClick={() => setOpen(!isOpen)}
+            />
+          </div>
         </div>
       </header>
 
