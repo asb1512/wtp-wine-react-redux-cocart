@@ -130,7 +130,7 @@ export default function Home() {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={1.5}
+            offset={1.4}
             speed={2.5}
           >
             <CabDesc toggle={showCabTitle} />
