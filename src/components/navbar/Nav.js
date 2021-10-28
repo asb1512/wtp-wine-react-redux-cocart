@@ -32,6 +32,11 @@ const Nav = () => {
     config: { duration: 300 }
   })
 
+  const handleAuthOpen = () => {
+    setAuthOpen(!authOpen)
+    setOpen(false)
+  }
+
   return (
     <>
       <header className="nav">
@@ -51,7 +56,7 @@ const Nav = () => {
               src={account}
               alt="Login or signup. View your account here."
               className="user-icon"
-              onClick={() => setAuthOpen(!authOpen)}
+              onClick={() => handleAuthOpen()}
             />
 
             <Hamburger
