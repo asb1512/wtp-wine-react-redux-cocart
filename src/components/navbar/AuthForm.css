@@ -1,0 +1,15 @@
+.auth-container {
+  position: fixed;
+  top: 10vh;
+  right: 0;
+  width: 18vw;
+  height: 30vh;
+  border-style: solid;
+  border-color: #222222;
+  z-index: 1500;
+  display: block;
+}
+
+.auth-form {
+  
+}
