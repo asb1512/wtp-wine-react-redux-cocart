@@ -6,8 +6,9 @@
 }
 
 .wine-desc > h1 {
-  font-size: 6rem;
+  font-size: 5.5rem;
   font-weight: 100;
+  margin: 1.3rem 0;
 }
 
 .wine-desc > div {
