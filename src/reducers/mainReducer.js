@@ -1,25 +1,15 @@
-const defaultState = {
-  currentUser: {}
-}
+const defaultState = {};
 
 export default function mainReducer(state = defaultState, action) {
   switch (action.type) {
-    case "SET_USER":
+    case "AUTHENTICATE_USER":
       return {
         ...state,
         currentUser: action.payload
       }
 
-    case "OAUTH_TWITCH_LOADING":
-      return {
-        ...state,
-        currentUser: {
-          twitch: { loading: true }
-        }
-      }
-
-    case "OAUTH_TWITCH":
-      return
+    case "AUTHENTICATE_USER_LOADING":
+      return { ...state, loading: true }
 
     default: return state
   }
