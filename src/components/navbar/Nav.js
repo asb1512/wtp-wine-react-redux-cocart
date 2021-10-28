@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import SocialIcons from "./SocialIcons";
-
-import "./Nav.css"
-
 import { useSpring, animated } from 'react-spring';
 import { Squash as Hamburger } from 'hamburger-react';
 
-import logo from '../images/logos/wtp-logo-white.png';
-import account from '../images/nav-icons/user-icon-white.png';
+import SocialIcons from "../SocialIcons";
+import AuthForm from "./AuthForm";
+
+import "./Nav.css"
+
+import logo from '../../images/logos/wtp-logo-white.png';
+import account from '../../images/nav-icons/user-icon-white.png';
 
 const Nav = () => {
 
   const [isOpen, setOpen] = useState(false)
   const [isContactOpen, setContactOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
 
   const sideNavStyle = useSpring({
     right: isOpen ? '0%' : '-30%'
@@ -49,6 +51,7 @@ const Nav = () => {
               src={account}
               alt="Login or signup. View your account here."
               className="user-icon"
+              onClick={() => setAuthOpen(!authOpen)}
             />
 
             <Hamburger
@@ -58,6 +61,8 @@ const Nav = () => {
             />
           </div>
         </div>
+
+        <AuthForm toggle={authOpen} />
       </header>
 
       <animated.div
