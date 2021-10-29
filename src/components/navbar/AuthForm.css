@@ -1,20 +1,3 @@
-.auth-container {
-  position: fixed;
-  top: 10vh;
-  right: 0;
-  width: 18vw;
-  height: 35vh;
-  max-height: 40vh;
-  border-style: solid;
-  border-color: #222222;
-  border-width: 1px;
-  border-radius: 0 0 0 1rem;
-  background-color: #000;
-  z-index: 900;
-  display: block;
-  padding: 2rem;
-}
-
 .auth-form {
   width: 100%;
   height: 80%;

@@ -1,0 +1,17 @@
+.mini-dashboard-container {
+  height: 100%;
+  width: 100%;
+}
+
+.mini-dashboard-div {
+  height: 20%;
+  font-size: 1.8rem;
+  font-weight: 100;
+  transition: background .5s ease-in-out;
+  transition: color .5s ease-in;
+}
+
+.mini-dashboard-item:hover {
+  background-color: #fff;
+  color: red;
+}
