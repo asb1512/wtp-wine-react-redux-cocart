@@ -3,7 +3,8 @@
   top: 10vh;
   right: 0;
   width: 18vw;
-  height: 30vh;
+  height: 35vh;
+  max-height: 40vh;
   border-style: solid;
   border-color: #222222;
   border-width: 1px;
@@ -23,12 +24,20 @@
   margin-bottom: 1.1rem;
 }
 
-.auth-field {
+.auth-group {
   width: 100%;
-  height: 15%;
-  margin-bottom: 1.5rem;
+  margin: 1.7rem 0;
+}
+
+.auth-input {
+  width: 100%;
+  height: 2rem;
   border-radius: .5rem;
   color: #000;
+}
+
+.auth-error {
+  color: red;
 }
 
 .auth-button {
