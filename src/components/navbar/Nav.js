@@ -1,17 +1,19 @@
 import React, { useState } from "react";
+import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import { useSpring, animated } from 'react-spring';
 import { Squash as Hamburger } from 'hamburger-react';
 
 import SocialIcons from "../SocialIcons";
 import AuthFormContainer from "./AuthFormContainer";
+import UserDisplay from "./UserDisplay";
 
 import "./Nav.css"
 
 import logo from '../../images/logos/wtp-logo-white.png';
 import account from '../../images/nav-icons/user-icon-white.png';
 
-const Nav = () => {
+const Nav = (props) => {
 
   const [isOpen, setOpen] = useState(false)
   const [isContactOpen, setContactOpen] = useState(false);
@@ -52,6 +54,8 @@ const Nav = () => {
 
         <div className="nav-right">
           <div className="nav-flex-right">
+            {props.currentUser ? <UserDisplay currentUser={props.currentUser} /> : null}
+
             <img
               src={account}
               alt="Login or signup. View your account here."
@@ -67,7 +71,10 @@ const Nav = () => {
           </div>
         </div>
 
-        <AuthFormContainer toggle={authOpen} />
+        <AuthFormContainer 
+          toggle={authOpen} 
+          handleAuthOpen={handleAuthOpen} 
+        />
       </header>
 
       <animated.div
@@ -145,4 +152,11 @@ const Nav = () => {
   )
 }
 
-export default Nav
+const mapStateToProps = state => {
+  console.log("UserDisplay mapStateToProps", state)
+  if (state.currentUser) {
+    return { currentUser: state.currentUser }
+  } else return {}
+}
+
+export default connect(mapStateToProps)(Nav);
