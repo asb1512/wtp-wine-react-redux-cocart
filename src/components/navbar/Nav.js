@@ -4,7 +4,7 @@ import { useSpring, animated } from 'react-spring';
 import { Squash as Hamburger } from 'hamburger-react';
 
 import SocialIcons from "../SocialIcons";
-import AuthForm from "./AuthForm";
+import AuthFormContainer from "./AuthFormContainer";
 
 import "./Nav.css"
 
@@ -67,7 +67,7 @@ const Nav = () => {
           </div>
         </div>
 
-        <AuthForm toggle={authOpen} />
+        <AuthFormContainer toggle={authOpen} />
       </header>
 
       <animated.div
