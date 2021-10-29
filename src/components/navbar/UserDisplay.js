@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserDisplay.css';
 
 export default function UserDisplay(props) {
   return (
