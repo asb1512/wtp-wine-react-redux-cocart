@@ -9,9 +9,10 @@ export default function mainReducer(state = defaultState, action) {
         ...state,
         userLoggedIn: true,
         currentUser: {
-          token: action.data.token,
-          username: action.data.user_display_name,
-          email: action.data.user_email,
+          token: action.resp.data.token,
+          username: action.resp.data.user_nicename,
+          userFullName: action.resp.data.user_display_name,
+          email: action.resp.data.user_email,
         },
         loading: false,
       }
