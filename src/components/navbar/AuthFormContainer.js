@@ -6,14 +6,18 @@ import AuthForm from './AuthForm';
 function AuthFormContainer(props) {
   return (
     <div>
-      <AuthForm toggle={props.toggle} />
+      <AuthForm 
+        toggle={props.toggle} 
+        authenticateUser={props.authenticateUser}
+        handleAuthOpen={props.handleAuthOpen} 
+      />
     </div>
   )
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    authenticateUser: () => dispatch(authenticateUser())
+    authenticateUser: (ui, pw) => dispatch(authenticateUser(ui, pw))
   }
 }
 
