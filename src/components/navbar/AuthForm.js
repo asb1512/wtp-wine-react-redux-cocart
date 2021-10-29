@@ -7,11 +7,11 @@ import './AuthForm.css';
 
 function AuthForm(props) {
 
-  const [email, setEmail] = useState('');
+  const [userIdentifier, setUserIdentifier] = useState('');
   const [pw, setPw] = useState('')
 
-  const onEmailChange = (event) => {
-    setEmail(event.target.value)
+  const onUserIdentifierChange = (event) => {
+    setUserIdentifier(event.target.value)
   }
 
   const onPwChange = (event) => {
@@ -24,7 +24,7 @@ function AuthForm(props) {
 
   const handleAuthFormSubmit = (event) => {
     event.preventDefault();
-    props.authenticateUser();
+    props.authenticateUser(userIdentifier, pw);
   }
 
   return (
@@ -33,13 +33,13 @@ function AuthForm(props) {
 
       <form className="auth-form" onSubmit={handleAuthFormSubmit}>
 
-        <label className="auth-label">EMAIL</label>
+        <label className="auth-label">EMAIL/USERNAME</label>
         <input 
           type="text" 
-          value={email} 
+          value={userIdentifier} 
           className="auth-field"
           placeholder="Email"
-          onChange={onEmailChange} 
+          onChange={onUserIdentifierChange} 
         />
 
         <label className="auth-label">PASSWORD</label>
