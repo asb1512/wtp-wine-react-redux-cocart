@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
 
 import './AuthForm.css';
 
@@ -18,10 +17,6 @@ export default function AuthForm(props) {
   const onPwChange = (event) => {
     setPw(event.target.value)
   }
-
-  const authFormStyle = useSpring({
-    opacity: props.toggle ? 1 : 0
-  })
 
   const validateUi = () => {
     if (!userIdentifier) return setUiError(true);
@@ -45,7 +40,7 @@ export default function AuthForm(props) {
   }
 
   return (
-    <animated.div className="auth-container" style={authFormStyle}>
+    <div className="auth-container">
       <h3>LOGIN/REGISTER</h3>
 
       <form className="auth-form" onSubmit={handleAuthFormSubmit}>
@@ -76,6 +71,6 @@ export default function AuthForm(props) {
         <input type="submit" value="SUBMIT" className="auth-button" />
 
       </form>
-    </animated.div>
+    </div>
   )
 }
