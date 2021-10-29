@@ -1,5 +1,6 @@
 const defaultState = {
   userLoggedIn: false,
+  currentUser: true,
 };
 
 export default function mainReducer(state = defaultState, action) {
