@@ -1,68 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { Form, Field } from "react-final-form";
 
 import './AuthForm.css';
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-const onSubmit = async (values) => {
-  await sleep(300);
-  window.alert(JSON.stringify(values, 0, 1));
-};
-
-const required = (value) => (value ? undefined : "Required");
-const composeValidators = (...validators) => (value) =>
-  validators.reduce((error, validator) => error || validator(value), undefined);
-
 export default function AuthForm(props) {
+
+  const [userIdentifier, setUserIdentifier] = useState('');
+  const [pw, setPw] = useState('')
+
+  const [uiError, setUiError] = useState(false);
+  const [pwError, setPwError] = useState(false);
+
+  const onUserIdentifierChange = (event) => {
+    setUserIdentifier(event.target.value)
+  }
+
+  const onPwChange = (event) => {
+    setPw(event.target.value)
+  }
 
   const authFormStyle = useSpring({
     opacity: props.toggle ? 1 : 0
   })
 
-  let formData = {};
+  const validateUi = () => {
+    if (!userIdentifier) return setUiError(true);
+  }
+
+  const validatePw = () => {
+    if (!pw) return setPwError(true);
+  }
+
+  const handleAuthFormSubmit = (event) => {
+    event.preventDefault();
+    if (userIdentifier && pw) {
+      props.authenticateUser(userIdentifier, pw);
+      setUserIdentifier('')
+      setPw('')
+      props.handleAuthOpen()
+    } else {
+      validateUi()
+      validatePw()
+    }
+  }
 
   return (
     <animated.div className="auth-container" style={authFormStyle}>
-      <h2 className="">LOGIN/REGISTER</h2>
-      <Form
-        onSubmit={onSubmit}
-        initialValues={formData}
-        render={({ handleSubmit, form, submitting, pristine, values }) => (
-          <form 
-            onSubmit={
-              handleSubmit
-            }
-          >
+      <h3>LOGIN/REGISTER</h3>
 
-            <Field name="username-email" validate={required}>
-              {({ input, meta }) => (
-                <div className="auth-group">
-                  <label className="auth-label">Username/Email</label>
-                  <input {...input} type="text" placeholder="Username/Email" className="auth-input" />
-                  {meta.error && meta.touched && <span className="auth-error">{meta.error}</span>}
-                </div>
-              )}
-            </Field>
+      <form className="auth-form" onSubmit={handleAuthFormSubmit}>
+        <div className="auth-group">
+          <label className="auth-label">EMAIL/USERNAME</label>
+          <input
+            type="text"
+            value={userIdentifier}
+            className="auth-input"
+            placeholder="Email/Username"
+            onChange={onUserIdentifierChange}
+          />
+          <span className="auth-error">{uiError ? "Email/username required": null}</span>
+        </div>
 
-            <Field name="password" validate={required}>
-              {({ input, meta }) => (
-                <div className="auth-group">
-                  <label className="auth-label">Password</label>
-                  <input {...input} type="password" placeholder="Password" className="auth-input"/>
-                  {meta.error && meta.touched && <span className="auth-error">{meta.error}</span>}
-                </div>
-              )}
-            </Field>
-            
-            <button type="submit" disabled={submitting} className="auth-button">
-              Submit
-            </button>
+        <div className="auth-group">  
+          <label className="auth-label">PASSWORD</label>
+          <input
+            type="password"
+            value={pw}
+            className="auth-input"
+            placeholder="Password"
+            onChange={onPwChange}
+          />
+          <span className="auth-error">{pwError ? "Password required" : null}</span>
+        </div>
 
-          </form>
-        )}
-      />
+        <input type="submit" value="SUBMIT" className="auth-button" />
+
+      </form>
     </animated.div>
-  );
-};
+  )
+}
