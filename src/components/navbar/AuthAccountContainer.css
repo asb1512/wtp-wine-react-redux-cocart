@@ -1,7 +1,7 @@
 .auth-account-container {
   position: fixed;
   right: 0;
-  width: 18vw;
+  width: 22vw;
   height: 35vh;
   max-height: 40vh;
   border-style: solid;
@@ -9,6 +9,6 @@
   border-width: 1px;
   border-radius: 0 0 0 1rem;
   background-color: #000;
-  z-index: 900;
+  z-index: 800;
   display: block;
 }
