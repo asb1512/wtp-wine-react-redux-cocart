@@ -1,6 +1,5 @@
 const defaultState = {
   userLoggedIn: false,
-  currentUser: true,
 };
 
 export default function mainReducer(state = defaultState, action) {
@@ -15,7 +14,19 @@ export default function mainReducer(state = defaultState, action) {
           userFullName: action.resp.data.user_display_name,
           email: action.resp.data.user_email,
         },
-        loading: false,
+      }
+
+    case "SET_USER_INFO":
+      return {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          userId: action.resp.data[0].id,
+          avatarUrl: action.resp.data[0].avatar_url,
+          billing: action.resp.data[0].billing,
+          shipping: action.resp.data[0].shipping,
+          role: action.resp.data[0].role,
+        }
       }
 
     case "AUTHENTICATE_USER_LOADING":
