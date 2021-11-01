@@ -1,0 +1,8 @@
+.user-orders-container {
+  position: fixed;
+  top: 10vh;
+  width: 50vw;
+  height: 32vh;
+  background-color: #000;
+  color: #fff;
+}
