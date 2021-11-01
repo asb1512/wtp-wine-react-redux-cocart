@@ -5,13 +5,24 @@
 
 .mini-dashboard-div {
   height: 20%;
+  margin: auto;
   font-size: 1.8rem;
   font-weight: 100;
   transition: background .5s ease-in-out;
   transition: color .5s ease-in;
+  cursor: none;
+}
+
+.mini-dashboard-div:hover {
+  background-color: #fff;
+  color: red;
+}
+
+.mini-dashboard-item {
+  display: block;
+  margin: auto;
 }
 
 .mini-dashboard-item:hover {
-  background-color: #fff;
   color: red;
 }
