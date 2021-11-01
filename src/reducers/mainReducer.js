@@ -29,6 +29,15 @@ export default function mainReducer(state = defaultState, action) {
         }
       }
 
+    case "SET_USER_ORDERS":
+      return {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          orders: action.resp.data[0],
+        }
+      }
+
     case "AUTHENTICATE_USER_LOADING":
       return { ...state, loading: true }
 
@@ -39,6 +48,22 @@ export default function mainReducer(state = defaultState, action) {
           errorMessage: action.error.message,
         },
         loading: false,
+      }
+
+    case "USER_INFO_ERROR":
+      return {
+        ...state,
+        currentError: {
+          errorMessage: action.error.message,
+        },
+      }
+
+    case "USER_ORDERS_ERROR":
+      return {
+        ...state,
+        currentError: {
+          errorMessage: action.error.message,
+        },
       }
 
     default: return state
