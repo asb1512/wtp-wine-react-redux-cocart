@@ -7,15 +7,21 @@ import {
 
 import Nav from './components/navbar/Nav';
 import Home from './pages/home/Home';
+import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
   return (
     <Router>
       <Nav />
+
       <Switch>
 
         <Route exact path="/">
           <Home />
+        </Route>
+
+        <Route path="/dashboard">
+          <Dashboard />
         </Route>
 
       </Switch>
