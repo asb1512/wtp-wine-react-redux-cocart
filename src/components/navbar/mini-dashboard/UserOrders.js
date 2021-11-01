@@ -4,8 +4,8 @@ import './UserOrders.css';
 
 export default function UserOrders() {
   return (
-    <div>
-      
+    <div className="user-orders-container">
+      Hello there.
     </div>
   )
 }
