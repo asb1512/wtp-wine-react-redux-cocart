@@ -19,6 +19,8 @@ export function authenticateUser(ui, pw) {
 
           .then(resp => {
             console.log("Customer ID retrieval:", resp)
+            dispatch({ type: "SET_USER_INFO", resp })
+
           })
           .catch(error => {
             console.log("Customer ID retrieval error:", error)
