@@ -57,3 +57,7 @@
 .orders-container {
   color: #fff;
 }
+
+.orders-table {
+  width: 100%;
+}
