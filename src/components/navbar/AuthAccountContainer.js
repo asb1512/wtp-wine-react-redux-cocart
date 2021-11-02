@@ -14,7 +14,7 @@ function AuthAccountContainer(props) {
     top: props.toggle ? '10vh' : '-75vh',
   })
 
-  if (props.currentUser) {
+  if (props.userLoggedIn) {
     return (
       <animated.div 
         className="auth-account-container" 
