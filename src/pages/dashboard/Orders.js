@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 function Orders(props) {
 
   const mapOverOrders = () => {
-    
+
   }
 
   console.log("Orders State:", props.orders)
@@ -27,9 +27,11 @@ function Orders(props) {
 }
 
 const mapStateToProps = state => {
-  return {
-    orders: state.currentUser.orders
-  }
+  if (state.currentUser.orders) {
+    return {
+      orders: state.currentUser.orders
+    }
+  } else return {}
 }
 
 export default connect(mapStateToProps)(Orders)
