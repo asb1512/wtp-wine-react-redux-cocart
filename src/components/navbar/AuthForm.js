@@ -41,7 +41,7 @@ export default function AuthForm(props) {
 
   return (
     <div className="auth-container">
-      <h3>LOGIN/REGISTER</h3>
+      <h3 className="auth-heading">LOGIN/REGISTER</h3>
 
       <form className="auth-form" onSubmit={handleAuthFormSubmit}>
         <div className="auth-group">
