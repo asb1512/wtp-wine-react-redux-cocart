@@ -11,4 +11,5 @@
   background-color: #000;
   z-index: 800;
   display: block;
+  overflow: hidden;
 }
