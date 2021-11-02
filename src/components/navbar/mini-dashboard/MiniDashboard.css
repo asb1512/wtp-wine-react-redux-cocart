@@ -3,27 +3,31 @@
   width: 100%;
   display: grid;
   grid-template-columns: 100%;
-  overflow: hidden;
 }
 
 .mini-dashboard-link {
   text-decoration: none;
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: 100%;
+  transition: background .5s ease-in-out;
+}
+
+.mini-dashboard-link:hover {
+  background-color: #fff;
 }
 
 .mini-dashboard-div {
-  width: 100%;
-  height: 100%;
   padding: 0 1.5rem;
   font-size: 2rem;
   font-weight: 100;
-  transition: background .5s ease-in-out;
   transition: color .5s ease-in;
   cursor: none;
-  justify-self: stretch;
+  justify-self: start;
+  align-self: center;
   text-decoration: none;
 }
 
 .mini-dashboard-div:hover {
-  background-color: #fff;
   color: red;
 }
