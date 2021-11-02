@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { authenticateUser } from '../../actions/authenticateUser';
+import { Toaster } from 'react-hot-toast';
 
 import './AuthForm.css';
 
-export default function AuthForm(props) {
+function AuthForm(props) {
 
   const [userIdentifier, setUserIdentifier] = useState('');
   const [pw, setPw] = useState('')
@@ -41,6 +44,19 @@ export default function AuthForm(props) {
 
   return (
     <div className="auth-container">
+      <Toaster 
+        toastOptions={{
+          duration: 3500,
+          style: {
+            background: '#000',
+            color: '#fff',
+            borderStyle: 'solid',
+            borderWidth: '1px',
+            borderColor: '#222222',
+          }
+        }}
+      />
+
       <h3 className="auth-heading">LOGIN/REGISTER</h3>
 
       <form className="auth-form" onSubmit={handleAuthFormSubmit}>
@@ -53,10 +69,10 @@ export default function AuthForm(props) {
             placeholder="Email/Username"
             onChange={onUserIdentifierChange}
           />
-          <span className="auth-error">{uiError ? "Email/username required": null}</span>
+          <span className="auth-error">{uiError ? "Email/username required" : null}</span>
         </div>
 
-        <div className="auth-group">  
+        <div className="auth-group">
           <label className="auth-label">PASSWORD</label>
           <input
             type="password"
@@ -74,3 +90,11 @@ export default function AuthForm(props) {
     </div>
   )
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    authenticateUser: (ui, pw) => dispatch(authenticateUser(ui, pw))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(AuthForm);

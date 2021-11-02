@@ -1,6 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux';
-import { authenticateUser } from '../../actions/authenticateUser';
 import { useSpring, animated } from 'react-spring';
 
 import AuthForm from './AuthForm';
@@ -8,7 +6,7 @@ import MiniDashboard from './mini-dashboard/MiniDashboard';
 
 import './AuthAccountContainer.css';
 
-function AuthAccountContainer(props) {
+export default function AuthAccountContainer(props) {
 
   const containerStyle = useSpring({
     top: props.toggle ? '10vh' : '-75vh',
@@ -37,11 +35,3 @@ function AuthAccountContainer(props) {
     )
   }
 }
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    authenticateUser: (ui, pw) => dispatch(authenticateUser(ui, pw))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(AuthAccountContainer);
