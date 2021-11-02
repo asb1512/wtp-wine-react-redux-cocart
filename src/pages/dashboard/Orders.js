@@ -3,25 +3,10 @@ import { connect } from 'react-redux';
 
 function Orders(props) {
 
-  const mapOverOrders = () => {
-    props.orders?.map(order => {
-      return (
-        <tr key={order.id}>
-          <td>{order.id}</td>
-          <td>DATE</td>
-          <td>{order.status}</td>
-          <td>${order.total}<br/>for {order.line_items.length} item(s)</td>
-        </tr>
-      )
-    })
-  }
-
-  console.log("Orders State:", props.orders)
-
   if (props.orders) {
     return (
       <div className="dashboard-subcontainer orders-container">
-        <table>
+        <table className="orders-table">
           <thead>
             <tr>
               <th>ORDER</th>
@@ -31,7 +16,17 @@ function Orders(props) {
             </tr>
           </thead>
           <tbody>
-            {mapOverOrders()}
+            {props.orders?.map(order => {
+              console.log("single order id", order.id)
+              return (
+                <tr key={order.id}>
+                  <td>{order.id}</td>
+                  <td>DATE</td>
+                  <td>{order.status}</td>
+                  <td>${order.total}<br />for {order.line_items.length} item(s)</td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>
