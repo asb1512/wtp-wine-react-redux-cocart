@@ -1,9 +1,35 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function Orders() {
-  return (
-    <div>
-      
-    </div>
-  )
+function Orders(props) {
+
+  const mapOverOrders = () => {
+    
+  }
+
+  console.log("Orders State:", props.orders)
+
+  if (props.orders) {
+    return (
+      <div className="orders-container">
+        Orders exist.
+      </div>
+    )
+  } else {
+    return (
+      <div className="dashboard-subcontainer">
+        <div className="dashboard-no-content">
+          You don't have any orders at this time.
+        </div>
+      </div>
+    )
+  }
 }
+
+const mapStateToProps = state => {
+  return {
+    orders: state.currentUser.orders
+  }
+}
+
+export default connect(mapStateToProps)(Orders)
