@@ -24,7 +24,9 @@ export default function MiniDashboard() {
         <div className="mini-dashboard-div">ACCOUNT</div>
       </Link>
 
-      <div className="mini-dashboard-div">LOGOUT</div>
+      <Link to="#" className="mini-dashboard-link">
+        <div className="mini-dashboard-div">LOGOUT</div>
+      </Link>
 
     </div>
   )
