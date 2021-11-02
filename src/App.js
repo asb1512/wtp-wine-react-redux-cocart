@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Nav from './components/navbar/Nav';
 import Home from './pages/home/Home';
@@ -12,8 +13,10 @@ import Orders from './pages/dashboard/Orders';
 import Subscriptions from './pages/dashboard/Subscriptions';
 import Addresses from './pages/dashboard/Addresses';
 import Account from './pages/dashboard/Account';
+import Error401 from './pages/error/Error401';
 
-function App() {
+function App(props) {
+
   return (
     <Router>
       <Nav />
@@ -25,8 +28,12 @@ function App() {
         </Route>
 
         <Route exact path="/dashboard/orders">
-          <Dashboard focus="orders" />
-          <Orders />
+          {
+            props.userLoggedIn ?
+            <><Dashboard focus="orders" />
+            <Orders /></> :
+            <Error401 />
+          }
         </Route>
 
         <Route exact path="/dashboard/subscriptions">
@@ -49,4 +56,10 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    userLoggedIn: state.userLoggedIn
+  }
+}
+
+export default connect(mapStateToProps)(App);
