@@ -25,10 +25,16 @@
 }
 
 .dashboard-option {
-  display: block;
-  margin: auto 0;
   align-self: stretch;
+  display: grid;
+  grid-template-columns: 100%;
   padding-left: 1.3rem;
   font-size: 2.2rem;
   font-weight: 100;
+  text-decoration: none;
+}
+
+.dashboard-option-text {
+  display: flex;
+  align-self: center;
 }
