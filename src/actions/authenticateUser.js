@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import toast from 'react-hot-toast';
 
 export function authenticateUser(ui, pw) {
   return function (dispatch) {
@@ -38,8 +38,9 @@ export function authenticateUser(ui, pw) {
           })
       })
       .catch(error => {
-        console.log("Error message:", error.message)
+        console.log("Authentication error:", error.message)
         dispatch({ type: "AUTHENTICATION_ERROR", error })
+        toast.error("Invalid login credentials. Please try again.")
       })
   }
 }
