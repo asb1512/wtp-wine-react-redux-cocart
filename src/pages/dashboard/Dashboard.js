@@ -1,48 +1,82 @@
 import React from 'react';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './Dashboard.css';
 
-import Orders from './Orders';
-import Subscriptions from './Subscriptions';
-import Addresses from './Addresses';
-import Account from './Account';
+export default function Dashboard(props) {
 
-export default function Dashboard() {
+  const focusDivStyle = {
+    backgroundColor: '#fff',
+  }
 
-  let match = useRouteMatch();
-  console.log("Dashboard URL Match:", match)
+  const focusTextStyle = {
+    color: 'red',
+  }
 
   return (
     <div className="dashboard">
       <div className="dashboard-sidenav">
         <div className="dashboard-options-container">
-          <div className="dashboard-option">ORDERS</div>
-          <div className="dashboard-option">SUBSCRIPTIONS</div>
-          <div className="dashboard-option">ADDRESSES</div>
-          <div className="dashboard-option">ACCOUNT</div>
+
+
+          <Link 
+            to={'/dashboard/orders'} 
+            className="dashboard-option"
+            style={props.focus === 'orders' ? focusDivStyle : null}
+          >
+            <div 
+              className="dashboard-option-text"
+              style={props.focus === 'orders' ? focusTextStyle : null}
+            >
+              ORDERS
+            </div>
+          </Link>
+
+
+          <Link 
+            to={'/dashboard/subscriptions'} 
+            className="dashboard-option"
+            style={props.focus === 'subscriptions' ? focusDivStyle : null}
+          >
+            <div 
+              className="dashboard-option-text"
+              style={props.focus === 'subscriptions' ? focusTextStyle : null}
+            >
+              SUBSCRIPTIONS
+            </div>
+          </Link>
+
+
+          <Link 
+            to={'/dashboard/addresses'} 
+            className="dashboard-option"
+            style={props.focus === 'addresses' ? focusDivStyle : null}
+          >
+            <div
+              className="dashboard-option-text"
+              style={props.focus === 'addresses' ? focusTextStyle : null}
+            >
+              ADDRESSES
+            </div>
+          </Link>
+
+
+          <Link 
+            to={'/dashboard/account'} 
+            className="dashboard-option"
+            style={props.focus === 'account' ? focusDivStyle : null}
+          >
+            <div
+              className="dashboard-option-text"
+              style={props.focus === 'account' ? focusTextStyle : null}
+            >
+              ACCOUNT
+            </div>
+          </Link>
+
+
         </div>
       </div>
-
-      <Switch>
-
-        <Route path={`${match.url}/orders`}>
-          <Orders />
-        </Route>
-
-        <Route path={`${match.url}/subscriptions`}>
-          <Subscriptions />
-        </Route>
-
-        <Route path={`${match.url}/addresses`}>
-          <Addresses />
-        </Route>
-
-        <Route path={`${match.url}/account`}>
-          <Account />
-        </Route>
-
-      </Switch>
     </div>
   )
 }
