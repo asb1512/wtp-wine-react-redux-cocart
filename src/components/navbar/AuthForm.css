@@ -1,11 +1,20 @@
+.auth-container {
+  width: 100%;
+  height: 100%;
+}
+
 .auth-form {
   width: 100%;
   height: 80%;
-  padding: 2rem;
 }
 
 .auth-label {
   margin-bottom: 1.1rem;
+  margin-left: 5%;
+}
+
+.auth-heading {
+  margin-left: 5%;
 }
 
 .auth-group {
@@ -14,8 +23,10 @@
 }
 
 .auth-input {
-  width: 100%;
+  display: block;
+  width: 90%;
   height: 2rem;
+  margin: auto;
   border-radius: .5rem;
   color: #000;
 }
@@ -25,8 +36,9 @@
 }
 
 .auth-button {
+  display: block;
   background-color: #000;
-  width: 100%;
+  width: 90%;
   padding: 1rem 3rem;
   margin: auto;
   border: 1px solid #fff;
