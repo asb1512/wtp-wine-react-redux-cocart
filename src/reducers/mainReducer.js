@@ -34,7 +34,7 @@ export default function mainReducer(state = defaultState, action) {
         ...state,
         currentUser: {
           ...state.currentUser,
-          orders: action.resp.data[0],
+          orders: action.resp.data,
         }
       }
 
@@ -44,26 +44,20 @@ export default function mainReducer(state = defaultState, action) {
     case "AUTHENTICATION_ERROR":
       return {
         ...state,
-        currentError: {
-          errorMessage: action.error.message,
-        },
+        currentError: "Invalid login credentials. Please try again.",
         loading: false,
       }
 
     case "USER_INFO_ERROR":
       return {
         ...state,
-        currentError: {
-          errorMessage: action.error.message,
-        },
+        currentError: action.error.message,
       }
 
     case "USER_ORDERS_ERROR":
       return {
         ...state,
-        currentError: {
-          errorMessage: action.error.message,
-        },
+        currentError: action.error.message,
       }
 
     default: return state
