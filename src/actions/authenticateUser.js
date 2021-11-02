@@ -24,7 +24,6 @@ export function authenticateUser(ui, pw) {
             axios.get(`https://dev.4.rageagency.com/wp-json/wc/v3/orders?customer=3&consumer_key=ck_d8c99f0d68384dd98286dd0316bf9f509bed709d&consumer_secret=cs_4f123bff70009dc073211f811d297e30619091f9`)
               .then(resp => {
                 console.log("Customer Order Retrieval:", resp)
-                debugger
                 dispatch({ type: "SET_USER_ORDERS", resp })
               })
               .catch(error => {
