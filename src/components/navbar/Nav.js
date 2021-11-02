@@ -154,9 +154,11 @@ const Nav = (props) => {
 }
 
 const mapStateToProps = state => {
-  console.log("UserDisplay mapStateToProps", state)
-  if (state.currentUser) {
-    return { currentUser: state.currentUser }
+  if (state.userLoggedIn) {
+    return {
+      userLoggedIn: state.userLoggedIn,
+      currentUser: state.currentUser,
+    }
   } else return {}
 }
 
