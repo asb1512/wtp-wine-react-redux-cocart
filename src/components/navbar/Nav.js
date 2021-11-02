@@ -74,7 +74,7 @@ const Nav = (props) => {
         <AuthAccountContainer 
           toggle={authOpen} 
           handleAuthOpen={handleAuthOpen}
-          currentUser={props.currentUser} 
+          userLoggedIn={props.userLoggedIn}
         />
       </header>
 
