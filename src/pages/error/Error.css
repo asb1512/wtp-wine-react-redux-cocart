@@ -1,0 +1,21 @@
+.error-container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 90vh;
+  background-color: #000;
+  padding: 6rem;
+}
+
+.error-heading {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 20rem;
+  font-weight: 100;
+}
+
+.error-description {
+  text-align: center;
+  font-size: 2rem;
+}
