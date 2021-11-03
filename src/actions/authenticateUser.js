@@ -1,6 +1,23 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
+export function validateUserToken(token, email) {
+  return function (dispatch) {
+    dispatch({ type: "AUTHENTICATE_USER_LOADING" })
+
+    // if a user already has a token as a cookie, validate that token before attempting to use it in subsequent requests
+    return axios.post(`${process.env.REACT_APP_BASE_URL}/wp-json/jwt-auth/v1/token/validate`)
+      .then(resp => {
+        // leave token as is
+        console.log("validateUserToken Success:", resp)
+      })
+      .catch(error => {
+        // prompt user to reauthenticate
+        console.log("validateUserToken Failure:", error)
+      })
+  }
+}
+
 export function authenticateUser(ui, pw) {
   return function (dispatch) {
     dispatch({ type: "AUTHENTICATE_USER_LOADING" })
