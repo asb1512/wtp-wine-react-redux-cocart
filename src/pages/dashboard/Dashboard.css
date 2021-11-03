@@ -60,4 +60,14 @@
 
 .orders-table {
   width: 100%;
+  border: 1px solid #fff;
+  border-collapse: collapse;
+}
+
+.orders-table-header {
+  height: 3rem;
+}
+
+.orders-table-header-row {
+  height: 1.5rem;
 }
