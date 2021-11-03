@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -5,6 +6,8 @@ import {
   Route,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { validateUserToken } from './actions/authenticateUser';
+import { useCookies } from 'react-cookie';
 
 import Nav from './components/navbar/Nav';
 import Home from './pages/home/Home';
@@ -16,6 +19,17 @@ import Account from './pages/dashboard/Account';
 import Error401 from './pages/error/Error401';
 
 function App(props) {
+
+  const [cookies] = useCookies(["wtpwT", "wtpwE"])
+
+  useEffect(() => {
+    console.log("App useEffect props:", props)
+    if (cookies["wtpwT"] && cookies["wtpwE"]) {
+      props.validateUserToken(cookies["wtpwT"], cookies["wtpwE"])
+    }
+  })
+
+  console.log("Cookies accessed from App:", cookies)
 
   return (
     <Router>
@@ -56,10 +70,18 @@ function App(props) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     userLoggedIn: state.userLoggedIn
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    validateUserToken: (token, email) => dispatch(validateUserToken(token, email))
+  }
+}
+
+// const AppWithCookies = withCookies(App)
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
