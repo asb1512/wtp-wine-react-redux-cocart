@@ -7,7 +7,7 @@ function Orders(props) {
     return (
       <div className="dashboard-subcontainer orders-container">
         <table className="orders-table">
-          <thead>
+          <thead className="orders-table-header">
             <tr>
               <th>ORDER</th>
               <th>DATE</th>
@@ -19,7 +19,7 @@ function Orders(props) {
             {props.orders?.map(order => {
               console.log("single order id", order.id)
               return (
-                <tr key={order.id}>
+                <tr key={order.id} className="orders-table-row">
                   <td>{order.id}</td>
                   <td>DATE</td>
                   <td>{order.status}</td>
