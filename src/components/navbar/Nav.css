@@ -54,6 +54,17 @@
   cursor: pointer;
 }
 
+.cart-icon {
+  height: 1.5rem;
+  margin-right: 1.2rem;
+  transition: transform .3s ease-in-out;
+}
+
+.cart-icon:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
 .side-nav {
   position: fixed;
   width: 20vw;

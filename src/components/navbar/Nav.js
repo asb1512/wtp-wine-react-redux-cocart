@@ -12,12 +12,14 @@ import "./Nav.css"
 
 import logo from '../../images/logos/wtp-logo-white.png';
 import account from '../../images/nav-icons/user-icon-white.png';
+import cart from '../../images/nav-icons/cart-icon-white.png';
 
 const Nav = (props) => {
 
   const [isOpen, setOpen] = useState(false)
   const [isContactOpen, setContactOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
 
   const sideNavStyle = useSpring({
     right: isOpen ? '0%' : '-30%'
@@ -34,9 +36,16 @@ const Nav = (props) => {
     config: { duration: 300 }
   })
 
+  const handleHamburgerClick = () => {
+    setOpen(!isOpen)
+    setAuthOpen(false)
+    setCartOpen(false)
+  }
+
   const handleAuthOpen = () => {
     setAuthOpen(!authOpen)
     setOpen(false)
+    setCartOpen(false)
   }
 
   return (
@@ -63,10 +72,16 @@ const Nav = (props) => {
               onClick={() => handleAuthOpen()}
             />
 
+            <img 
+              src={cart}
+              alt="Your shopping cart."
+              className="cart-icon"
+            />
+
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
-              onClick={() => setOpen(!isOpen)}
+              onClick={() => handleHamburgerClick()}
             />
           </div>
         </div>
