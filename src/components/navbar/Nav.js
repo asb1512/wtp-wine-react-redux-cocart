@@ -5,6 +5,7 @@ import { useSpring, animated } from 'react-spring';
 import { Squash as Hamburger } from 'hamburger-react';
 
 import SocialIcons from "../SocialIcons";
+import MiniCart from "./MiniCart";
 import AuthAccountContainer from "./AuthAccountContainer";
 import UserDisplay from "./UserDisplay";
 
@@ -48,6 +49,12 @@ const Nav = (props) => {
     setCartOpen(false)
   }
 
+  const handleCartClick = () => {
+    setCartOpen(!cartOpen)
+    setAuthOpen(false)
+    setOpen(false)
+  }
+
   return (
     <>
       <header className="nav">
@@ -72,10 +79,11 @@ const Nav = (props) => {
               onClick={() => handleAuthOpen()}
             />
 
-            <img 
+            <img
               src={cart}
               alt="Your shopping cart."
               className="cart-icon"
+              onClick={() => handleCartClick()}
             />
 
             <Hamburger
@@ -86,24 +94,41 @@ const Nav = (props) => {
           </div>
         </div>
 
-        <AuthAccountContainer 
-          toggle={authOpen} 
+        <MiniCart
+          toggle={cartOpen}
+        />
+
+        <AuthAccountContainer
+          toggle={authOpen}
           handleAuthOpen={handleAuthOpen}
           userLoggedIn={props.userLoggedIn}
           setAuthOpen={setAuthOpen}
         />
       </header>
 
+
+
       <animated.div
         className="side-nav"
         style={sideNavStyle}
       >
         <div className="side-nav-content">
+
           <Link to="/" className="side-nav-link">
             <div
               className="side-nav-item"
               onClick={() => { setOpen(!isOpen) }}
-            >HOME
+            >
+              HOME
+            </div>
+          </Link>
+
+          <Link to="/wine" className="side-nav-link">
+            <div
+              className="side-nav-item"
+              onClick={() => { setOpen(!isOpen) }}
+            >
+              THE WINE
             </div>
           </Link>
 
@@ -111,7 +136,8 @@ const Nav = (props) => {
             <div
               className="side-nav-item"
               onClick={() => { setOpen(!isOpen) }}
-            >WINE CLUB
+            >
+              WINE CLUB
             </div>
           </Link>
 
@@ -119,7 +145,8 @@ const Nav = (props) => {
             <div
               className="side-nav-item"
               onClick={() => { setOpen(!isOpen) }}
-            >GIFT CARDS
+            >
+              GIFT CARDS
             </div>
           </Link>
 
@@ -127,7 +154,8 @@ const Nav = (props) => {
             <div
               className="side-nav-item"
               onClick={() => { setOpen(!isOpen) }}
-            >ABOUT
+            >
+              ABOUT
             </div>
           </Link>
 
@@ -135,7 +163,8 @@ const Nav = (props) => {
             <div
               className="side-nav-item"
               onClick={() => { setOpen(!isOpen) }}
-            >CAUSES
+            >
+              CAUSES
             </div>
           </Link>
 
