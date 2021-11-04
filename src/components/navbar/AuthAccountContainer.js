@@ -10,7 +10,7 @@ import './AuthAccountContainer.css';
 
 function AuthAccountContainer(props) {
 
-  const [setCookie] = useCookies(["wtpwT"], ["wtpwE"])
+  const [cookies, setCookie, removeCookie] = useCookies(["wtpwT"], ["wtpwE"])
 
   useEffect(() => {
     if (props.token && props.email) {
@@ -30,7 +30,7 @@ function AuthAccountContainer(props) {
         className="auth-account-container"
         style={containerStyle}
       >
-        <MiniDashboard />
+        <MiniDashboard setAuthOpen={props.setAuthOpen} />
       </animated.div>
     )
   } else {
