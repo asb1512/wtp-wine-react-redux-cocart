@@ -2,9 +2,12 @@ import React from 'react';
 import './UserDisplay.css';
 
 export default function UserDisplay(props) {
-  return (
+
+  console.log("UserDisplay props:", props)
+
+  return(
     <div className="user-display">
-      {props.currentUser ? props.currentUser.userFullName : null}
+      Hello there.
     </div>
   )
 }
