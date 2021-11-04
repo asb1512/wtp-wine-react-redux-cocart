@@ -8,7 +8,7 @@ function Orders(props) {
       <div className="dashboard-subcontainer orders-container">
         <table className="orders-table">
           <thead className="orders-table-header">
-            <tr>
+            <tr className="orders-table-row">
               <th>ORDER</th>
               <th>DATE</th>
               <th>STATUS</th>
