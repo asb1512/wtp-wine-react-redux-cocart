@@ -4,6 +4,8 @@ const defaultState = {
 
 export default function mainReducer(state = defaultState, action) {
   switch (action.type) {
+
+    // Pertaining to authentication of user who provides email & password
     case "AUTHENTICATE_USER":
       return {
         ...state,
@@ -39,14 +41,7 @@ export default function mainReducer(state = defaultState, action) {
       }
 
     case "AUTHENTICATE_USER_LOADING":
-      return { ...state, loading: true }
-
-    case "AUTHENTICATION_ERROR":
-      return {
-        ...state,
-        currentError: "Invalid login credentials. Please try again.",
-        loading: false,
-      }
+      return { ...state, userLoading: true }
 
     case "USER_INFO_ERROR":
       return {
@@ -59,6 +54,34 @@ export default function mainReducer(state = defaultState, action) {
         ...state,
         currentError: action.error.message,
       }
+    
+    case "AUTHENTICATION_ERROR":
+      return {
+        ...state,
+        currentError: "Invalid login credentials. Please try again.",
+        userLoading: false,
+      }
+
+
+
+
+    // Pertaining to validating pre-existing tokens from cookie
+    case "VALIDATE_USER_TOKEN_LOADING":
+      return { ...state, validationLoading: true }
+
+    case "SET_TOKEN_FROM_COOKIE":
+      return {
+        ...state,
+        userLoggedIn: true,
+        validationLoading: false,
+        currentUser: {
+          token: action.userData.token,
+          email: action.userData.email,
+        }
+      }
+
+    case "TOKEN_VALIDATION_ERROR":
+      return { ...state, validationLoading: false }
 
     default: return state
   }
