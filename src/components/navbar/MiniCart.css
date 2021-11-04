@@ -1,0 +1,41 @@
+.minicart-container {
+  position: fixed;
+  width: 20vw;
+  height: 90vh;
+  top: 10vh;
+  right: 0;
+  background-color: #000;
+  border-style: solid;
+  border-width: 0 0 0 5px;
+  border-color: #fff;
+  color: #fff;
+  z-index: 900;
+  cursor: default;
+}
+
+.minicart-title {
+  width: 100%;
+  padding: 1.5rem 0;
+  background: #fff;
+  color: red;
+  font-size: 3.5rem;
+  font-weight: 100;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}
+
+.minicart-items {
+  overflow-y: scroll;
+}
+
+.minicart-total {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background: #fff;
+  color: red;
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-align: center;
+}
