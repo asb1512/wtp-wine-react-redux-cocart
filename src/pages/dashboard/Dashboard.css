@@ -47,15 +47,13 @@
   bottom: 0;
   right: 0;
   padding: 4rem;
+  color: #fff;
 }
 
 .dashboard-no-content {
-  text-align: center;
+  height: 50%;
+  text-align: left;
   font-size: 1.7rem;
-}
-
-.orders-container {
-  color: #fff;
 }
 
 .orders-table {
@@ -72,4 +70,17 @@
 
 .orders-table-row {
   border: 1px solid #fff;
+}
+
+.address-container {
+  height: 50%;
+}
+
+.address-title {
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.address-content {
+  font-size: 1.8rem;
 }
