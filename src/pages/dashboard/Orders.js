@@ -5,7 +5,7 @@ function Orders(props) {
 
   if (props.orders) {
     return (
-      <div className="dashboard-subcontainer orders-container">
+      <div className="dashboard-subcontainer">
         <table className="orders-table">
           <thead className="orders-table-header">
             <tr className="orders-table-row">
