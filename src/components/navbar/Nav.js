@@ -75,6 +75,7 @@ const Nav = (props) => {
           toggle={authOpen} 
           handleAuthOpen={handleAuthOpen}
           userLoggedIn={props.userLoggedIn}
+          setAuthOpen={setAuthOpen}
         />
       </header>
 
