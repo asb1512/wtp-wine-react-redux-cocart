@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './MiniDashboard.css';
 
@@ -29,8 +29,6 @@ export default function MiniDashboard() {
       <Link to="#" className="mini-dashboard-link" onClick={setLogOut(true)}>
         <div className="mini-dashboard-div">LOGOUT</div>
       </Link>
-
-      {/* {logUserOut ? <Redirect to="/" /> : null} */}
 
     </div>
   )
