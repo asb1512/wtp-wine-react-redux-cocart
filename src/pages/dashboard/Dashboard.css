@@ -66,8 +66,10 @@
 
 .orders-table-header {
   height: 3rem;
+  font-size: 1.5rem;
+  text-align: left;
 }
 
-.orders-table-header-row {
-  height: 1.5rem;
+.orders-table-row {
+  border: 1px solid #fff;
 }
