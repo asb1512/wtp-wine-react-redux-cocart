@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { connect } from 'react-redux';
+import { useCookies } from 'react-cookie';
 
 import AuthForm from './AuthForm';
 import MiniDashboard from './mini-dashboard/MiniDashboard';
 
 import './AuthAccountContainer.css';
 
-export default function AuthAccountContainer(props) {
+function AuthAccountContainer(props) {
+
+  const [setCookie] = useCookies(["wtpwT"], ["wtpwE"])
+
+  useEffect(() => {
+    if (props.token && props.email) {
+      setCookie("wtpwT", props.token, { path: "/" })
+      setCookie("wtpwE", props.email, { path: "/" })
+      console.log("Cookies Set!")
+    }
+  })
 
   const containerStyle = useSpring({
     top: props.toggle ? '10vh' : '-75vh',
@@ -14,8 +26,8 @@ export default function AuthAccountContainer(props) {
 
   if (props.userLoggedIn) {
     return (
-      <animated.div 
-        className="auth-account-container" 
+      <animated.div
+        className="auth-account-container"
         style={containerStyle}
       >
         <MiniDashboard />
@@ -23,8 +35,8 @@ export default function AuthAccountContainer(props) {
     )
   } else {
     return (
-      <animated.div 
-        className="auth-account-container" 
+      <animated.div
+        className="auth-account-container"
         style={containerStyle}
       >
         <AuthForm
@@ -35,3 +47,14 @@ export default function AuthAccountContainer(props) {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  if (state.userLoggedIn) {
+    return {
+      token: state.currentUser.token,
+      email: state.currentUser.email,
+    }
+  } else return {}
+}
+
+export default connect(mapStateToProps)(AuthAccountContainer);
