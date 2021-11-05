@@ -17,6 +17,7 @@ import Subscriptions from './pages/dashboard/Subscriptions';
 import Addresses from './pages/dashboard/Addresses';
 import Account from './pages/dashboard/Account';
 import Error401 from './pages/error/Error401';
+import Wine from './pages/wine/Wine';
 
 function App(props) {
 
@@ -39,6 +40,10 @@ function App(props) {
 
         <Route exact path="/">
           <Home />
+        </Route>
+
+        <Route exact path ="/wine">
+          <Wine />
         </Route>
 
         <Route exact path="/dashboard/orders">
