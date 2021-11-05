@@ -24,7 +24,6 @@ function App(props) {
   const [cookies] = useCookies(["wtpwT", "wtpwE"])
 
   useEffect(() => {
-    console.log("App useEffect props:", props)
     if (cookies["wtpwT"] && cookies["wtpwE"]) {
       props.validateUserToken(cookies["wtpwT"], cookies["wtpwE"])
     }
