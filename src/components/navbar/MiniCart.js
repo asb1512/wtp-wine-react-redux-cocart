@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 import './MiniCart.css';
@@ -9,6 +9,8 @@ export default function MiniCart(props) {
     right: props.toggle ? '0%' : '-30%'
   })
 
+  const [subTotal, setSubTotal] = useState(0)
+
   return (
     <animated.div className="minicart-container" style={cartStyle}>
       <div className="minicart-title">YOUR CART</div>
@@ -17,7 +19,7 @@ export default function MiniCart(props) {
 
       </div>
 
-      <div className="minicart-total">SUBTOTAL :</div>
+      <div className="minicart-total">SUBTOTAL : ${subTotal}</div>
     </animated.div>
   )
 }
