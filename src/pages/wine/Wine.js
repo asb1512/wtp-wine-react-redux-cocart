@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './Wine.css';
 import { useSpring, animated } from 'react-spring';
+import { connect } from 'react-redux';
+import { addSimpleItemToCart } from '../../actions/userCart';
 
 import cab from '../../images/wine/cabernet.png';
 import chard from '../../images/wine/chardonnay.png';
 
 
 
-export default function Wine(props) {
+function Wine(props) {
 
 
 
@@ -41,6 +43,25 @@ export default function Wine(props) {
     setHideChard(true)
     setCabTitle(true)
     setCabBg(true)
+  }
+
+
+  const [cabQuantity, setCabQuantity] = useState(1);
+  const handleAddCabToCart = () => {
+    const productId = 13;
+    props.addSimpleItemToCart(productId, cabQuantity)
+  }
+  const handlePlusCabQuantity = () => {
+    if (cabQuantity >= 1) {
+      let newValue = cabQuantity + 1;
+      setCabQuantity(newValue);
+    }
+  }
+  const handleMinusCabQuantity = () => {
+    if (cabQuantity > 1) {
+      let newValue = cabQuantity - 1;
+      setCabQuantity(newValue);
+    }
   }
 
 
@@ -91,10 +112,30 @@ export default function Wine(props) {
         </div>
         <div className="cab-desc-anchor">
           <animated.div className="cab-desc-cntr" style={cabDescStyle}>
-            <div className="cab-desc">
+            <div className="cab-price">
               $29.99
             </div>
-            <button className="addtocart-btn">ADD TO CART</button>
+            <div className="quantity-counter">
+              <div 
+                className="minus-sign"
+                onClick={() => handleMinusCabQuantity()}
+              >
+                –
+              </div>
+              <div className="quantity-value">{cabQuantity}</div>
+              <div 
+                className="plus-sign"
+                onClick={() => handlePlusCabQuantity()}
+              >
+                +
+              </div>
+            </div>
+            <button 
+              className="addtocart-btn"
+              onClick={() => handleAddCabToCart()}
+            >
+              ADD TO CART
+            </button>
           </animated.div>
         </div>
 
@@ -126,3 +167,19 @@ export default function Wine(props) {
     </div>
   )
 }
+
+const mapStateToProps = state => {
+  if (state.cart) {
+    return {
+      cart: state.cart,
+    }
+  } else return {}
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addSimpleItemToCart: (productId, quantity, cartKey = '') => dispatch(addSimpleItemToCart(productId, quantity, cartKey)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Wine);
