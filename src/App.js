@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { validateUserToken } from './actions/authenticateUser';
+import { retrieveUserCart } from './actions/userCart';
 import { useCookies } from 'react-cookie';
 
 import Nav from './components/navbar/Nav';
@@ -21,11 +22,16 @@ import Wine from './pages/wine/Wine';
 
 function App(props) {
 
-  const [cookies] = useCookies(["wtpwT", "wtpwE"])
+  const [cookies, setCookie] = useCookies(["wtpwT", "wtpwE"])
 
   useEffect(() => {
     if (cookies["wtpwT"] && cookies["wtpwE"]) {
       props.validateUserToken(cookies["wtpwT"], cookies["wtpwE"])
+    }
+    if (props.userCart) {
+      setCookie("wtpwCk", props.userCart.cart_key, { path: "/" })
+    } else if (cookies["wtpwCk"]) {
+      props.retrieveUserCart(cookies["wtpwCk"])
     }
   })
 
@@ -76,16 +82,16 @@ function App(props) {
 
 const mapStateToProps = (state) => {
   return {
-    userLoggedIn: state.userLoggedIn
+    userLoggedIn: state.userLoggedIn,
+    userCart: state.userCart ? state.userCart : null,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    validateUserToken: (token, email) => dispatch(validateUserToken(token, email))
+    validateUserToken: (token, email) => dispatch(validateUserToken(token, email)),
+    retrieveUserCart: (cartKey) => dispatch(retrieveUserCart(cartKey)),
   }
 }
-
-// const AppWithCookies = withCookies(App)
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
