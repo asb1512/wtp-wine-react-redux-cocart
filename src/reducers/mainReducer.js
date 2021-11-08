@@ -54,7 +54,7 @@ export default function mainReducer(state = defaultState, action) {
         ...state,
         currentError: action.error.message,
       }
-    
+
     case "AUTHENTICATION_ERROR":
       return {
         ...state,
@@ -82,6 +82,20 @@ export default function mainReducer(state = defaultState, action) {
 
     case "TOKEN_VALIDATION_ERROR":
       return { ...state, validationLoading: false }
+
+
+
+
+    // pertaining to a user's cart
+    case "CART_LOADING":
+      return { ...state, cartLoading: true }
+
+    case "SET_USER_CART":
+      return {
+        ...state,
+        userCart: action.resp.data,
+      }
+
 
     default: return state
   }
