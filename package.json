@@ -49,5 +49,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@stripe/react-stripe-js": "^1.6.0",
+    "stripe": "^8.186.1"
   }
 }
