@@ -17,8 +17,9 @@ import Orders from './pages/dashboard/Orders';
 import Subscriptions from './pages/dashboard/Subscriptions';
 import Addresses from './pages/dashboard/Addresses';
 import Account from './pages/dashboard/Account';
-import Error401 from './pages/error/Error401';
+import Checkout from './pages/checkout/Checkout';
 import Wine from './pages/wine/Wine';
+import Error401 from './pages/error/Error401';
 
 function App(props) {
 
@@ -73,6 +74,10 @@ function App(props) {
         <Route exact path="/dashboard/account">
           <Dashboard focus="account" />
           <Account />
+        </Route>
+
+        <Route exact path="/checkout">
+          <Checkout />
         </Route>
 
       </Switch>
