@@ -26,10 +26,25 @@ export function addSimpleItemToCart(productId, quantity, cartKey) {
     })
       .then(resp => {
         dispatch({ type: "SET_USER_CART", resp })
-        toast.success("Item successfully add to cart.")
+        toast.success("Item successfully add to cart")
       })
       .catch(error => {
         console.log("addSimpleItemToCart error:", error)
+      })
+  }
+}
+
+export function removeItemFromCart(itemKey, cartKey) {
+  return function (dispatch) {
+    dispatch({ type: "CART_LOADING" })
+
+    return axios.delete(`${process.env.REACT_APP_BASE_URL}/wp-json/cocart/v2/cart/item/${itemKey}?=${cartKey}`)
+      .then(resp => {
+        dispatch({type: "SET_USER_CART", resp})
+        toast.success("Item successfully removed from cart")
+      })
+      .catch(error => {
+        toast.error("An unknown error occurred. Please try again or refresh this page.")
       })
   }
 }
