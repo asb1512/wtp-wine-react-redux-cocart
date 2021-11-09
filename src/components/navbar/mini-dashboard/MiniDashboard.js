@@ -1,51 +1,63 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 import './MiniDashboard.css';
 
-export default function MiniDashboard(props) {
+function MiniDashboard(props) {
 
-  const [logUserOut, setLogOut] = useState(false)
+  const [cookies, setCookie, removeCookie] = useCookies(["wtpwT"], ["wtpwE"], ["wtpwCk"])
+
+  const handleLogout = () => {
+    removeCookie("wtpwT", { path: "/" })
+    removeCookie("wtpwE", { path: "/" })
+    removeCookie("wtpwCk", { path: "/" })
+    props.logoutUser();
+    return (
+      <Redirect to="/" />
+    )
+  }
 
   return (
     <div className="mini-dashboard-container">
 
-      <Link 
-        to="/dashboard/orders" 
+      <Link
+        to="/dashboard/orders"
         className="mini-dashboard-link"
         onClick={() => props.setAuthOpen(false)}
       >
         <div className="mini-dashboard-div">ORDERS</div>
       </Link>
 
-      <Link 
-        to="/dashboard/subscriptions" 
+      <Link
+        to="/dashboard/subscriptions"
         className="mini-dashboard-link"
         onClick={() => props.setAuthOpen(false)}
       >
         <div className="mini-dashboard-div">SUBSCRIPTIONS</div>
       </Link>
 
-      <Link 
-        to="/dashboard/addresses" 
+      <Link
+        to="/dashboard/addresses"
         className="mini-dashboard-link"
         onClick={() => props.setAuthOpen(false)}
       >
         <div className="mini-dashboard-div">ADDRESSES</div>
       </Link>
 
-      <Link 
-        to="/dashboard/account" 
+      <Link
+        to="/dashboard/account"
         className="mini-dashboard-link"
         onClick={() => props.setAuthOpen(false)}
       >
         <div className="mini-dashboard-div">ACCOUNT</div>
       </Link>
 
-      <Link 
-        to="#" 
-        className="mini-dashboard-link" 
-        onClick={() => setLogOut(true)}
+      <Link
+        to="#"
+        className="mini-dashboard-link"
+        onClick={() => handleLogout()}
       >
         <div className="mini-dashboard-div">LOGOUT</div>
       </Link>
@@ -53,3 +65,11 @@ export default function MiniDashboard(props) {
     </div>
   )
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logoutUser: () => dispatch({ type: "LOGOUT_USER" })
+  }
+}
+
+export default connect(null, mapDispatchToProps)(MiniDashboard);
