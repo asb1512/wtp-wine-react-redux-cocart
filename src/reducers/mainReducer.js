@@ -94,6 +94,7 @@ export default function mainReducer(state = defaultState, action) {
       return {
         ...state,
         userCart: action.resp.data,
+        cartLoading: false,
       }
 
 
