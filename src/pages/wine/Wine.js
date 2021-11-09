@@ -49,7 +49,7 @@ function Wine(props) {
   const [cabQuantity, setCabQuantity] = useState(1);
   const handleAddCabToCart = () => {
     const productId = 13;
-    props.addSimpleItemToCart(productId, cabQuantity)
+    props.addSimpleItemToCart(productId, cabQuantity, props.cartKey)
   }
   const handlePlusCabQuantity = () => {
     if (cabQuantity >= 1) {
@@ -169,9 +169,9 @@ function Wine(props) {
 }
 
 const mapStateToProps = state => {
-  if (state.cart) {
+  if (state.userCart) {
     return {
-      cart: state.cart,
+      cartKey: state.userCart.cart_key,
     }
   } else return {}
 }
