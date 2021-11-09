@@ -2,6 +2,7 @@ import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import { connect } from 'react-redux';
 import { removeItemFromCart } from '../../actions/userCart';
+import { Link } from 'react-router-dom';
 
 import cab from '../../images/wine/cabernet.png';
 import chard from '../../images/wine/chardonnay.png';
@@ -70,7 +71,27 @@ function MiniCart(props) {
         {renderMiniCartContent()}
       </div>
 
-      <div className="minicart-total">SUBTOTAL : ${addDecimalToSubtotal()}</div>
+      <div className="minicart-options">
+
+        <div className="minicart-totals">
+          <div className="minicart-subtotal">
+            SUBTOTAL : ${addDecimalToSubtotal()}
+          </div>
+          <div className="minicart-shipping">
+            SHIPPING & HANDLING :
+          </div>
+          <div className="minicart-tax">
+            ESTIMATED TAX :
+          </div>
+          <div className="minicart-total">
+            TOTAL :
+          </div>
+        </div>
+
+        <div className="minicart-checkout">
+          <Link to="/checkout">CHECKOUT</Link>
+        </div>
+      </div>
     </animated.div>
   )
 }
