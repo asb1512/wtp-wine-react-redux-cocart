@@ -62,6 +62,10 @@ export default function mainReducer(state = defaultState, action) {
         userLoading: false,
       }
 
+    case "LOGOUT_USER":
+      debugger
+      return { userLoggedIn: false }
+
 
 
 
