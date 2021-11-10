@@ -1,0 +1,8 @@
+.checkout-container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 90vw;
+  background: #000;
+  color: #fff;
+}
