@@ -1,0 +1,29 @@
+.order-summary-container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 90vh;
+  background: #000;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 100%;
+  overflow: hidden;
+}
+
+.order-summary-items {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  padding: 3rem;
+  color: #fff;
+}
+
+.order-summary-totals {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.order-summary-heading {
+  margin: none;
+  font-size: 3.5rem;
+  font-weight: 100;
+}
