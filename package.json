@@ -5,6 +5,8 @@
   "dependencies": {
     "@cocart/cocart-rest-api": "^1.1.0",
     "@react-spring/parallax": "^9.3.0",
+    "@stripe/react-stripe-js": "^1.6.0",
+    "@stripe/stripe-js": "^1.21.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -50,8 +52,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@stripe/react-stripe-js": "^1.6.0",
-    "stripe": "^8.186.1"
-  }
+  "devDependencies": {}
 }
