@@ -62,22 +62,38 @@ function App(props) {
         </Route>
 
         <Route exact path="/dashboard/subscriptions">
-          <Dashboard focus="subscriptions" />
-          <Subscriptions />
+          {
+            props.userLoggedIn ?
+              <><Dashboard focus="subscriptions" />
+                <Subscriptions /></> :
+              <Error401 />
+          }
         </Route>
 
         <Route exact path="/dashboard/addresses">
-          <Dashboard focus="addresses" />
-          <Addresses />
+          {
+            props.userLoggedIn ?
+              <><Dashboard focus="addresses" />
+                <Addresses /></> :
+              <Error401 />
+          }
         </Route>
 
         <Route exact path="/dashboard/account">
-          <Dashboard focus="account" />
-          <Account />
+          {
+            props.userLoggedIn ?
+              <><Dashboard focus="account" />
+                <Account /></> :
+              <Error401 />
+          }
         </Route>
 
         <Route exact path="/order-summary">
-          <OrderSummary />
+          {
+            props.userLoggedIn ?
+              <OrderSummary /> :
+              <Error401 />
+          }
         </Route>
 
       </Switch>
