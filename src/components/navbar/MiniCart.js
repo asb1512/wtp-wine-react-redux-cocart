@@ -89,7 +89,13 @@ function MiniCart(props) {
         </div>
 
         <div className="minicart-checkout">
-          <Link to="/checkout">CHECKOUT</Link>
+          <Link 
+            to="/order-summary" 
+            className="minicart-link"
+            onClick={() => props.setCartOpen(false)}
+          >
+            CHECKOUT
+          </Link>
         </div>
       </div>
     </animated.div>
