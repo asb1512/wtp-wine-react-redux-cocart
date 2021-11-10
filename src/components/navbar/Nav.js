@@ -96,6 +96,7 @@ const Nav = (props) => {
 
         <MiniCart
           toggle={cartOpen}
+          setCartOpen={setCartOpen}
         />
 
         <AuthAccountContainer
