@@ -17,7 +17,7 @@ import Orders from './pages/dashboard/Orders';
 import Subscriptions from './pages/dashboard/Subscriptions';
 import Addresses from './pages/dashboard/Addresses';
 import Account from './pages/dashboard/Account';
-import Checkout from './pages/checkout/Checkout';
+import OrderSummary from './pages/checkout/OrderSummary';
 import Wine from './pages/wine/Wine';
 import Error401 from './pages/error/Error401';
 
@@ -76,8 +76,8 @@ function App(props) {
           <Account />
         </Route>
 
-        <Route exact path="/checkout">
-          <Checkout />
+        <Route exact path="/order-summary">
+          <OrderSummary />
         </Route>
 
       </Switch>
