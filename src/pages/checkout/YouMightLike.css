@@ -1,0 +1,119 @@
+.uml-container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 40vh;
+  background-color: #000;
+  display: block;
+}
+
+.uml-heading {
+  margin: 0 0 1rem 5%;
+  font-size: 2rem;
+  font-weight: 100;
+  color: red;
+}
+
+.uml-body {
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  grid-template-rows: 25% 75%;
+}
+
+.wtps-logo {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  justify-self: start;
+  align-self: center;
+  height: 70%;
+  margin-left: 2rem;
+}
+
+.wtps-product-1 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.wtps-lgb-img {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  justify-self: start;
+  align-self: center;
+  height: 90%;
+  margin-left: 1rem;
+}
+
+.wtps-lgb-title {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  justify-self: center;
+  align-self: center;
+  width: 30%;
+  margin-left: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 2.1rem;
+  color: #192841;
+}
+
+.wtps-co-img {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  justify-self: start;
+  align-self: center;
+  height: 90%;
+  margin-left: 1rem;
+}
+
+.wtps-co-title {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  justify-self: center;
+  align-self: center;
+  width: 30%;
+  margin-left: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 2.1rem;
+  color: #192841;
+}
+
+.wtps-bj-img {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  justify-self: left;
+  align-self: center;
+  height: 90%;
+  margin-left: 1rem;
+}
+
+.wtps-bj-title {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  justify-self: center;
+  align-self: center;
+  width: 30%;
+  margin-left: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 2.1rem;
+  color: #192841;
+}
+
+.wtps-subtitle {
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.1rem;
+  color: #192841;
+}
