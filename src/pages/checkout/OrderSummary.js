@@ -2,6 +2,7 @@ import React from 'react';
 import './OrderSummary.css';
 import { connect } from 'react-redux';
 import { removeItemFromCart } from '../../actions/userCart';
+import YouMightLike from './YouMightLike';
 
 import cab from '../../images/wine/cabernet.png';
 import chard from '../../images/wine/chardonnay.png';
@@ -75,23 +76,31 @@ function OrderSummary(props) {
           <div className="order-summary-total">
             TOTAL:
           </div>
+          <button 
+            className="order-summary-checkout-btn"
+          >
+            CHECKOUT
+          </button>
         </>
       )
     }
   }
 
   return (
-    <div className="order-summary-container">
-      <div className="order-summary-items">
-        <div className="order-summary-heading">YOUR ORDER</div>
-        {renderCartItems()}
-      </div>
+    <>
+      <div className="order-summary-container">
+        <div className="order-summary-items">
+          <div className="order-summary-heading">YOUR ORDER</div>
+          {renderCartItems()}
+        </div>
 
-      <div className="order-summary-totals">
-        <div className="order-summary-heading">SUMMARY</div>
-        {renderSummary()}
+        <div className="order-summary-totals">
+          <div className="order-summary-heading">SUMMARY</div>
+          {renderSummary()}
+        </div>
       </div>
-    </div>
+      <YouMightLike />
+    </>
   )
 }
 
