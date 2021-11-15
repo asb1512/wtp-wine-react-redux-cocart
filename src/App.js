@@ -21,6 +21,7 @@ import OrderSummary from './pages/checkout/OrderSummary';
 import CheckoutSummary from './pages/checkout/CheckoutSummary';
 import Wine from './pages/wine/Wine';
 import Error401 from './pages/error/Error401';
+import OrderSuccess from './pages/checkout/OrderSuccess';
 
 function App(props) {
 
@@ -102,6 +103,14 @@ function App(props) {
             props.userLoggedIn ?
               <CheckoutSummary /> :
               <Error401 />
+          }
+        </Route>
+
+        <Route exact path="/order-success">
+          {
+            props.userLoggedIn ?
+            <OrderSuccess /> :
+            <Error401 />
           }
         </Route>
 
