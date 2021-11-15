@@ -8,13 +8,15 @@ const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY}`)
 
 export default function CheckoutSummary() {
 
-  
+  // const renderLoading = () => {
+  //   return (
+
+  //   )
+  // }
 
   return (
     <div className="checkout-container">
-      <Elements stripe={stripePromise}>
-        <CheckoutForm />
-      </Elements>
+      
     </div>
   )
 }
