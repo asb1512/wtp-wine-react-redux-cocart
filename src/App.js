@@ -18,6 +18,7 @@ import Subscriptions from './pages/dashboard/Subscriptions';
 import Addresses from './pages/dashboard/Addresses';
 import Account from './pages/dashboard/Account';
 import OrderSummary from './pages/checkout/OrderSummary';
+import CheckoutSummary from './pages/checkout/CheckoutSummary';
 import Wine from './pages/wine/Wine';
 import Error401 from './pages/error/Error401';
 
@@ -92,6 +93,14 @@ function App(props) {
           {
             props.userLoggedIn ?
               <OrderSummary /> :
+              <Error401 />
+          }
+        </Route>
+
+        <Route exact path="/checkout">
+          {
+            props.userLoggedIn ?
+              <CheckoutSummary /> :
               <Error401 />
           }
         </Route>
