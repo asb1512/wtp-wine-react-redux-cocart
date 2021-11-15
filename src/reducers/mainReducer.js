@@ -1,5 +1,9 @@
 const defaultState = {
   userLoggedIn: false,
+  userLoading: false,
+  validationLoading: false,
+  cartLoading: false,
+  checkoutLoading: false,
 };
 
 export default function mainReducer(state = defaultState, action) {
@@ -100,6 +104,39 @@ export default function mainReducer(state = defaultState, action) {
         userCart: action.resp.data,
         cartLoading: false,
       }
+
+
+
+
+    case "CHECKOUT_LOADING":
+      return {
+        ...state,
+        checkoutLoading: true,
+      }
+
+    case "SET_STRIPE_INTENT":
+      return {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          stripe: {
+            stripePaymentIntentId: action.resp.data.payment_intent_id,
+            stripeClientSecret: action.resp.data.client_secret,
+          }
+        }
+      }
+
+    case "SET_CHECKOUT_ORDER":
+      return {
+        ...state,
+        checkoutLoading: false,
+        currentUser: {
+          ...state.currentUser,
+          orderCheckout: action.resp.data,
+        }
+      }
+
+
 
 
     default: return state
