@@ -1,13 +1,18 @@
 import React from 'react';
 import './OrderSummary.css';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { removeItemFromCart } from '../../actions/userCart';
+import { createPaymentIntentAndOrder } from '../../actions/checkoutUser';
 import YouMightLike from './YouMightLike';
+import Loader from '../../components/Loader';
 
 import cab from '../../images/wine/cabernet.png';
 import chard from '../../images/wine/chardonnay.png';
 
 function OrderSummary(props) {
+
+  let history = useHistory()
 
   const addDecimalToSubtotal = () => {
     if (props.userCart && props.userCart.items.length > 0) {
@@ -76,8 +81,9 @@ function OrderSummary(props) {
           <div className="order-summary-total">
             TOTAL:
           </div>
-          <button 
+          <button
             className="order-summary-checkout-btn"
+            onClick={() => initializeCheckout()}
           >
             CHECKOUT
           </button>
@@ -85,6 +91,41 @@ function OrderSummary(props) {
       )
     }
   }
+
+  const initializeCheckout = () => {
+    // need to add ability for customer to checkout as guest and/or add billing/shipping addresses
+    // setLoader(true)
+    // the amount passed must be changed to full total
+    props.createPaymentIntentAndOrder(
+      props.userCart.totals.subtotal, 
+      props.currentUser.billing, 
+      props.currentUser.shipping, 
+      createLineItems(), 
+      [
+        {
+          method_id: "flat_rate", 
+          method_title: "Flat rate", 
+          total: "1.00",
+        }
+      ]
+    )
+    history.push('/checkout')
+  }
+
+  const createLineItems = () => {
+    const orderLineItems = []
+    props.userCart.items.map(item => {
+      let itemObj = {
+        product_id: item.id,
+        quantity: item.quantity.value,
+      }
+      orderLineItems.push(itemObj)
+      return orderLineItems
+    })
+    return orderLineItems
+  }
+
+
 
   return (
     <>
@@ -100,21 +141,31 @@ function OrderSummary(props) {
         </div>
       </div>
       <YouMightLike />
+      {props.checkoutLoading ? <Loader message="Do not refresh the page while your order is being processed." /> : null}
     </>
   )
 }
+
+
 
 const mapStateToProps = (state) => {
   if (state.userCart) {
     return {
       userCart: state.userCart,
+      checkoutLoading: state.checkoutLoading,
+      currentUser: state.currentUser ? state.currentUser : {},
     }
   } else return {};
 }
 
+
+ 
 const mapDispatchToProps = (dispatch) => {
   return {
     removeItemFromCart: (itemKey, cartKey) => dispatch(removeItemFromCart(itemKey, cartKey)),
+    createPaymentIntentAndOrder: (amount, billingAddress, shippingAddress, lineItems, shipping) => {
+      dispatch(createPaymentIntentAndOrder(amount, billingAddress, shippingAddress, lineItems, shipping))
+    },
   }
 }
 
