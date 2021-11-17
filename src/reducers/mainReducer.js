@@ -120,7 +120,6 @@ export default function mainReducer(state = defaultState, action) {
         currentUser: {
           ...state.currentUser,
           stripe: {
-            stripePaymentIntentId: action.resp.data.payment_intent_id,
             stripeClientSecret: action.resp.data.client_secret,
           }
         }
