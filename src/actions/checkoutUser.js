@@ -1,7 +1,7 @@
 import 'axios';
 import axios from 'axios';
 
-export function createPaymentIntentAndOrder(amount, billingAddress, shippingAddress, lineItems, shipping) {
+export function createPaymentIntentAndOrder(customerId, amount, billingAddress, shippingAddress, lineItems, shipping) {
   return function (dispatch) {
     dispatch({ type: "CHECKOUT_LOADING" })
 
@@ -13,6 +13,7 @@ export function createPaymentIntentAndOrder(amount, billingAddress, shippingAddr
           payment_method: "stripe",
           payment_method_title: "card",
           set_paid: false,
+          customer_id: customerId,
           billing: billingAddress,
           shipping: shippingAddress,
           line_items: lineItems,
