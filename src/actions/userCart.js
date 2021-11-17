@@ -34,11 +34,17 @@ export function addSimpleItemToCart(productId, quantity, cartKey) {
   }
 }
 
-export function removeItemFromCart(itemKey, cartKey) {
+export function removeItemFromCart(itemKey, cartKey, token) {
   return function (dispatch) {
     dispatch({ type: "CART_LOADING" })
 
-    return axios.delete(`${process.env.REACT_APP_BASE_URL}/wp-json/cocart/v2/cart/item/${itemKey}?=${cartKey}`)
+    let config = {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    }
+
+    return axios.delete(`${process.env.REACT_APP_BASE_URL}/wp-json/cocart/v2/cart/item/${itemKey}?=${cartKey}`, config)
       .then(resp => {
         dispatch({type: "SET_USER_CART", resp})
         toast.success("Item successfully removed from cart")

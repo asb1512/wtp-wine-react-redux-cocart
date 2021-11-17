@@ -25,7 +25,7 @@ function MiniCart(props) {
   }
 
   const handleItemDeletion = (itemKey) => {
-    props.removeItemFromCart(itemKey, props.cartKey)
+    props.removeItemFromCart(itemKey, props.cartKey, props.currentUser.token)
   }
 
   const renderMiniCartContent = () => {
@@ -36,6 +36,7 @@ function MiniCart(props) {
             return (
               <div className="minicart-item" key={item.id}>
                 <img
+                  // 
                   src={item.id === 13 ? cab : chard}
                   alt={`We The People Wine ${item.name}`}
                   className="minicart-item-img"
@@ -108,13 +109,14 @@ const mapStateToProps = (state) => {
       cartItems: state.userCart.items ? state.userCart.items : [],
       cartTotals: state.userCart.totals ? state.userCart.totals : null,
       cartKey: state.userCart.cart_key ? state.userCart.cart_key : null,
+      currentUser: state.currentUser,
     }
   } else return {}
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    removeItemFromCart: (itemKey, cartKey) => dispatch(removeItemFromCart(itemKey, cartKey)),
+    removeItemFromCart: (itemKey, cartKey, token) => dispatch(removeItemFromCart(itemKey, cartKey, token)),
   }
 }
 
