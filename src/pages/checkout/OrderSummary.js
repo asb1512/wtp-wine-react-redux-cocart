@@ -97,6 +97,7 @@ function OrderSummary(props) {
     // setLoader(true)
     // the amount passed must be changed to full total
     props.createPaymentIntentAndOrder(
+      props.currentUser.userId,
       props.userCart.totals.subtotal, 
       props.currentUser.billing, 
       props.currentUser.shipping, 
@@ -109,7 +110,7 @@ function OrderSummary(props) {
         }
       ]
     )
-    history.push('/checkout')
+    history.push(`/checkout?cart=${props.userCart.cart_hash}`)
   }
 
   const createLineItems = () => {
@@ -163,8 +164,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     removeItemFromCart: (itemKey, cartKey) => dispatch(removeItemFromCart(itemKey, cartKey)),
-    createPaymentIntentAndOrder: (amount, billingAddress, shippingAddress, lineItems, shipping) => {
-      dispatch(createPaymentIntentAndOrder(amount, billingAddress, shippingAddress, lineItems, shipping))
+    createPaymentIntentAndOrder: (customerId, amount, billingAddress, shippingAddress, lineItems, shipping) => {
+      dispatch(createPaymentIntentAndOrder(customerId, amount, billingAddress, shippingAddress, lineItems, shipping))
     },
   }
 }
