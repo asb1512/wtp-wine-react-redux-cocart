@@ -19,23 +19,13 @@ function CheckoutSummary(props) {
   const renderContent = () => {
     if (props.stripe && props.orderCheckout) {
 
-      const appearance = {
-        style: {
-          base: {
-            color: '#fff',
-          },
-          invalid: {},
-          complete: {},
-        },
-      }
 
-      const options = { 
-        client_secret: props.stripe.stripeClientSecret,
-        appearance: appearance,
-      }
+      // const options = { 
+      //   clientSecret: props.stripe.stripeClientSecret,
+      // }
 
       return (
-        <Elements stripe={stripePromise} options={options}>
+        <Elements stripe={stripePromise}>
           <CheckoutForm />
         </Elements>
       )
