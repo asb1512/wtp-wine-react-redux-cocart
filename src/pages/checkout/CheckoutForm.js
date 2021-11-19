@@ -1,8 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { clearCart } from '../../actions/userCart';
+import { useHistory } from 'react-router-dom';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 
+const CARD_ELEMENT_OPTIONS = {
+  style: {
+    base: {
+      color: '#fff',
+      "::placeholder": {
+        color: "#aab7c4",
+      },
+      fontSize: '20px',
+    },
+    invalid: {},
+  },
+  hidePostalCode: true,
+};
+
 function CheckoutForm(props) {
+
+  let history = useHistory(); 
 
   const stripe = useStripe();
   const elements = useElements();
@@ -11,33 +29,9 @@ function CheckoutForm(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [btnDisabled, setBtnDisable] = useState(false);
 
-  useEffect(() => {
-    if (!stripe || props.stripe.stripeClientSecret) {
-      return;
-    }
-
-    stripe.retrievePaymentIntent(props.stripe.stripeClientSecret).then(({ paymentIntent }) => {
-      switch (paymentIntent.status) {
-        case "succeeded":
-          setMessage("Payment succeeded!");
-          break;
-        case "processing":
-          setMessage("Your payment is processing.");
-          break;
-        case "requires_payment_method":
-          setMessage("Your payment was not successful, please try again.");
-          break;
-        default:
-          setMessage("Something went wrong.");
-          break;
-      }
-    });
-  }, [stripe, props.stripe.stripeClientSecret]);
-
 
   const handleSubmit = async (event) => {
-    console.log("handleSubmit was called!")
-    event.preventDefault()
+    event.preventDefault();
 
     const billingDetails = {
       name: props.orderCheckout.billing.first_name + " " + props.orderCheckout.billing.last_name,
@@ -48,48 +42,41 @@ function CheckoutForm(props) {
         state: props.orderCheckout.billing.state,
         postal_code: props.orderCheckout.billing.postcode,
       },
-    }
+    };
 
     if (!stripe || !elements) {
-      setBtnDisable(true)
+      setBtnDisable(true);
       return;
-    }
+    };
 
-    // if (!error) {
+    const cardElement = elements.getElement(CardElement);
 
-    // }
+    const paymentMethod = {
+      payment_method: {
+        card: cardElement,
+        billing_details: billingDetails,
+      },
+      receipt_email: props.orderCheckout.billing.email,
+    };
 
-    const result = await stripe.confirmPayment(
-      props.stripe.stripeClientSecret, 
-      {
-        payment_method: {
-          card: elements.getElement(CardElement),
-          billing_details: billingDetails
-        },
-        confirmParams: {
-          return_url: `http://localhost:3000/order-success`,
-        },
+    try {
+      const result = await stripe.confirmCardPayment(props.stripe.stripeClientSecret, paymentMethod);
+      
+      if (result.error) {
+        throw new Error(result.error.message);
       }
-    )
-
-    if (result.error) {
-      renderStripeError(result.error.message)
-      console.log("Stripe Error Message:", result.error.message)
+      props.clearCart(props.userCart.cart_key)
+      history.push(`/order-success`);
+      return result;
+    } catch (error) {
+      throw new Error(error);
     }
-  }
-
-  const renderStripeError = (errorMsg) => {
-    return (
-      <div className="stripe-error">
-        {errorMsg}
-      </div>
-    )
   }
 
   return (
     <form className="stripe-checkout" onSubmit={handleSubmit}>
 
-      <CardElement />
+      <CardElement options={CARD_ELEMENT_OPTIONS} />
       <button 
         type="submit"
         className="stripe-submit-btn"
@@ -107,8 +94,15 @@ const mapStateToProps = state => {
     return {
       orderCheckout: state.currentUser.orderCheckout,
       stripe: state.currentUser.stripe,
+      userCart: state.userCart
     }
   } else return {}
 }
 
-export default connect(mapStateToProps)(CheckoutForm);
+const mapDispatchToProps = dispatch => {
+  return {
+    clearCart: (cartKey) => dispatch(clearCart(cartKey))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutForm);
