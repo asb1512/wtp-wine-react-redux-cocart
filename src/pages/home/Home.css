@@ -49,11 +49,10 @@
   z-index: 500;
 }
 
-.wtp-logo {
-  width: 50%;
+.wtp-logo-svg {
+  width: 80%;
+  margin: 22% auto 3rem auto;
   display: block;
-  margin: auto;
-  margin-top: 20%;
 }
 
 .wtp-brand-stamp {
