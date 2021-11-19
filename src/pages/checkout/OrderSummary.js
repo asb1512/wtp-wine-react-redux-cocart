@@ -12,7 +12,7 @@ import chard from '../../images/wine/chardonnay.png';
 
 function OrderSummary(props) {
 
-  let history = useHistory()
+  let history = useHistory();
 
   const addDecimalToSubtotal = () => {
     if (props.userCart && props.userCart.items.length > 0) {
