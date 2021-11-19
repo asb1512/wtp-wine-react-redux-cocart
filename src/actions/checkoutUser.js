@@ -20,9 +20,9 @@ export function createPaymentIntentAndOrder(customerId, amount, billingAddress, 
           shipping_lines: shipping,
           meta_data: [
             {
-              key: resp.data.id,
-              value: resp.data.client_secret
-            }
+              key: "_stripe_intent_id",
+              value: resp.data.payment_intent_id,
+            },
           ],
         }
 
