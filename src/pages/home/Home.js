@@ -11,6 +11,7 @@ import CabDesc from "./components/CabDesc"
 import ChardDesc from "./components/ChardDesc"
 import WelcomeButton from "./components/WelcomeButton"
 import ParallaxUpDownButtons from "./components/ParallaxUpDownButtons"
+import WtpLogo from "../../SVG/wtp-logo/WtpLogo";
 
 import cabernet from "../../images/wine/cabernet.png"
 import chardonnay from "../../images/wine/chardonnay.png"
@@ -100,17 +101,13 @@ export default function Home() {
             offset={0}
             speed={1}
           >
-            {/* <WtpLogo /> */}
-            <img
-              src={wtpLogoWhite}
-              alt="We The People Wine"
-              className="wtp-logo"
-            />
+          
+            <WtpLogo />
 
             <WelcomeButton
               buttonText="ENTER"
               width="20%"
-              margin="6rem auto"
+              margin="2rem auto"
               padding="1rem"
               fontSize="3rem"
               onButtonClick={handlePage1Click}
