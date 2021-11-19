@@ -25,7 +25,7 @@ function MiniCart(props) {
   }
 
   const handleItemDeletion = (itemKey) => {
-    props.removeItemFromCart(itemKey, props.cartKey, props.currentUser.token)
+    props.removeItemFromCart(itemKey, props.userCart.cart_key, props.currentUser.token)
   }
 
   const renderMiniCartContent = () => {
@@ -78,15 +78,6 @@ function MiniCart(props) {
           <div className="minicart-subtotal">
             SUBTOTAL : ${addDecimalToSubtotal()}
           </div>
-          <div className="minicart-shipping">
-            SHIPPING & HANDLING :
-          </div>
-          <div className="minicart-tax">
-            ESTIMATED TAX :
-          </div>
-          <div className="minicart-total">
-            TOTAL :
-          </div>
         </div>
 
         <div className="minicart-checkout">
@@ -109,6 +100,7 @@ const mapStateToProps = (state) => {
       cartItems: state.userCart.items ? state.userCart.items : [],
       cartTotals: state.userCart.totals ? state.userCart.totals : null,
       cartKey: state.userCart.cart_key ? state.userCart.cart_key : null,
+      userCart: state.userCart,
       currentUser: state.currentUser,
     }
   } else return {}
