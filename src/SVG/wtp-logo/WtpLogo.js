@@ -23,9 +23,9 @@ export default function WtpLogo() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 600 200"
+      viewBox="0 0 600 100"
       style={{ fill: 'none' }}
-      className="block w-1/2 mx-auto mt-80"
+      className="wtp-logo-svg"
     >
       <W toggle={toggle} />
       <E1 toggle={toggle} />
