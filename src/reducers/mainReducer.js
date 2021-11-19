@@ -83,6 +83,7 @@ export default function mainReducer(state = defaultState, action) {
         userLoggedIn: true,
         validationLoading: false,
         currentUser: {
+          ...state.currentUser,
           token: action.userData.token,
           email: action.userData.email,
         }
