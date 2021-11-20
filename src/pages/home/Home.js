@@ -1,4 +1,4 @@
-import "./Home.css"
+import "./Home.css";
 
 import React from 'react';
 import { useState, useRef } from "react";
@@ -6,16 +6,16 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { useSpring, animated } from 'react-spring';
 import ReactPlayer from "react-player";
 
-import ParallaxNav from "./components/ParallaxNav"
-import CabDesc from "./components/CabDesc"
-import ChardDesc from "./components/ChardDesc"
-import WelcomeButton from "./components/WelcomeButton"
-import ParallaxUpDownButtons from "./components/ParallaxUpDownButtons"
+import ParallaxNav from "./components/ParallaxNav";
+import CabDesc from "./components/CabDesc";
+import ChardDesc from "./components/ChardDesc";
+import WelcomeButton from "./components/WelcomeButton";
+import ParallaxUpDownButtons from "./components/ParallaxUpDownButtons";
 import WtpLogo from "../../SVG/wtp-logo/WtpLogo";
 
-import cabernet from "../../images/wine/cabernet.png"
-import chardonnay from "../../images/wine/chardonnay.png"
-import wtpLogoWhite from "../../images/logos/wtp-logo-white.png"
+import cabernet from "../../images/wine/cabernet.png";
+import chardonnay from "../../images/wine/chardonnay.png";
+import wtpLogoWhite from "../../images/logos/wtp-logo-white.png";
 
 
 
