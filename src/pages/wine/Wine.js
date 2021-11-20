@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState, useRef } from "react";
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import './Wine.css';
 import { useSpring, animated } from 'react-spring';
 import { connect } from 'react-redux';
@@ -11,25 +12,21 @@ import chard from '../../images/wine/chardonnay.png';
 
 function Wine(props) {
 
-
+  const parallax = useRef(null)
 
   const [showCabBg, setCabBg] = useState(false);
   const cabBgStyle = useSpring({
     opacity: showCabBg ? 1 : 0,
     config: { duration: 300 }
   })
+
   const [showCabTitle, setCabTitle] = useState(false);
   const cabTitleStyle = useSpring({
     transform: showCabTitle ? 'translate(0px,0px)' : 'translate(900px,0px)'
   })
-  const [showCabDesc, setCabDesc] = useState(false)
-  const cabDescStyle = useSpring({
-    transform: showCabDesc ? 'translate(0px,0px)' : 'translate(-900px,0px)'
-  })
-  const [hideChard, setHideChard] = useState(false)
-  const cabClickStyle = useSpring({
-    opacity: hideChard ? 0 : 1
-  })
+
+  
+
   const handleCabMouseEnter = () => {
     setCabBg(true)
     setCabTitle(true)
@@ -39,10 +36,7 @@ function Wine(props) {
     setCabTitle(false)
   }
   const handleCabClick = () => {
-    setCabDesc(true)
-    setHideChard(true)
-    setCabTitle(true)
-    setCabBg(true)
+    parallax.current.scrollTo(1)
   }
 
 
@@ -83,87 +77,233 @@ function Wine(props) {
     setChardBg(false)
     setChardTitle(false)
   }
+  const handleChardClick = () => {
+    parallax.current.scrollTo(2)
+  }
+
+
+  const returnToFirstPage = () => {
+    parallax.current.scrollTo(0)
+  }
 
 
 
   return (
-
     <div className="wine-cntr">
 
-      <div className="wine-options">
+      <Parallax
+        ref={parallax}
+        pages={3}
+        enabled={false}
+      >
+        {/* 1st page */}
+        <ParallaxLayer 
+          offset={0}
+          speed={1}
+          className="wine-options"
+        >
 
-
-        <img
-          src={cab}
-          alt="We The People 2018 Cabernet Sauvignon"
-          className="wtp-cab"
-          onMouseEnter={() => handleCabMouseEnter()}
-          onMouseLeave={() => handleCabMouseLeave()}
-          onClick={() => handleCabClick()}
-        />
-        <div className="cab-title-cntr">
-          <animated.div
-            className="cab-title"
-            style={cabTitleStyle}
-          >
-            2018 CALIFORNIA CABERNET SAUVIGNON
-            <div className="wine-subheading">BLUEBERRY | CHERRY | TANNIN | VELVET</div>
-          </animated.div>
-        </div>
-        <div className="cab-desc-anchor">
-          <animated.div className="cab-desc-cntr" style={cabDescStyle}>
-            <div className="cab-price">
-              $29.99
-            </div>
-            <div className="quantity-counter">
-              <div 
-                className="minus-sign"
-                onClick={() => handleMinusCabQuantity()}
-              >
-                –
-              </div>
-              <div className="quantity-value">{cabQuantity}</div>
-              <div 
-                className="plus-sign"
-                onClick={() => handlePlusCabQuantity()}
-              >
-                +
-              </div>
-            </div>
-            <button 
-              className="addtocart-btn"
-              onClick={() => handleAddCabToCart()}
+          <img
+            src={cab}
+            alt="We The People 2018 Cabernet Sauvignon"
+            className="wtp-cab"
+            onMouseEnter={() => handleCabMouseEnter()}
+            onMouseLeave={() => handleCabMouseLeave()}
+            onClick={() => handleCabClick()}
+          />
+          <div className="cab-title-cntr">
+            <animated.div
+              className="cab-title"
+              style={cabTitleStyle}
             >
-              ADD TO CART
-            </button>
-          </animated.div>
-        </div>
+              2018 CALIFORNIA CABERNET SAUVIGNON
+              <div className="wine-subheading">BLUEBERRY | CHERRY | TANNIN | VELVET</div>
+            </animated.div>
+          </div>
 
 
-        <animated.img
-          src={chard}
-          alt="We The People 2019 Chardonnay"
-          className="wtp-chard"
-          style={cabClickStyle}
-          onMouseEnter={() => handleChardMouseEnter()}
-          onMouseLeave={() => handleChardMouseLeave()}
-        />
-        <div className="chard-title-cntr">
-          <animated.div
-            className="chard-title"
-            style={chardTitleStyle}
-          >
-            2019 CALIFORNIA CHARDONNAY
-            <div className="wine-subheading">STONE FRUIT | BAKED APPLES | FRESH ACIDITY</div>
-          </animated.div>
-        </div>
+          <img
+            src={chard}
+            alt="We The People 2019 Chardonnay"
+            className="wtp-chard"
+            onMouseEnter={() => handleChardMouseEnter()}
+            onMouseLeave={() => handleChardMouseLeave()}
+            onClick={() => handleChardClick()}
+          />
+          <div className="chard-title-cntr">
+            <animated.div
+              className="chard-title"
+              style={chardTitleStyle}
+            >
+              2019 CALIFORNIA CHARDONNAY
+              <div className="wine-subheading">STONE FRUIT | BAKED APPLES | FRESH ACIDITY</div>
+            </animated.div>
+          </div>
 
+          <animated.div className="cab-bg" style={cabBgStyle} />
+          <animated.div className="chard-bg" style={chardBgStyle} />
 
-      </div>
+        </ParallaxLayer>
 
-      <animated.div className="cab-bg" style={cabBgStyle} />
-      <animated.div className="chard-bg" style={chardBgStyle} />
+        {/* 2nd page */}
+        <ParallaxLayer
+          offset={1}
+          speed={1}
+          className="cab-show-cntr"
+        >
+          <div className="cab-up-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 166.854 166.854"
+              stroke='#fff'
+              style={{ transform: 'rotate(180deg)' }}
+              onClick={() => returnToFirstPage()}
+            >
+              <g>
+                <g>
+                  <circle
+                    className="circle"
+                    fill="none"
+                    cx="83.427"
+                    cy="83.427"
+                    r="81.427"
+                    strokeWidth="4"
+                  />
+                  <path
+                    fill="#fff"
+                    d="M83.427,107.223l47.34-42.46a2.687,2.687,0,0,1,1.761-.518c2.348,0,4.108,2.331,4.108,5.438a5.565,5.565,0,0,1-1.956,4.4L86.557,117.06a3.931,3.931,0,0,1-6.26,0L32.175,74.084a5.563,5.563,0,0,1-1.957-4.4c0-3.107,1.761-5.438,4.109-5.438a2.684,2.684,0,0,1,1.76.518Z"
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
 
+          <img
+            src={cab}
+            alt="We The People 2018 Cabernet Sauvignon"
+            className="wtp-cab-show"
+          />
+
+          <div className="cab-title-show-cntr">
+            <div
+              className="cab-title"
+              style={cabTitleStyle}
+            >
+              2018 CALIFORNIA CABERNET SAUVIGNON
+              <div className="wine-subheading">BLUEBERRY | CHERRY | TANNIN | VELVET</div>
+            </div>
+          </div>
+
+          <div className="cab-desc-anchor">
+            <div className="cab-desc-cntr">
+              <div className="cab-price">
+                $29.99
+              </div>
+              <div className="cab-quantity-counter">
+                <div 
+                  className="minus-sign"
+                  onClick={() => handleMinusCabQuantity()}
+                >
+                  –
+                </div>
+                <div className="quantity-value">{cabQuantity}</div>
+                <div 
+                  className="plus-sign"
+                  onClick={() => handlePlusCabQuantity()}
+                >
+                  +
+                </div>
+              </div>
+              <button 
+                className="addtocart-btn"
+                onClick={() => handleAddCabToCart()}
+              >
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div className="cab-bg" style={cabBgStyle} />
+        </ParallaxLayer>
+
+        {/* 3rd page */}
+        <ParallaxLayer
+          offset={2}
+          speed={1}
+          className="chard-show-cntr"
+        >
+          <div className="chard-up-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 166.854 166.854"
+              stroke='#fff'
+              style={{ transform: 'rotate(180deg)' }}
+              onClick={() => returnToFirstPage()}
+            >
+              <g>
+                <g>
+                  <circle
+                    className="circle"
+                    fill="none"
+                    cx="83.427"
+                    cy="83.427"
+                    r="81.427"
+                    strokeWidth="4"
+                  />
+                  <path
+                    fill="#fff"
+                    d="M83.427,107.223l47.34-42.46a2.687,2.687,0,0,1,1.761-.518c2.348,0,4.108,2.331,4.108,5.438a5.565,5.565,0,0,1-1.956,4.4L86.557,117.06a3.931,3.931,0,0,1-6.26,0L32.175,74.084a5.563,5.563,0,0,1-1.957-4.4c0-3.107,1.761-5.438,4.109-5.438a2.684,2.684,0,0,1,1.76.518Z"
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <img
+            src={chard}
+            alt="We The People 2019 Chardonnay"
+            className="wtp-chard-show"
+          />
+
+          <div className="chard-title-show-cntr">
+            <div
+              className="chard-title"
+              style={chardTitleStyle}
+            >
+              2019 CALIFORNIA CHARDONNAY
+              <div className="wine-subheading">STONE FRUIT | BAKED APPLES | FRESH ACIDITY</div>
+            </div>
+          </div>
+
+          <div className="chard-desc-anchor">
+            <div className="chard-desc-cntr">
+              <div className="chard-price">
+                $29.99
+              </div>
+              <div className="quantity-counter">
+                <div
+                  className="minus-sign"
+                  onClick={() => handleMinusCabQuantity()}
+                >
+                  –
+                </div>
+                <div className="chard-quantity-value">{cabQuantity}</div>
+                <div
+                  className="plus-sign"
+                  onClick={() => handlePlusCabQuantity()}
+                >
+                  +
+                </div>
+              </div>
+              <button
+                className="addtocart-btn"
+                onClick={() => handleAddCabToCart()}
+              >
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div className="chard-bg" style={chardBgStyle} />
+        </ParallaxLayer>
+
+      </Parallax>
     </div>
   )
 }
