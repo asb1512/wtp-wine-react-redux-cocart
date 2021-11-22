@@ -12,6 +12,7 @@ import { useCookies } from 'react-cookie';
 
 import Nav from './components/navbar/Nav';
 import Home from './pages/home/Home';
+import About from './pages/about/About';
 import Dashboard from './pages/dashboard/Dashboard';
 import Orders from './pages/dashboard/Orders';
 import Subscriptions from './pages/dashboard/Subscriptions';
@@ -48,6 +49,10 @@ function App(props) {
 
         <Route exact path="/">
           <Home />
+        </Route>
+
+        <Route exact path="/about">
+          <About />
         </Route>
 
         <Route exact path ="/wine">
