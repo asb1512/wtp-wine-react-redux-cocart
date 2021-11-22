@@ -11,6 +11,7 @@ const CARD_ELEMENT_OPTIONS = {
       "::placeholder": {
         color: "#aab7c4",
       },
+      colorBackground: '#343a40',
       fontSize: '20px',
     },
     invalid: {},
