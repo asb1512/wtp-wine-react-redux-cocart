@@ -23,13 +23,13 @@
 }
 
 .parallax-cab-style {
-  background: linear-gradient(207deg, rgba(0,0,0,1) 0%, rgba(158,26,26,1) 100%);
+  background: linear-gradient(35deg, rgba(0,0,0,1) 0%, rgba(158,26,26,1) 100%);
 }
 
 .parallax-chard-style {
   top: 0;
   bottom: 0;
-  background: linear-gradient(207deg, rgba(0,0,0,1) 0%, rgba(203,168,27,1) 100%);
+  background: linear-gradient(35deg, rgba(0,0,0,1) 0%, rgba(203,168,27,1) 100%);
 }
 
 .parallax-brand-style {
