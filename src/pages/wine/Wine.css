@@ -135,7 +135,7 @@
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(207deg, rgba(0,0,0,1) 0%, rgba(203,168,27,1) 100%);
+  background: linear-gradient(35deg, rgba(0,0,0,1) 0%, rgba(203,168,27,1) 100%);
   z-index: 100;
 }
 
