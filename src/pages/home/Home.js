@@ -9,7 +9,6 @@ import ReactPlayer from "react-player";
 import ParallaxNav from "./components/ParallaxNav";
 import CabDesc from "./components/CabDesc";
 import ChardDesc from "./components/ChardDesc";
-import WelcomeButton from "./components/WelcomeButton";
 import ParallaxUpDownButtons from "./components/ParallaxUpDownButtons";
 import WtpLogo from "../../SVG/wtp-logo/WtpLogo";
 import WtpLogoMobileWe from "../../SVG/wtp-logo/WtpLogoMobileWe";
@@ -119,14 +118,12 @@ export default function Home() {
           
             {renderWtpLogo()}
 
-            <WelcomeButton
-              buttonText="ENTER"
-              width="20%"
-              margin="2rem auto"
-              padding="1rem"
-              fontSize="3rem"
-              onButtonClick={handlePage1Click}
-            />
+            <button 
+              className="welcome-button"
+              onClick={() => handlePage1Click()}
+            >
+              DISCOVER
+            </button>
           </ParallaxLayer>
 
           {/* PAGE 2 */}
