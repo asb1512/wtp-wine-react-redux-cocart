@@ -127,3 +127,28 @@
   background-color: #fff;
   color: red;
 }
+
+@media only screen and (max-width: 768px) {
+
+  /* main navbar */
+  .nav-flex-right {
+    margin-right: .8rem;
+  }
+
+  .nav-wtp-logo {
+    margin-left: .8rem;
+  }
+
+  .user-icon {
+    height: 1.2rem;
+  }
+
+  .cart-icon {
+    height: 1.2rem;
+  }
+
+  /* side nav */
+  .side-nav {
+    width: 100vw;
+  }
+}
