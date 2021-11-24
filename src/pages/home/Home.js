@@ -20,9 +20,7 @@ import wtpLogoWhite from "../../images/logos/wtp-logo-white.png";
 
 
 
-export default function Home() {
-
-  let width = window.innerWidth;
+export default function Home(props) {
 
   const [showCabTitle, setCabTitle] = useState(false)
   const [showChardTitle, setChardTitle] = useState(false)
@@ -82,7 +80,7 @@ export default function Home() {
   })
 
   const renderWtpLogo = () => {
-    if (width > 768) {
+    if (props.width > 768) {
       return <WtpLogo />
     } else {
       return (
@@ -245,7 +243,7 @@ export default function Home() {
               url="https://www.youtube.com/watch?v=LamRwl5Z2qk"
               playing={playVideo}
               controls={true}
-              width={width < 768 ? 350 : 600}
+              width={props.width < 768 ? 350 : 600}
               style={{ margin: 'auto' }}
             />
           </ParallaxLayer>
