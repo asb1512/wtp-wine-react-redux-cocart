@@ -20,18 +20,18 @@ export default function ParallaxNav(props, ref) {
       <div
         className={`parallax-nav-item${props.focus === 'cab' ? focusStyle : ''}`}
       >
-        – CABERNET SAUVIGNON
+        CABERNET SAUVIGNON
       </div>
 
       <div
         className={`parallax-nav-item${props.focus === 'chard' ? focusStyle : ''}`}
       >
-        – CHARDONNAY
+        CHARDONNAY
       </div>
       <div
         className={`parallax-nav-item${props.focus === 'video' ? focusStyle : ''}`}
       >
-        – MEET THE BRAND
+        MEET THE BRAND
       </div>
     </animated.div>
   )
