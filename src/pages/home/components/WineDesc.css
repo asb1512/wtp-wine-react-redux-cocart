@@ -2,25 +2,29 @@
   position: absolute;
   right: 10vw;
   width: 50%;
+  color: #F3F3F7;
   z-index: 800;
 }
 
 .wine-desc > h1 {
+  margin: 1.3rem 0;
+  font-family: 'Work Sans', sans-serif;
   font-size: 5.5rem;
   font-weight: 100;
-  margin: 1.3rem 0;
+  line-height: 5rem;
 }
 
 .wine-desc > div {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 300;
+  line-height: 3rem;
   border-style: solid;
   border-width: 1px 0 0 0;
   padding-top: 2rem;
 }
 
 .wine-desc-span-cab {
-  color: #FF4949;
+  color: #E40032;
   font-weight: 400;
 }
 
