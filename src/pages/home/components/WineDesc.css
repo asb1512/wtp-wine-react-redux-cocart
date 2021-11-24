@@ -32,3 +32,15 @@
   color: #ECBD14;
   font-weight: 400;
 }
+
+@media only screen and (max-width: 768px) {
+  .wine-desc {
+    position: absolute;
+    display: block;
+  }
+
+  .wine-desc > h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
