@@ -17,13 +17,15 @@ import cart from '../../images/nav-icons/cart-icon-white.png';
 
 const Nav = (props) => {
 
+  let width = window.innerWidth;
+
   const [isOpen, setOpen] = useState(false)
   const [isContactOpen, setContactOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
   const sideNavStyle = useSpring({
-    right: isOpen ? '0%' : '-30%'
+    right: isOpen ? '0%' : width > 768 ? '-30%' : '-100%'
   })
 
   const emailStyle = useSpring({
