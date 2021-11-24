@@ -122,7 +122,7 @@ export default function Home() {
               className="welcome-button"
               onClick={() => handlePage1Click()}
             >
-              DISCOVER
+              DISCOVER OUR WINE
             </button>
           </ParallaxLayer>
 
