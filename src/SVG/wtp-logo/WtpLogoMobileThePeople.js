@@ -21,7 +21,7 @@ export default function WtpLogoMobileThePeople() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 600 95"
+      viewBox="0 0 600 83"
       style={{ fill: 'none' }}
       className="wtp-logo-the-people-svg-mobile"
     >

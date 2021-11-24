@@ -14,7 +14,7 @@ export default function WtpLogoMobile() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 150 90"
+      viewBox="0 0 120 90"
       style={{ fill: 'none' }}
       className="wtp-logo-we-svg-mobile"
     >
