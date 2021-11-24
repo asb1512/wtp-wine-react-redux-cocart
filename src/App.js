@@ -26,6 +26,8 @@ import OrderSuccess from './pages/checkout/OrderSuccess';
 
 function App(props) {
 
+  let width = window.innerWidth;
+
   const [cookies, setCookie] = useCookies(["wtpwT", "wtpwE"])
 
   useEffect(() => {
@@ -43,12 +45,12 @@ function App(props) {
 
   return (
     <Router>
-      <Nav />
+      <Nav width={width} />
 
       <Switch>
 
         <Route exact path="/">
-          <Home />
+          <Home width={width} />
         </Route>
 
         <Route exact path="/about">
