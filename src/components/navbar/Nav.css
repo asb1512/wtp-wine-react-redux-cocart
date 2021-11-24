@@ -151,4 +151,14 @@
   .side-nav {
     width: 100vw;
   }
+
+  .side-nav-item {
+    padding: .5rem 0 .5rem 2rem;
+    font-size: 2.3rem;
+  }
+
+  .contact-item {
+    font-size: 2.3rem;
+    padding: .5rem 0 .5rem 4rem;
+  }
 }
