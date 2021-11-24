@@ -20,3 +20,9 @@
   font-weight: 400;
   color: #D9DAE4;
 }
+
+@media only screen and (max-width: 768px) {
+  .parallax-nav {
+    display: none;
+  }
+}
