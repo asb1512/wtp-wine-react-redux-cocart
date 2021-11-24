@@ -12,6 +12,8 @@ import ChardDesc from "./components/ChardDesc";
 import WelcomeButton from "./components/WelcomeButton";
 import ParallaxUpDownButtons from "./components/ParallaxUpDownButtons";
 import WtpLogo from "../../SVG/wtp-logo/WtpLogo";
+import WtpLogoMobileWe from "../../SVG/wtp-logo/WtpLogoMobileWe";
+import WtpLogoMobileThePeople from "../../SVG/wtp-logo/WtpLogoMobileThePeople";
 
 import cabernet from "../../images/wine/cabernet.png";
 import chardonnay from "../../images/wine/chardonnay.png";
@@ -80,6 +82,19 @@ export default function Home() {
     config: { duration: 650 }
   })
 
+  const renderWtpLogo = () => {
+    if (width > 768) {
+      return <WtpLogo />
+    } else {
+      return (
+        <>
+          <WtpLogoMobileWe />
+          <WtpLogoMobileThePeople />
+        </>
+      )
+    }
+  }
+
   return (
     <>
 
@@ -102,7 +117,7 @@ export default function Home() {
             speed={1}
           >
           
-            <WtpLogo />
+            {renderWtpLogo()}
 
             <WelcomeButton
               buttonText="ENTER"
