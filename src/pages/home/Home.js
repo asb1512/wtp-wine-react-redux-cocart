@@ -108,6 +108,7 @@ export default function Home(props) {
           enabled={false}
         >
 
+
           {/* PAGE 1 */}
           <ParallaxLayer
             offset={0}
@@ -124,6 +125,7 @@ export default function Home(props) {
             </button>
           </ParallaxLayer>
 
+
           {/* PAGE 2 */}
           <ParallaxLayer
             offset={1}
@@ -137,10 +139,10 @@ export default function Home(props) {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={1.4}
+            offset={props.width > 768 ? 1.4 : 1.62}
             speed={2.5}
           >
-            <CabDesc toggle={showCabTitle} />
+            <CabDesc toggle={showCabTitle} width={props.width} />
           </ParallaxLayer>
 
           <ParallaxLayer
@@ -161,6 +163,7 @@ export default function Home(props) {
               handleDownClick={handlePage2Click}
             />
           </ParallaxLayer>
+          
 
           {/* PAGE 3 */}
           <ParallaxLayer
@@ -174,7 +177,7 @@ export default function Home(props) {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={2.3}
+            offset={props.width > 768 ? 2.3 : 2.44}
             speed={2.5}
           >
             <ChardDesc toggle={showChardTitle} />
@@ -197,6 +200,7 @@ export default function Home(props) {
               handleDownClick={handlePage3Click}
             />
           </ParallaxLayer>
+
 
           {/* PAGE 4 */}
           <ParallaxLayer
@@ -226,7 +230,7 @@ export default function Home(props) {
           />
 
           <ParallaxLayer
-            offset={3.2}
+            offset={props.width > 768 ? 3.2 : 3.3}
             speed={1}
           >
 
