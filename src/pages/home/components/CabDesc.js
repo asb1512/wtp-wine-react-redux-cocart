@@ -11,12 +11,24 @@ export default function CabDesc(props) {
     config: { duration: 1000 }
   })
 
+  const renderText = () => {
+    if (props.width > 768) {
+      return (
+        <>
+          CABERNET <br /> SAUVIGNON
+        </>
+      )
+    } else {
+      return 'CABERNET SAUVIGNON'
+    }
+  }
+
   return (
     <div className="wine-desc">
       <animated.h1
         style={animatedStyle}
       >
-        CABERNET <br /> SAUVIGNON
+        {renderText()}
       </animated.h1>
       <div>
         Our <span className="wine-desc-span-cab">2018 California Cabernet Sauvignon</span> boasts a deep ruby and purple hue with flavors of blueberry and cherry. Soft tannins round the full-bodied mouthfeel with a velvet finish.
