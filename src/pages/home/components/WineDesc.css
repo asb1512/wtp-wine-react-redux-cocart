@@ -35,12 +35,18 @@
 
 @media only screen and (max-width: 768px) {
   .wine-desc {
-    position: absolute;
-    display: block;
+    right: 10vw;
+    width: 80%;
   }
 
   .wine-desc > h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 200;
+  }
+
+  .wine-desc > div {
+    font-size: .9rem;
+    line-height: 1.8rem;
   }
 }
