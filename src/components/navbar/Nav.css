@@ -92,7 +92,7 @@
 .side-nav-item {
   font-family: 'Work Sans', sans-serif;
   font-size: 2.2rem;
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: 5px;
   padding: 1rem 0 1rem 2rem;
   transition: background .5s ease-in-out;
@@ -102,7 +102,8 @@
 
 .side-nav-item:hover {
   background-color: #fff;
-  color: red;
+  font-weight: 300;
+  color: #E40032;
 }
 
 .side-nav-link {
