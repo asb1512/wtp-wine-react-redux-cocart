@@ -3,7 +3,6 @@
   right: 0;
   width: 22vw;
   height: 35vh;
-  max-height: 40vh;
   border-style: solid;
   border-color: #222222;
   border-width: 1px;
@@ -13,4 +12,11 @@
   z-index: 800;
   display: block;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .auth-account-container {
+    width: 100vw;
+    height: 55vh;
+  }
 }

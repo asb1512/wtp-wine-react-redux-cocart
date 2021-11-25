@@ -30,7 +30,7 @@ function AuthAccountContainer(props) {
         className="auth-account-container"
         style={containerStyle}
       >
-        <MiniDashboard setAuthOpen={props.setAuthOpen} />
+        <MiniDashboard setAuthOpen={props.setAuthOpen} width={props.width} />
       </animated.div>
     )
   } else {
