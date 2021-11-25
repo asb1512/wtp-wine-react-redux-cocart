@@ -12,7 +12,7 @@ import './MiniCart.css';
 function MiniCart(props) {
 
   const cartStyle = useSpring({
-    right: props.toggle ? '0%' : '-47%'
+    right: props.toggle ? '0%' : props.width > 768 ? '-47%' : '-100%',
   })
 
   const addDecimalToSubtotal = () => {
