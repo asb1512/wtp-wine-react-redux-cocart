@@ -6,21 +6,24 @@
 }
 
 .mini-dashboard-link {
-  text-decoration: none;
+  color: #F3F3F7;
   align-self: stretch;
+  text-decoration: none;
   display: grid;
   grid-template-columns: 100%;
   transition: background .5s ease-in-out;
 }
 
 .mini-dashboard-link:hover {
-  background-color: #fff;
+  background-color: #F3F3F7;
 }
 
 .mini-dashboard-div {
   padding: 0 1.5rem;
+  font-family: 'Work Sans', sans-serif;
   font-size: 2rem;
   font-weight: 100;
+  letter-spacing: 5px;
   transition: color .5s ease-in;
   cursor: none;
   justify-self: start;
@@ -29,5 +32,18 @@
 }
 
 .mini-dashboard-div:hover {
-  color: red;
+  color: #E40032;
+}
+
+.mini-dashboard-div:active {
+  color: #E40032;
+}
+
+.user-display {
+  align-self: center;
+  padding-left: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #BB0F33;
+  text-decoration: underline;
 }
