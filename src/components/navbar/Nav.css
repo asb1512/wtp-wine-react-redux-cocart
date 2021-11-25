@@ -157,6 +157,7 @@
   /* side nav */
   .side-nav {
     width: 100vw;
+    box-shadow: none;
   }
 
   .side-nav-item {
