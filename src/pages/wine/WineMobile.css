@@ -91,7 +91,6 @@
   bottom: 33vh;
   width: 100vw;
   height: 9vh;
-  border: 1px solid green;
   overflow: hidden;
   z-index: 200;
 }
@@ -125,7 +124,6 @@
   bottom: 0;
   width: 100vw;
   height: 33vh;
-  border: 1px solid yellow;
   overflow: hidden;
   z-index: 150;
 }
@@ -141,11 +139,69 @@
 
 .wine-mobile-chard-price {
   position: absolute;
-  left: 39vw;
+  left: 38vw;
   font-family: 'Work Sans', sans-serif;
   font-size: 7vw;
   font-weight: 200;
   color: #D9DAE4;
+}
+
+.wine-mobile-quantity-counter {
+  position: absolute;
+  left: 34vw;
+  font-size: 7vw;
+  font-weight: 100;
+  color: #F3F3F7;
+  display: flex;
+}
+
+.wine-mobile-sign {
+  align-self: center;
+  color: #F3F3F7;
+}
+
+.wine-mobile-quantity-value {
+  margin: 0 1rem;
+  padding: .25rem 1rem;
+  border: 1px solid #F3F3F7;
+  border-radius: 10rem;
+}
+
+.wine-mobile-atc-btn {
+  position: absolute;
+  left: 23vw;
+  width: 54vw;
+  height: 6vh;
+  padding: 0 5vw;
+  background: transparent;
+  border: 1px solid #F3F3F7;
+  border-radius: 2vw;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 6vw;
+  color: #F3F3F7;
+}
+
+.wine-mobile-atc-btn:active {
+  background: #F3F3F7;
+  color: #000;
+}
+
+.wine-mobile-back-btn {
+  position: absolute;
+  left: 40vw;
+  width: 20vw;
+  height: 3vh;
+  background: transparent;
+  border: 1px solid #686E78;
+  border-radius: 100vw;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 4vw;
+  color: #686E78;
+}
+
+.wine-mobile-back-btn:active {
+  background: #F3F3F7;
+  color: #000;
 }
 
 .wine-mobile-cab-bg {

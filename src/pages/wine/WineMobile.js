@@ -19,16 +19,20 @@ function WineMobile(props) {
   const [triggerChard, setTriggerChard] = useState(false);
   const [hideCab, setHideCab] = useState(false);
   const [hideBottom, setHideBottom] = useState(false);
+  const [wineQuantity, setWineQuantity] = useState(1);
+
 
   const cabImgStyle = useSpring({
     height: triggerCab ? '100%' : '145%',
     left: triggerCab ? '37vw' : '7vw',
     opacity: hideCab ? 0 : 1,
+    config: { duration: 600 }
   })
   const chardImgStyle = useSpring({
     height: triggerChard ? '100%' : '145%',
     right: triggerChard ? '37vw' : '7vw',
     opacity: hideChard ? 0 : 1,
+    config: { duration: 600 }
   })
   const bottomStyle = useSpring({
     opacity: hideBottom ? 0 : 1,
@@ -59,6 +63,19 @@ function WineMobile(props) {
     delay: 350,
     top: triggerChard ? '2vh' : '-20vh',
   })
+  const quantityStyle = useSpring({
+    delay: 500,
+    top: triggerCab || triggerChard ? '8vh' : '-20vh',
+  })
+  const atcBtnStyle = useSpring({
+    delay: 750,
+    top: triggerCab || triggerChard ? '16vh' : '-20vh',
+  })
+  const backBtnStyle = useSpring({
+    delay: 800,
+    top: triggerCab || triggerChard ? '25vh' : '-20vh',
+  })
+
 
   const handleCabClick = () => {
     setTriggerCab(true);
@@ -69,6 +86,32 @@ function WineMobile(props) {
     setTriggerChard(true);
     setHideCab(true);
     setHideBottom(true);
+  }
+  const handleMinusQuantity = () => {
+    if (wineQuantity > 1) {
+      let newValue = wineQuantity - 1;
+      setWineQuantity(newValue);
+    }
+  }
+  const handlePlusQuantity = () => {
+    if (wineQuantity >= 1) {
+      let newValue = wineQuantity + 1;
+      setWineQuantity(newValue);
+    }
+  }
+  const handleAddToCart = () => {
+    if (triggerCab) {
+      props.addSimpleItemToCart(13, wineQuantity, props.cartKey)
+    } else if (triggerChard) {
+      props.addSimpleItemToCart(14, wineQuantity, props.cartKey)
+    }
+  }
+  const handleBackBtnClick = () => {
+    setTriggerCab(false);
+    setHideChard(false);
+    setTriggerChard(false);
+    setHideCab(false);
+    setHideBottom(false);
   }
 
   
@@ -150,6 +193,7 @@ function WineMobile(props) {
         </animated.div>
       </div>
 
+
       <div className="wine-mobile-details-cntr">
         <animated.div
           className="wine-mobile-cab-price"
@@ -164,7 +208,43 @@ function WineMobile(props) {
         >
           $27.99
         </animated.div>
+
+        <animated.div 
+          className="wine-mobile-quantity-counter"
+          style={quantityStyle}
+        >
+          <div
+            className="wine-mobile-sign"
+            onClick={() => handleMinusQuantity()}
+          >
+            –
+          </div>
+          <div className="wine-mobile-quantity-value">{wineQuantity}</div>
+          <div
+            className="wine-mobile-sign"
+            onClick={() => handlePlusQuantity()}
+          >
+            +
+          </div>
+        </animated.div>
+
+        <animated.button
+          className="wine-mobile-atc-btn"
+          style={atcBtnStyle}
+          onClick={handleAddToCart}
+        >
+          ADD TO CART
+        </animated.button>
+
+        <animated.button
+          className="wine-mobile-back-btn"
+          style={backBtnStyle}
+          onClick={handleBackBtnClick}
+        >
+          BACK
+        </animated.button>
       </div>
+
 
       <animated.div
         className="wine-mobile-cab-bg"
