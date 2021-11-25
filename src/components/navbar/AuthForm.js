@@ -64,13 +64,12 @@ function AuthForm(props) {
 
       <form className="auth-form" onSubmit={handleAuthFormSubmit}>
         <div className="auth-group">
-          
-          <TextField
+          <label className="auth-label">EMAIL/USERNAME</label>
+          <input
             type="text"
-            variant="outlined"
             value={userIdentifier}
             className="auth-input"
-            label="Email/Username"
+            placeholder="Email/Username"
             onChange={onUserIdentifierChange}
           />
           <span className="auth-error">{uiError ? "Email/username required" : null}</span>
