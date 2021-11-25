@@ -1,9 +1,11 @@
+/* initial state */
 .wine-mobile-cntr {
   position: absolute;
   bottom: 0;
   width: 100vw;
   height: 90vh;
   background-color: #000;
+  z-index: 0;
 }
 
 .wine-mobile-bottle-cntr {
@@ -11,17 +13,12 @@
   top: 0;
   width: 100vw;
   height: 45vh;
-  padding: 1.3rem;
-  background-color: green;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 100%;
+  padding-top: 1rem;
 }
 
 .wine-mobile-bottle-img {
-  justify-self: center;
-  align-self: start;
-  height: 165%;
+  position: absolute;
+  z-index: 500;
 }
 
 .wine-mobile-vertical-lines {
@@ -82,4 +79,35 @@
 .wine-mobile-btn-chard:active {
   background: #F3F3F7;
   color: #000;
+}
+
+
+/* after-click state */
+.wine-mobile-title-cntr {
+  position: absolute;
+  bottom: 35vh;
+  width: 100vw;
+  height: 6vh;
+  overflow: hidden;
+  z-index: 200;
+}
+
+.wine-mobile-title {
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: #F3F3F7;
+}
+
+.wine-mobile-cab-bg {
+  width: 100vw;
+  background: linear-gradient(45deg, rgba(0,0,0,1) 15%, rgba(158,26,26,1) 100%);
+  z-index: 100;
+}
+
+.wine-mobile-chard-bg {
+  width: 100vw;
+  background: linear-gradient(45deg, rgba(0,0,0,1) 15%, rgba(203,168,27,1) 100%);
+  z-index: 100;
 }
