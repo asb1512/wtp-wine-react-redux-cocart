@@ -60,7 +60,7 @@ function App(props) {
 
         <Route exact path ="/wine">
           {
-            props.width > 768
+            width > 768
             ? <Wine />
             : <WineMobile />
           }
