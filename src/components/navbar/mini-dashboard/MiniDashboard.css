@@ -38,12 +38,3 @@
 .mini-dashboard-div:active {
   color: #E40032;
 }
-
-.user-display {
-  align-self: center;
-  padding-left: 1.5rem;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
-  color: #BB0F33;
-  text-decoration: underline;
-}
