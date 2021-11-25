@@ -23,7 +23,7 @@ const Nav = (props) => {
   const [cartOpen, setCartOpen] = useState(false);
 
   const sideNavStyle = useSpring({
-    right: isOpen ? '0%' : props.width > 768 ? '-30%' : '-100%'
+    right: isOpen ? '0%' : props.width > 768 ? '-30%' : '-100%',
   })
 
   const emailStyle = useSpring({
@@ -97,6 +97,7 @@ const Nav = (props) => {
         <MiniCart
           toggle={cartOpen}
           setCartOpen={setCartOpen}
+          width={props.width}
         />
 
         <AuthAccountContainer
