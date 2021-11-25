@@ -45,6 +45,20 @@ function WineMobile(props) {
   const chardTitleStyle = useSpring({
     right: triggerChard ? '16vw' : '-100vw',
   })
+  const cabSubheadingStyle = useSpring({
+    bottom: triggerCab ? '0vh' : '-20vh',
+  })
+  const chardSubheadingStyle = useSpring({
+    bottom: triggerChard ? '0vh' : '-20vh',
+  })
+  const cabPriceStyle = useSpring({
+    delay: 350,
+    top: triggerCab ? '2vh' : '-20vh',
+  })
+  const chardPriceStyle = useSpring({
+    delay: 350,
+    top: triggerChard ? '2vh' : '-20vh',
+  })
 
   const handleCabClick = () => {
     setTriggerCab(true);
@@ -106,6 +120,7 @@ function WineMobile(props) {
 
       {/* after-click state */}
       <div className="wine-mobile-title-cntr">
+
         <animated.div
           className="wine-mobile-title"
           style={cabTitleStyle}
@@ -118,6 +133,36 @@ function WineMobile(props) {
           style={chardTitleStyle}
         >
           CHARDONNAY
+        </animated.div>
+
+        <animated.div
+          className="wine-mobile-cab-subheading"
+          style={cabSubheadingStyle}
+        >
+          BLUEBERRY | CHERRY | TANNIN | VELVET
+        </animated.div>
+
+        <animated.div
+          className="wine-mobile-chard-subheading"
+          style={chardSubheadingStyle}
+        >
+          STONE FRUIT | BAKED APPLES | FRESH ACIDITY
+        </animated.div>
+      </div>
+
+      <div className="wine-mobile-details-cntr">
+        <animated.div
+          className="wine-mobile-cab-price"
+          style={cabPriceStyle}
+        >
+          $29.99
+        </animated.div>
+
+        <animated.div
+          className="wine-mobile-chard-price"
+          style={chardPriceStyle}
+        >
+          $27.99
         </animated.div>
       </div>
 
