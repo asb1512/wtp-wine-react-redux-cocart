@@ -214,7 +214,7 @@ function Wine(props) {
                 </div>
               </div>
               <button 
-                className="addtocart-btn"
+                className="cab-addtocart-btn"
                 onClick={() => handleAddCabToCart()}
               >
                 ADD TO CART
@@ -277,14 +277,14 @@ function Wine(props) {
               <div className="chard-price">
                 $29.99
               </div>
-              <div className="quantity-counter">
+              <div className="chard-quantity-counter">
                 <div
                   className="minus-sign"
                   onClick={() => handleMinusCabQuantity()}
                 >
                   –
                 </div>
-                <div className="chard-quantity-value">{cabQuantity}</div>
+                <div className="quantity-value">{cabQuantity}</div>
                 <div
                   className="plus-sign"
                   onClick={() => handlePlusCabQuantity()}
@@ -293,7 +293,7 @@ function Wine(props) {
                 </div>
               </div>
               <button
-                className="addtocart-btn"
+                className="chard-addtocart-btn"
                 onClick={() => handleAddCabToCart()}
               >
                 ADD TO CART
