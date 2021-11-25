@@ -241,6 +241,7 @@
 }
 
 .plus-sign {
+  color: #F3F3F7;
   transition: transform .3s ease-in-out;
   cursor: pointer;
 }
