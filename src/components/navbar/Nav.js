@@ -70,7 +70,7 @@ const Nav = (props) => {
 
         <div className="nav-right">
           <div className="nav-flex-right">
-            {props.currentUser ? <UserDisplay currentUser={props.currentUser} /> : null}
+            {props.currentUser && props.width > 768 ? <UserDisplay currentUser={props.currentUser} /> : null}
 
             <img
               src={account}
