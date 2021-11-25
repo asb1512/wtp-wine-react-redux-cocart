@@ -21,6 +21,7 @@ import Account from './pages/dashboard/Account';
 import OrderSummary from './pages/checkout/OrderSummary';
 import CheckoutSummary from './pages/checkout/CheckoutSummary';
 import Wine from './pages/wine/Wine';
+import WineMobile from './pages/wine/WineMobile';
 import Error401 from './pages/error/Error401';
 import OrderSuccess from './pages/checkout/OrderSuccess';
 
@@ -58,7 +59,11 @@ function App(props) {
         </Route>
 
         <Route exact path ="/wine">
-          <Wine />
+          {
+            props.width > 768
+            ? <Wine />
+            : <WineMobile />
+          }
         </Route>
 
         <Route exact path="/dashboard/orders">
