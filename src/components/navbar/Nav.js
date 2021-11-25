@@ -104,6 +104,7 @@ const Nav = (props) => {
           handleAuthOpen={handleAuthOpen}
           userLoggedIn={props.userLoggedIn}
           setAuthOpen={setAuthOpen}
+          width={props.width}
         />
       </header>
 
