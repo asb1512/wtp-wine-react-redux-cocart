@@ -42,8 +42,7 @@ function Wine(props) {
 
   const [cabQuantity, setCabQuantity] = useState(1);
   const handleAddCabToCart = () => {
-    const productId = 13;
-    props.addSimpleItemToCart(productId, cabQuantity, props.cartKey)
+    props.addSimpleItemToCart(14, cabQuantity, props.cartKey)
   }
   const handlePlusCabQuantity = () => {
     if (cabQuantity >= 1) {
@@ -79,6 +78,23 @@ function Wine(props) {
   }
   const handleChardClick = () => {
     parallax.current.scrollTo(2)
+  }
+
+  const [chardQuantity, setChardQuantity] = useState(1);
+  const handleAddChardToCart = () => {
+    props.addSimpleItemToCart(14, cabQuantity, props.cartKey)
+  }
+  const handlePlusChardQuantity = () => {
+    if (chardQuantity >= 1) {
+      let newValue = chardQuantity + 1;
+      setChardQuantity(newValue);
+    }
+  }
+  const handleMinusChardQuantity = () => {
+    if (chardQuantity > 1) {
+      let newValue = chardQuantity - 1;
+      setChardQuantity(newValue);
+    }
   }
 
 
@@ -280,21 +296,21 @@ function Wine(props) {
               <div className="chard-quantity-counter">
                 <div
                   className="minus-sign"
-                  onClick={() => handleMinusCabQuantity()}
+                  onClick={() => handleMinusChardQuantity()}
                 >
                   –
                 </div>
                 <div className="quantity-value">{cabQuantity}</div>
                 <div
                   className="plus-sign"
-                  onClick={() => handlePlusCabQuantity()}
+                  onClick={() => handlePlusChardQuantity()}
                 >
                   +
                 </div>
               </div>
               <button
                 className="chard-addtocart-btn"
-                onClick={() => handleAddCabToCart()}
+                onClick={() => handleAddChardToCart()}
               >
                 ADD TO CART
               </button>
