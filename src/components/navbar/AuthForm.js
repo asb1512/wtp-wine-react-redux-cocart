@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+
 import { connect } from 'react-redux';
 import { authenticateUser } from '../../actions/authenticateUser';
+
 import { Toaster } from 'react-hot-toast';
+import TextField from '@mui/material/TextField';
 
 import './AuthForm.css';
 
@@ -49,10 +52,10 @@ function AuthForm(props) {
           duration: 3500,
           style: {
             background: '#000',
-            color: '#fff',
+            color: '#F3F3F7',
             borderStyle: 'solid',
             borderWidth: '1px',
-            borderColor: '#222222',
+            borderColor: '#29333D',
           }
         }}
       />
@@ -61,12 +64,13 @@ function AuthForm(props) {
 
       <form className="auth-form" onSubmit={handleAuthFormSubmit}>
         <div className="auth-group">
-          <label className="auth-label">EMAIL/USERNAME</label>
-          <input
+          
+          <TextField
             type="text"
+            variant="outlined"
             value={userIdentifier}
             className="auth-input"
-            placeholder="Email/Username"
+            label="Email/Username"
             onChange={onUserIdentifierChange}
           />
           <span className="auth-error">{uiError ? "Email/username required" : null}</span>
