@@ -30,12 +30,12 @@
   height: 2rem;
   margin: auto;
   border-radius: .5rem;
-  color: #F3F3F7;
+  color: #000;
 }
 
-.MuiOutlinedInput-input:active {
+/* .MuiOutlinedInput-input:active {
   color: #F3F3F7;
-}
+} */
 
 .auth-error {
   margin-left: 5%;
