@@ -10,9 +10,10 @@
 .about-title {
   max-width: 50%;
   margin: 2rem auto 0 auto;
+  font-family: 'Work Sans', sans-serif;
   font-size: 4rem;
   font-weight: 100;
-  color: rgb(245, 245, 245);
+  color: #F3F3F7;
 }
 
 .about-content {
