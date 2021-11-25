@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import UserDisplay from '../UserDisplay';
 
 import './MiniDashboard.css';
 
@@ -21,6 +22,12 @@ function MiniDashboard(props) {
 
   return (
     <div className="mini-dashboard-container">
+
+      {
+        props.width <= 768 && props.currentUser
+        ? <UserDisplay currentUser={props.currentUser} />
+        : null
+      }
 
       <Link
         to="/dashboard/orders"
@@ -66,10 +73,18 @@ function MiniDashboard(props) {
   )
 }
 
+const mapStateToProps = state => {
+  if (state.currentUser) {
+    return {
+      currentUser: state.currentUser,
+    }
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     logoutUser: () => dispatch({ type: "LOGOUT_USER" })
   }
 }
 
-export default connect(null, mapDispatchToProps)(MiniDashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(MiniDashboard);
