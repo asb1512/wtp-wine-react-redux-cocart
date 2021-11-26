@@ -15,14 +15,14 @@
 }
 
 .mini-dashboard-link:hover {
-  background-color: #F3F3F7;
+  background-color: #29333D;
 }
 
 .mini-dashboard-div {
   padding: 0 1.5rem;
   font-family: 'Work Sans', sans-serif;
   font-size: 2rem;
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: 5px;
   transition: color .5s ease-in;
   cursor: none;
@@ -33,6 +33,7 @@
 
 .mini-dashboard-div:hover {
   color: #E40032;
+  font-weight: 300;
 }
 
 .mini-dashboard-div:active {

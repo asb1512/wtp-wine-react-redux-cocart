@@ -77,7 +77,7 @@
   backdrop-filter: blur(10rem);
   border-style: solid;
   border-width: 0 0 0 5px;
-  border-color: #fff;
+  border-color: #686E78;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5);
   color: #fff;
   z-index: 900;
@@ -101,7 +101,7 @@
 }
 
 .side-nav-item:hover {
-  background-color: #fff;
+  background-color: #29333D;
   font-weight: 300;
   color: #E40032;
 }
@@ -117,8 +117,8 @@
 }
 
 .side-nav-link:hover {
-  background-color: #fff;
-  color: red;
+  background-color: #29333D;
+  color: #E40032;
 }
 
 .contact-item {
@@ -131,8 +131,8 @@
 }
 
 .contact-item:hover {
-  background-color: #fff;
-  color: red;
+  background-color: #F3F3F7;
+  color: #E40032;
 }
 
 @media only screen and (max-width: 768px) {

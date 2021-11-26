@@ -6,10 +6,9 @@
   right: 0;
   background-color: #000;
   border-style: solid;
-  border-width: 0 0 0 5px;
-  border-color: #F3F3F7;
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.7);
-  color: #F3F3F7;
+  border-width: 0 0 0 3px;
+  border-color: #D9DAE4;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.6);
   z-index: 900;
   cursor: default;
 }
@@ -17,8 +16,8 @@
 .minicart-title {
   width: 100%;
   padding: 1.5rem 0;
-  background: #F3F3F7;
-  color: #E40032;
+  background: #29333D;
+  color: #F3F3F7;
   font-family: 'Work-Sans', sans-serif;
   font-size: 3.5rem;
   font-weight: 100;
@@ -96,9 +95,10 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #F3F3F7;
+  background-color: #29333D;
+  border-top: 1px solid #D9DAE4;
   color: #E40032;
-  font-weight: 100;
+  font-weight: 200;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
@@ -114,7 +114,7 @@
 }
 
 .minicart-totals > div {
-  color: #E40032;
+  color: #F3F3F7;
 }
 
 .minicart-subtotal {
