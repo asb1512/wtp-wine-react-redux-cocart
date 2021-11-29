@@ -173,17 +173,18 @@
   width: 54vw;
   height: 6vh;
   padding: 0 5vw;
-  background: transparent;
+  background: #F3F3F7;
   border: 1px solid #F3F3F7;
   border-radius: 2vw;
   font-family: 'Work Sans', sans-serif;
   font-size: 6vw;
-  color: #F3F3F7;
+  color: #000;
 }
 
 .wine-mobile-atc-btn:active {
-  background: #F3F3F7;
-  color: #000;
+  background: #686E78;
+  border: 1px solid #686E78;
+  color: #D9DAE4;
 }
 
 .wine-mobile-back-btn {
