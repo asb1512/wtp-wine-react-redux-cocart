@@ -17,12 +17,12 @@
   width: 100%;
   padding: 1.5rem 0;
   background: #29333D;
-  color: #E40032;
+  color: #F3F3F7;
   font-family: 'Work-Sans', sans-serif;
   font-size: 3.5rem;
-  font-weight: 200;
+  font-weight: 100;
   text-align: center;
-  border-bottom: 1px solid #D9DAE4;
+  border-bottom: 1px solid #F3F3F7;
 }
 
 .minicart-items {
