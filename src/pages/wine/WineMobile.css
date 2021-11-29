@@ -10,7 +10,7 @@
 
 .wine-mobile-bottle-cntr {
   position: absolute;
-  top: 0;
+  top: 10vh;
   width: 100vw;
   height: 45vh;
   padding-top: 1rem;
