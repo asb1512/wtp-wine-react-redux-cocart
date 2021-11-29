@@ -111,9 +111,9 @@
 
 @media only screen and (max-width: 768px) {
   .welcome-button {
-    margin: 7rem auto;
-    padding: 1rem 1.7rem;
-    font-size: 1.5rem;
+    margin: 4rem auto 7rem auto;
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
     font-weight: 500;
   }
 
