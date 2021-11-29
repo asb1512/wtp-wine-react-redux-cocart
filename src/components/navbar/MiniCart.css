@@ -95,9 +95,10 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #F3F3F7;
+  background-color: #29333D;
+  border-top: 1px solid #D9DAE4;
   color: #E40032;
-  font-weight: 100;
+  font-weight: 200;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
