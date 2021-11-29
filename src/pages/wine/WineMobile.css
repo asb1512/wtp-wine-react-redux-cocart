@@ -88,7 +88,7 @@
 /* after-click state */
 .wine-mobile-title-cntr {
   position: absolute;
-  bottom: 33vh;
+  bottom: 30vh;
   width: 100vw;
   height: 7vh;
   overflow: hidden;
@@ -123,7 +123,7 @@
   position: absolute;
   bottom: 0;
   width: 100vw;
-  height: 33vh;
+  height: 30vh;
   overflow: hidden;
   z-index: 150;
 }

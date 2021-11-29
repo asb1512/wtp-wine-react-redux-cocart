@@ -23,13 +23,13 @@ function WineMobile(props) {
 
 
   const cabImgStyle = useSpring({
-    height: triggerCab ? '90%' : '130%',
+    height: triggerCab ? '90%' : '120%',
     left: triggerCab ? '38vw' : '10vw',
     opacity: hideCab ? 0 : 1,
     config: { duration: 600 }
   })
   const chardImgStyle = useSpring({
-    height: triggerChard ? '90%' : '130%',
+    height: triggerChard ? '90%' : '120%',
     right: triggerChard ? '38vw' : '10vw',
     opacity: hideChard ? 0 : 1,
     config: { duration: 600 }
