@@ -23,7 +23,7 @@
 
 .wine-mobile-vertical-lines {
   position: absolute;
-  bottom: 15vh;
+  bottom: 20vh;
   left: 25vw;
   width: 50%;
   height: 5vh;
@@ -33,7 +33,7 @@
 
 .wine-mobile-btn-cntr {
   position: absolute;
-  bottom: 3vh;
+  bottom: 6vh;
   width: 100vw;
   height: 12vh;
   display: grid;
