@@ -28,7 +28,7 @@
 }
 
 .about-emphasis {
-  color: rgb(255, 58, 58);
+  color: #E40032;
 }
 
 .about-banner-cntr {
@@ -41,6 +41,66 @@
 }
 
 .about-img {
-  object-fit: cover;
   width: 100%;
+  transform: translate(0, -100px);
+}
+
+@media only screen and (max-width: 560px) {
+  .about-title {
+    max-width: 85%;
+    font-size: 3.3rem;
+  }
+
+  .about-content {
+    max-width: 85%;
+  }
+
+  .about-banner-cntr {
+    width: 85%;
+  }
+
+  .about-img {
+    width: auto;
+    height: 100%;
+    transform: none;
+  }
+}
+
+@media only screen and (min-width: 561px) and (max-width: 900px) {
+  .about-title {
+    max-width: 75%;
+  }
+
+  .about-content {
+    max-width: 75%;
+  }
+
+  .about-banner-cntr {
+    width: 75%;
+  }
+
+  .about-img {
+    width: 125%;
+    transform: translate(0, 0);
+  }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1500px) {
+  .about-title {
+    max-width: 75%;
+  }
+
+  .about-content {
+    max-width: 75%;
+  }
+
+  .about-banner-cntr {
+    width: 75%;
+  }
+
+  .about-img {
+    width: 125%;
+    object-fit: cover;
+    
+  }
 }
