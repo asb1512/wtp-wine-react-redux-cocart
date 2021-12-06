@@ -1,0 +1,305 @@
+/* MAIN PAGE */
+.wine-club-bg {
+  position: absolute;
+  top: 10vh;
+  width: 100%;
+  height: auto;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+.wine-club-cntr {
+  position: relative;
+  max-width: 60%;
+  height: auto;
+  margin: auto;
+  background-color: transparent;
+  overflow-x: hidden;
+}
+
+.wine-club-cntr > h1 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 4rem;
+  font-weight: 100;
+  color: #F3F3F7;
+}
+
+
+
+/* DIAMOND & PLATINUM PACKAGE */
+.diamond-cntr {
+  padding: 4rem 0;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: #686E78;
+}
+
+.gold-title-cntr {
+  display: inline;
+}
+
+.diamond-title {
+  margin-bottom: .3rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #F3F3F7;
+}
+
+.diamond-icon {
+  height: 1.4rem;
+  margin-left: .6rem;
+}
+
+.diamond-subheading {
+  margin-bottom: 4rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #29333D;
+}
+
+.diamond-wine-cntr {
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  grid-template-rows: 85% 15%;
+}
+
+.diamond-img {
+  max-width: 75%;
+  max-height: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+.diamond-desc {
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: end;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #686E78;
+  text-align: center;
+}
+
+.diamond-cab {
+  grid-column: 1/2;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.diamond-chard {
+  grid-column: 2/3;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.diamond-mix {
+  grid-column: 3/4;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+
+
+/* PLATINUM PACKAGE */
+.platinum-wine-cntr {
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  grid-template-rows: 85% 15%;
+}
+
+.platinum-img {
+  max-width: 60%;
+  max-height: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.platinum-cab {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.platinum-chard {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.platinum-mix {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+
+
+/* GOLD PACKAGE */
+.gold-cntr {
+  padding: 4rem 0;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: #686E78;
+}
+
+.gold-title-cntr {
+  display: inline;
+}
+
+.gold-title {
+  margin-bottom: .3rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #F3F3F7;
+}
+
+.gold-icon {
+  height: 1.4rem;
+  margin-left: .6rem;
+}
+
+.gold-subheading {
+  margin-bottom: 4rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #29333D;
+}
+
+.gold-wine-cntr {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 85% 15%;
+}
+
+.gold-img {
+  max-width: 75%;
+  max-height: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+.gold-desc {
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: end;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #686E78;
+  text-align: center;
+}
+
+.gold-3-cab {
+  grid-column: 1/2;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.gold-3-chard {
+  grid-column: 2/3;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.gold-2-cab {
+  grid-column: 3/4;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.gold-2-chard {
+  grid-column: 4/5;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .wine-club-cntr {
+      position: relative;
+      max-width: 80%;
+      height: auto;
+      margin: auto;
+      background-color: transparent;
+      overflow-x: hidden;
+  }
+
+  .wine-club-cntr > h1 {
+    font-size: 3rem;
+  }
+
+  /* DIAMOND & PLATINUM PACKAGE */
+  .diamond-cntr {
+    padding: 3rem 0;
+  }
+
+  .diamond-title {
+    font-size: 1.5rem;
+  }
+
+  .diamond-icon {
+    height: 1.1rem;
+  }
+
+  .diamond-subheading {
+    margin-bottom: 3rem;
+    font-size: .9rem;
+  }
+
+  .diamond-wine-cntr {
+    display: block;
+  }
+
+  .diamond-desc {
+    margin: 1rem 0 3rem 0;
+    font-size: .9rem;
+  }
+
+  /* PLATINUM PACKAGE */
+  .platinum-wine-cntr {
+    display: block;
+  }
+
+  .platinum-img {
+    max-width: 80%;
+  }
+
+  /* GOLD PACKAGE */
+  .gold-cntr {
+    padding: 3rem 0;
+  }
+
+  .gold-title {
+    font-size: 1.5rem;
+  }
+
+  .gold-icon {
+    height: 1.1rem;
+  }
+
+  .gold-subheading {
+    margin-bottom: 3rem;
+    font-size: .9rem;
+  }
+
+  .gold-wine-cntr {
+    display: block;
+  }
+
+  .gold-desc {
+    margin: 1rem 0 3rem 0;
+    font-size: .9rem;
+  }
+}
