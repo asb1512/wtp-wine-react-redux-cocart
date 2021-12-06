@@ -92,7 +92,7 @@
   background-color: #29333D;
   border: none;
   transform: scale(1.05);
-  cursor: none;
+  cursor: pointer;
 }
 
 .wtp-brand-stamp {
