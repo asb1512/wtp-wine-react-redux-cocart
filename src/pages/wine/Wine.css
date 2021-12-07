@@ -224,6 +224,7 @@
 }
 
 .minus-sign {
+  align-self: center;
   color: #F3F3F7;
   transition: transform .3s ease-in-out;
   cursor: pointer;
@@ -241,6 +242,7 @@
 }
 
 .plus-sign {
+  align-self: center;
   color: #F3F3F7;
   transition: transform .3s ease-in-out;
   cursor: pointer;
@@ -272,7 +274,7 @@
 }
 
 .cab-addtocart-btn:hover {
-  background-color: #fff;
+  background-color: #F3F3F7;
   color: #000;
 }
 
