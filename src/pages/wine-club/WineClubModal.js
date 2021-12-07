@@ -111,6 +111,10 @@ export default function WineClubModal(props) {
 
           <div className="wcm-pkg-subheading">{props.packageQuantity} BOTTLES</div>
 
+          <div className="wcm-pkg-price">
+            ${props.packagePrice} <span>per delivery</span>
+          </div>
+
           <select className="wcm-select">
             <option>Choose a frequency</option>
             <option>Monthly</option>

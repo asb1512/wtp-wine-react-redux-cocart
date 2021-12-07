@@ -98,6 +98,22 @@
   color: #D9DAE4;
 }
 
+.wcm-pkg-price {
+  margin: 2rem 0 1.3rem 0;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: #29333D;
+}
+
+.wcm-pkg-price > span {
+  font-size: 1.8rem;
+  font-weight: 200;
+  letter-spacing: normal;
+  color: #D9DAE4;
+}
+
 .wcm-select {
   margin: 2rem 0;
   padding: .7rem 2.5rem;
@@ -194,7 +210,17 @@
     letter-spacing: 5px;
   }
 
+  .wcm-pkg-price {
+    margin: 1rem 0 .5rem 0;
+    font-size: 1.6rem;
+  }
+
+  .wcm-pkg-price > span {
+    font-size: 1.3rem;
+  }
+
   .wcm-select {
+    margin: 1rem 0;
     width: 100%;
     font-size: .9rem;
   }
@@ -207,6 +233,7 @@
 
   .wcm-addtocart-btn {
     width: 100%;
+    margin: 1rem 0;
     padding: .8rem 0;
     font-size: 1.5rem;
   }
