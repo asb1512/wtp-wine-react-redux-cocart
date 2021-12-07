@@ -6,6 +6,7 @@
   height: auto;
   background-color: #000;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .wine-club-cntr {
@@ -22,6 +23,7 @@
   font-size: 4rem;
   font-weight: 100;
   color: #F3F3F7;
+  cursor: default;
 }
 
 
@@ -44,6 +46,7 @@
   font-size: 2rem;
   font-weight: 200;
   color: #F3F3F7;
+  cursor: default;
 }
 
 .diamond-icon {
@@ -58,6 +61,7 @@
   font-weight: 400;
   letter-spacing: 2px;
   color: #29333D;
+  cursor: default;
 }
 
 .diamond-wine-cntr {
@@ -71,6 +75,12 @@
   max-height: 90%;
   display: block;
   margin: 0 auto;
+  transition: transform .5s ease-in-out;
+  cursor: pointer;
+}
+
+.diamond-img:hover {
+  transform: scale(1.1);
 }
 
 .diamond-desc {
@@ -83,6 +93,7 @@
   letter-spacing: 1px;
   color: #686E78;
   text-align: center;
+  cursor: pointer;
 }
 
 .diamond-cab {
@@ -117,6 +128,12 @@
   max-height: 80%;
   display: block;
   margin: 0 auto;
+  transition: transform .5s ease-in-out;
+  cursor: pointer;
+}
+
+.platinum-img:hover {
+  transform: scale(1.1);
 }
 
 .platinum-cab {
@@ -160,6 +177,7 @@
   font-size: 2rem;
   font-weight: 200;
   color: #F3F3F7;
+  cursor: default;
 }
 
 .gold-icon {
@@ -174,6 +192,7 @@
   font-weight: 400;
   letter-spacing: 2px;
   color: #29333D;
+  cursor: default;
 }
 
 .gold-wine-cntr {
@@ -187,6 +206,12 @@
   max-height: 90%;
   display: block;
   margin: 0 auto;
+  transition: transform .5s ease-in-out;
+  cursor: pointer;
+}
+
+.gold-img:hover {
+  transform: scale(1.1);
 }
 
 .gold-desc {
@@ -199,6 +224,7 @@
   letter-spacing: 1px;
   color: #686E78;
   text-align: center;
+  cursor: pointer;
 }
 
 .gold-3-cab {
