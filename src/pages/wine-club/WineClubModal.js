@@ -90,6 +90,13 @@ export default function WineClubModal(props) {
   const renderModalContent = () => {
     return (
       <div className="wcm-ctnt">
+        <div
+          className="wcm-close-btn"
+          onClick={() => props.setModal(false)}
+        >
+          X
+        </div>
+
         <img
           src={renderWineImg()}
           alt={`We The People Wine: ${props.altText} – ${props.packageQuantity} bottles`}
@@ -153,12 +160,6 @@ export default function WineClubModal(props) {
       style={props.showModal ? {} : {display: 'none'}}
     >
       <div className="wcm-cntr">
-        <div 
-          className="wcm-close-btn"
-          onClick={() => props.setModal(false)}
-        >
-          X
-        </div>
         {renderModalContent()}
       </div>
     </div>
