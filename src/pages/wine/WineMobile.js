@@ -23,14 +23,14 @@ function WineMobile(props) {
 
 
   const cabImgStyle = useSpring({
-    height: triggerCab ? '100%' : '145%',
-    left: triggerCab ? '37vw' : '7vw',
+    height: triggerCab ? '90%' : '120%',
+    left: triggerCab ? '38vw' : '10vw',
     opacity: hideCab ? 0 : 1,
     config: { duration: 600 }
   })
   const chardImgStyle = useSpring({
-    height: triggerChard ? '100%' : '145%',
-    right: triggerChard ? '37vw' : '7vw',
+    height: triggerChard ? '90%' : '120%',
+    right: triggerChard ? '38vw' : '10vw',
     opacity: hideChard ? 0 : 1,
     config: { duration: 600 }
   })
@@ -44,10 +44,10 @@ function WineMobile(props) {
     height: triggerChard ? '100vh' : '0vh',
   })
   const cabTitleStyle = useSpring({
-    left: triggerCab ? '24vw' : '-100vw',
+    left: triggerCab ? '29vw' : '-100vw',
   })
   const chardTitleStyle = useSpring({
-    right: triggerChard ? '16vw' : '-100vw',
+    right: triggerChard ? '22vw' : '-100vw',
   })
   const cabSubheadingStyle = useSpring({
     bottom: triggerCab ? '0vh' : '-20vh',
@@ -57,23 +57,23 @@ function WineMobile(props) {
   })
   const cabPriceStyle = useSpring({
     delay: 350,
-    top: triggerCab ? '2vh' : '-20vh',
+    top: triggerCab ? '1vh' : '-20vh',
   })
   const chardPriceStyle = useSpring({
     delay: 350,
-    top: triggerChard ? '2vh' : '-20vh',
+    top: triggerChard ? '1vh' : '-20vh',
   })
   const quantityStyle = useSpring({
     delay: 500,
-    top: triggerCab || triggerChard ? '8vh' : '-20vh',
+    top: triggerCab || triggerChard ? '6vh' : '-20vh',
   })
   const atcBtnStyle = useSpring({
     delay: 750,
-    top: triggerCab || triggerChard ? '16vh' : '-20vh',
+    top: triggerCab || triggerChard ? '13vh' : '-20vh',
   })
   const backBtnStyle = useSpring({
     delay: 800,
-    top: triggerCab || triggerChard ? '25vh' : '-20vh',
+    top: triggerCab || triggerChard ? '20vh' : '-20vh',
   })
 
 

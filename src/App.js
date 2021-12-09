@@ -25,6 +25,7 @@ import WineMobile from './pages/wine/WineMobile';
 import Error401 from './pages/error/Error401';
 import OrderSuccess from './pages/checkout/OrderSuccess';
 import GiftCards from './pages/gift-cards/GiftCards';
+import WineClub from './pages/wine-club/WineClub';
 
 
 
@@ -67,6 +68,10 @@ function App(props) {
             ? <Wine />
             : <WineMobile />
           }
+        </Route>
+
+        <Route exact path="/wine-club">
+          <WineClub />
         </Route>
 
         <Route exact path="/gift-cards">

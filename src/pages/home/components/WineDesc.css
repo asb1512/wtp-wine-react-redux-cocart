@@ -43,10 +43,12 @@
     margin: 0;
     font-size: 1.7rem;
     font-weight: 200;
+    line-height: 3rem;
   }
 
   .wine-desc > div {
-    font-size: .9rem;
-    line-height: 1.8rem;
+    padding-top: .5rem;
+    font-size: .8rem;
+    line-height: 1.7rem;
   }
 }

@@ -1,0 +1,252 @@
+.wcm-bg {
+  position: fixed;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba( 0, 0, 0, 0.6 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 15px );
+  -webkit-backdrop-filter: blur( 5px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 5000;
+}
+
+.wcm-cntr {
+  display: block;
+  width: 70%;
+  height: 70%;
+  padding: 2.5rem 3rem 3rem 3rem;
+  margin: 15vh auto;
+  background: rgba(255, 255, 255, 0.37);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.wcm-close-btn {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: start;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #D9DAE4;
+  transition: transform .3s ease-in-out;
+  cursor: pointer;
+}
+
+.wcm-close-btn:hover {
+  transform: scale(1.3);
+}
+
+.wcm-ctnt {
+  display: grid;
+  grid-template-columns: 50% 47% 3%;
+  grid-template-rows: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.wcm-img {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  max-width: 95%;
+  max-height: 85%;
+  justify-self: center;
+  align-self: center;
+}
+
+.wcm-pkg-info {
+  grid-column: 2/3;
+  max-width: 85%;
+  max-height: 80%;
+  justify-self: center;
+  align-self: center;
+}
+
+.wcm-pkg-level {
+  margin-bottom: 1.5rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba( 255, 255, 255, 0.35);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #F3F3F7;
+  cursor: default;
+}
+
+.wcm-icon {
+  height: 1.4rem;
+  margin-left: .6rem;
+}
+
+.wcm-pkg-title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+  color: #29333D;
+}
+
+.wcm-pkg-title > span {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.wcm-pkg-subheading {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: #D9DAE4;
+}
+
+.wcm-pkg-price {
+  margin: 1.5rem 0;
+  padding-top: .5rem;
+  border-top: 1px solid rgba( 255, 255, 255, 0.15);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: #29333D;
+}
+
+.wcm-pkg-price > span {
+  font-size: 1.8rem;
+  font-weight: 200;
+  letter-spacing: normal;
+  color: #D9DAE4;
+}
+
+.wcm-select {
+  margin: 0 0 1.5rem 0;
+  padding: .7rem 2.5rem;
+  border-radius: 1000px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.45);
+  color: #29333D;
+}
+
+.wcm-quantity-counter {
+  padding-left: 4rem;
+  color: #F3F3F7;
+  font-size: 2rem;
+  font-weight: 100;
+  display: flex;
+}
+
+.wcm-addtocart-btn {
+  background-color: rgba(255, 255, 255, 0.45);
+  border: 1px solid #686E78;
+  border-radius: 1000px;
+  margin: 1.5rem 0 0 0;
+  padding: 1rem 2rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #29333D;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.wcm-addtocart-btn:hover {
+  background-color: #F3F3F7;
+  color: #29333D;
+}
+
+.wcm-addtocart-btn:active {
+  background-color: #29333D;
+  color: #F3F3F7;
+}
+
+@media only screen and (max-width: 768px) {
+  .wcm-cntr {
+    width: 95%;
+    height: 95%;
+    margin: 2.5vh auto;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .wcm-ctnt {
+    display: block;
+    margin: auto;
+  }
+
+  .wcm-close-btn {
+    float: right;
+  }
+
+  .wcm-img {
+    display: block;
+    max-width: 80%;
+    max-height: 32%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .wcm-pkg-info {
+    display: block;
+    margin: auto;
+  }
+
+  .wcm-pkg-level {
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    border-color: rgba( 255, 255, 255, 0.35);
+  }
+
+  .wcm-icon {
+    height: .9rem;
+    margin-left: .5rem;
+  }
+
+  .wcm-pkg-title {
+    margin-bottom: .3rem;
+    font-size: 2rem;
+    line-height: 1.8rem;
+  }
+
+  .wcm-pkg-title > span {
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+
+  .wcm-pkg-subheading {
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+  }
+
+  .wcm-pkg-price {
+    margin: 1rem 0 .5rem 0;
+    font-size: 1.6rem;
+  }
+
+  .wcm-pkg-price > span {
+    font-size: 1.3rem;
+  }
+
+  .wcm-select {
+    margin: 1rem 0;
+    width: 100%;
+    font-size: .9rem;
+  }
+
+  .wcm-quantity-counter {
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .wcm-addtocart-btn {
+    width: 100%;
+    margin: 1rem 0;
+    padding: .8rem 0;
+    font-size: 1.5rem;
+  }
+}

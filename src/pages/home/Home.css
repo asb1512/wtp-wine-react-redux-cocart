@@ -92,7 +92,7 @@
   background-color: #29333D;
   border: none;
   transform: scale(1.05);
-  cursor: none;
+  cursor: pointer;
 }
 
 .wtp-brand-stamp {
@@ -111,16 +111,16 @@
 
 @media only screen and (max-width: 768px) {
   .welcome-button {
-    margin: 7rem auto;
-    padding: 1rem 1.7rem;
-    font-size: 1.5rem;
+    margin: 4rem auto 7rem auto;
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
     font-weight: 500;
   }
 
   .wine-bottle {
     position: relative;
     display: block;
-    height: 50vh;
+    height: 47vh;
     margin: 1rem auto;
   }
 

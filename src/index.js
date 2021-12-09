@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 import mainReducer from './reducers/mainReducer';
 import { CookiesProvider } from 'react-cookie';
 
-const composedEnhancer = compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const composedEnhancer = compose(applyMiddleware(thunk))
 const store = createStore(mainReducer, undefined, composedEnhancer)
 
 ReactDOM.render(
