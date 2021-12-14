@@ -6,9 +6,10 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { useSpring, animated } from 'react-spring';
 import ReactPlayer from "react-player";
 
-import ParallaxNav from "./components/ParallaxNav";
+// import ParallaxNav from "./components/ParallaxNav";
 import CabDesc from "./components/CabDesc";
 import ChardDesc from "./components/ChardDesc";
+import BackToTopButton from "./components/BackToTopButton";
 import ParallaxUpDownButtons from "./components/ParallaxUpDownButtons";
 import WtpLogo from "../../SVG/wtp-logo/WtpLogo";
 import WtpLogoMobileWe from "../../SVG/wtp-logo/WtpLogoMobileWe";
@@ -22,54 +23,62 @@ import wtpLogoWhite from "../../images/logos/wtp-logo-white.png";
 
 export default function Home(props) {
 
-  const [showCabTitle, setCabTitle] = useState(false)
-  const [showChardTitle, setChardTitle] = useState(false)
-  const [playVideo, setVideoPlay] = useState(false)
-  const [showParaNav, setParaNav] = useState(false)
-  const [pageFocus, setPageFocus] = useState('')
+  const [showCabTitle, setCabTitle] = useState(false);
+  const [showChardTitle, setChardTitle] = useState(false);
+  const [playVideo, setVideoPlay] = useState(false);
+  const [showParaNav, setParaNav] = useState(false);
+  const [pageFocus, setPageFocus] = useState('');
 
-  const parallax = useRef(null)
+  const parallax = useRef(null);
 
   const handleUpClick = (offset, navFocus) => {
-    parallax.current.scrollTo(offset)
-    setPageFocus(navFocus)
+    parallax.current.scrollTo(offset);
+    setPageFocus(navFocus);
+  };
+
+  const handleBttBtnClick = () => {
+    if (parallax.current != null) {
+      console.log("You made it!")
+      parallax.current.scrollTo(0);
+      setVideoPlay(false);
+    }
   }
 
   const handlePage1Click = () => {
-    parallax.current.scrollTo(1)
-    setCabTitle(true)
-    setParaNav(true)
-    setPageFocus('cab')
-  }
+    parallax.current.scrollTo(1);
+    setCabTitle(true);
+    setParaNav(true);
+    setPageFocus('cab');
+  };
 
   const cabStyle = useSpring({
     delay: 500,
-    opacity: showCabTitle ? 0.7 : 0,
-    width: showCabTitle ? '100vw' : '0vw',
-    height: showCabTitle ? '100vh' : '0vh',
+    // opacity: showCabTitle ? 0.7 : 0,
+    // width: showCabTitle ? '100vw' : '0vw',
+    // height: showCabTitle ? '100vh' : '0vh',
     config: { duration: 650 }
-  })
+  });
 
   const handlePage2Click = () => {
-    parallax.current.scrollTo(1.95)
-    setChardTitle(true)
-    setPageFocus('chard')
-  }
+    parallax.current.scrollTo(1.95);
+    setChardTitle(true);
+    setPageFocus('chard');
+  };
 
   const chardStyle = useSpring({
     delay: 500,
-    opacity: showChardTitle ? 0.7 : 0,
-    width: showChardTitle ? '100vw' : '0vw',
-    height: showChardTitle ? '100vh' : '0vh',
+    // opacity: showChardTitle ? 0.7 : 0,
+    // width: showChardTitle ? '100vw' : '0vw',
+    // height: showChardTitle ? '100vh' : '0vh',
     config: { duration: 650 }
-  })
+  });
 
   const handlePage3Click = () => {
-    parallax.current.scrollTo(3)
-    setCabTitle(false)
-    setChardTitle(false)
-    setVideoPlay(true)
-    setPageFocus('video')
+    parallax.current.scrollTo(3);
+    setCabTitle(false);
+    setChardTitle(false);
+    setVideoPlay(true);
+    setPageFocus('video');
   }
 
   const videoStyle = useSpring({
@@ -77,7 +86,7 @@ export default function Home(props) {
     opacity: playVideo ? 0.2 : 0,
     height: playVideo ? '100vh' : '0vh',
     config: { duration: 650 }
-  })
+  });
 
   const renderWtpLogo = () => {
     if (props.width > 768) {
@@ -95,17 +104,18 @@ export default function Home(props) {
   return (
     <>
 
-      <ParallaxNav
+      {/* <ParallaxNav
         toggle={showParaNav}
         focus={pageFocus}
-      />
+      /> */}
 
       <div className="parallax-container">
 
         <Parallax
           ref={parallax}
           pages={4}
-          enabled={false}
+          enabled={true}
+          // style={{ top: '0', left: '0' }}
         >
 
 
@@ -113,11 +123,12 @@ export default function Home(props) {
           <ParallaxLayer
             offset={0}
             speed={1}
+            style={{zIndex: '500'}}
           >
-          
+
             {renderWtpLogo()}
 
-            <button 
+            <button
               className="welcome-button"
               onClick={() => handlePage1Click()}
             >
@@ -131,6 +142,7 @@ export default function Home(props) {
             offset={1}
             speed={1}
           >
+            <BackToTopButton handleClick={handleBttBtnClick} />
 
             <animated.div
               style={cabStyle}
@@ -140,7 +152,8 @@ export default function Home(props) {
 
           <ParallaxLayer
             offset={props.width > 768 ? 1.4 : 1.62}
-            speed={2.5}
+            speed={2.2}
+            style={{zIndex: '1000'}}
           >
             <CabDesc toggle={showCabTitle} width={props.width} />
           </ParallaxLayer>
@@ -155,15 +168,8 @@ export default function Home(props) {
               alt="We The People Wine: Cabernet Sauvignon"
               className="wine-bottle"
             />
-
-            <ParallaxUpDownButtons
-              handleUpClick={handleUpClick}
-              offset={0}
-              navFocus={'chard'}
-              handleDownClick={handlePage2Click}
-            />
           </ParallaxLayer>
-          
+
 
           {/* PAGE 3 */}
           <ParallaxLayer
@@ -178,7 +184,8 @@ export default function Home(props) {
 
           <ParallaxLayer
             offset={props.width > 768 ? 2.3 : 2.44}
-            speed={2.5}
+            speed={2.2}
+            style={{ zIndex: '1000' }}
           >
             <ChardDesc toggle={showChardTitle} />
           </ParallaxLayer>
@@ -192,13 +199,6 @@ export default function Home(props) {
               alt="We The People Wine: Chardonnay"
               className="wine-bottle"
             />
-
-            <ParallaxUpDownButtons
-              handleUpClick={handleUpClick}
-              offset={1}
-              navFocus={'video'}
-              handleDownClick={handlePage3Click}
-            />
           </ParallaxLayer>
 
 
@@ -209,7 +209,7 @@ export default function Home(props) {
           >
             <animated.div
               className="parallax-brand-style"
-              style={videoStyle}
+              // style={videoStyle}
             >
               <img
                 src={wtpLogoWhite}
@@ -217,17 +217,7 @@ export default function Home(props) {
                 className="wtp-brand-stamp"
               />
             </animated.div>
-
           </ParallaxLayer>
-
-          <ParallaxUpDownButtons
-            handleUpClick={handleUpClick}
-            offset={0}
-            navFocus={''}
-            handleDownClick={null}
-            setVideoPlay={setVideoPlay}
-            handleLastPageClick={setParaNav}
-          />
 
           <ParallaxLayer
             offset={props.width > 768 ? 3.2 : 3.3}

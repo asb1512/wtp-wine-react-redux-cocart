@@ -3,7 +3,6 @@
   right: 10vw;
   width: 50%;
   color: #F3F3F7;
-  z-index: 800;
 }
 
 .wine-desc > h1 {
@@ -21,6 +20,30 @@
   border-style: solid;
   border-width: 1px 0 0 0;
   padding-top: 2rem;
+}
+
+.wine-desc > button {
+  display: block;
+  margin: 2rem 0;
+  padding: 1rem 4rem;
+  background-color: transparent;
+  border: 1px solid #F3F3F7;
+  border-radius: 1000px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #F3F3F7;
+  cursor: pointer;
+}
+
+.wine-desc > button:hover {
+  background-color: #F3F3F7;
+  color: #686E78;
+}
+
+.wine-desc > button:active {
+  background-color: #29333D;
+  color: #F3F3F7;
 }
 
 .wine-desc-span-cab {
