@@ -64,6 +64,27 @@ export function removeItemFromCart(itemKey, cartKey, token) {
   }
 }
 
+export function addVariableProductToCart(productId, quantity, frequency, cartKey) {
+  return function (dispatch) {
+    dispatch({ type: "CART_LOADING" })
+
+    return axios.post(`${process.env.REACT_APP_BASE_URL}/wp-json/cocart/v2/cart/add-item${cartKey ? '?' + cartKey : ''}`, {
+      id: `${productId}`,
+      quantity: `${quantity}`,
+      variation: {
+        attribute_frequency: frequency,
+      },
+    })
+      .then(resp => {
+        dispatch({ type: "SET_USER_CART", resp })
+        toast.success("Item successfully add to cart")
+      })
+      .catch(error => {
+        console.log("addSimpleItemToCart error:", error)
+      })
+  }
+}
+
 export function clearCart(cartKey) {
   return function (dispatch) {
     dispatch({ type: "CART_LOADING" })

@@ -22,6 +22,7 @@ import gpThreeChard from '../../images/wine-club/gp-3-chard.png';
 export default function WineClub() {
 
   const [showModal, setModal] = useState(false);
+  const [productId, setProductId] = useState(0);
   const [packageLevel, setPackageLevel] = useState('');
   const [wineTypeYear, setWineTypeYear] = useState('');
   const [wineTypeName, setWineTypeName] = useState('');
@@ -30,8 +31,9 @@ export default function WineClub() {
   const [altText, setAltText] = useState('');
   const [packagePrice, setPackagePrice] = useState(0);
 
-  const handleWineClick = (pkgLevel, pkgType, wineVarietyYear, wineVarietyName, bottleQuantity, altImgText, pkgPrice) => {
+  const handleWineClick = (prdtId, pkgLevel, pkgType, wineVarietyYear, wineVarietyName, bottleQuantity, altImgText, pkgPrice) => {
     setModal(true);
+    setProductId(prdtId);
     setPackageLevel(pkgLevel);
     setPackageType(pkgType);
     setWineTypeYear(wineVarietyYear);
@@ -69,13 +71,13 @@ export default function WineClub() {
                   src={dpCab}
                   alt="We The People Wine Club: Diamond Package 2018 Cabernet Sauvignon"
                   className="diamond-img"
-                  onClick={() => handleWineClick('Diamond', 'dpCab', '2018', 'CABERNET SAUVIGNON', '12', 'Diamond Package Cabernet Sauvignon', 288.99)}
+                  onClick={() => handleWineClick(99, 'Diamond', 'dpCab', '2018', 'CABERNET SAUVIGNON', '12', 'Diamond Package Cabernet Sauvignon', 288.99)}
                 />
               </div>
 
               <div 
                 className="diamond-desc"
-                onClick={() => handleWineClick('Diamond', 'dpCab', '2018', 'CABERNET SAUVIGNON', '12', 'Diamond Package Cabernet Sauvignon', 288.99)}
+                onClick={() => handleWineClick(99, 'Diamond', 'dpCab', '2018', 'CABERNET SAUVIGNON', '12', 'Diamond Package Cabernet Sauvignon', 288.99)}
               >
                 2018 Cabernet Sauvignon
               </div>
@@ -85,13 +87,13 @@ export default function WineClub() {
                   src={dpChard}
                   alt="We The People Wine Club: Diamond Package 2019 Chardonnay"
                   className="diamond-img"
-                  onClick={() => handleWineClick('Diamond', 'dpChard', '2019', 'CHARDONNAY', '12', 'Diamond Package Chardonnay', 269.99)}
+                  onClick={() => handleWineClick(108, 'Diamond', 'dpChard', '2019', 'CHARDONNAY', '12', 'Diamond Package Chardonnay', 269.99)}
                 />
               </div>
 
               <div 
                 className="diamond-desc"
-                onClick={() => handleWineClick('Diamond', 'dpChard', '2019', 'CHARDONNAY', '12', 'Diamond Package Chardonnay', 269.99)}
+                onClick={() => handleWineClick(108, 'Diamond', 'dpChard', '2019', 'CHARDONNAY', '12', 'Diamond Package Chardonnay', 269.99)}
               >
                 2019 Chardonnay
               </div>
@@ -101,13 +103,13 @@ export default function WineClub() {
                   src={dpMix}
                   alt="We The People Wine Club: Diamond Package Mix & Match"
                   className="diamond-img"
-                  onClick={() => handleWineClick('Diamond', 'dpMix', '', 'HALF & HALF', '12', 'Diamond Package Half & Half', 279.99)}
+                  onClick={() => handleWineClick(113, 'Diamond', 'dpMix', '', 'HALF & HALF', '12', 'Diamond Package Half & Half', 279.99)}
                 />
               </div>
 
               <div 
                 className="diamond-desc"
-                onClick={() => handleWineClick('Diamond', 'dpMix', '', 'HALF & HALF', '12', 'Diamond Package Half & Half', 279.99)}
+                onClick={() => handleWineClick(113, 'Diamond', 'dpMix', '', 'HALF & HALF', '12', 'Diamond Package Half & Half', 279.99)}
               >
                 Half & Half
               </div>
@@ -137,13 +139,13 @@ export default function WineClub() {
                   src={ppCab}
                   alt="We The People Wine Club: Diamond Package 2018 Cabernet Sauvignon"
                   className="platinum-img"
-                  onClick={() => handleWineClick('Platinum', 'ppCab', '2018', 'CABERNET SAUVIGNON', '6', 'Platinum Package Cabernet Sauvignon', 144.99)}
+                  onClick={() => handleWineClick(118, 'Platinum', 'ppCab', '2018', 'CABERNET SAUVIGNON', '6', 'Platinum Package Cabernet Sauvignon', 144.99)}
                 />
               </div>
 
               <div 
                 className="diamond-desc"
-                onClick={() => handleWineClick('Platinum', 'ppCab', '2018', 'CABERNET SAUVIGNON', '6', 'Platinum Package Cabernet Sauvignon', 144.99)}
+                onClick={() => handleWineClick(118, 'Platinum', 'ppCab', '2018', 'CABERNET SAUVIGNON', '6', 'Platinum Package Cabernet Sauvignon', 144.99)}
               >
                 2018 Cabernet Sauvignon
               </div>
@@ -153,13 +155,13 @@ export default function WineClub() {
                   src={ppChard}
                   alt="We The People Wine Club: Diamond Package 2019 Chardonnay"
                   className="platinum-img"
-                  onClick={() => handleWineClick('Platinum', 'ppChard', '2019', 'CHARDONNAY', '6', 'Platinum Package Chardonnay', 135.99)}
+                  onClick={() => handleWineClick(123, 'Platinum', 'ppChard', '2019', 'CHARDONNAY', '6', 'Platinum Package Chardonnay', 135.99)}
                 />
               </div>
 
               <div 
                 className="diamond-desc"
-                onClick={() => handleWineClick('Platinum', 'ppChard', '2019', 'CHARDONNAY', '6', 'Platinum Package Chardonnay', 135.99)}
+                onClick={() => handleWineClick(123, 'Platinum', 'ppChard', '2019', 'CHARDONNAY', '6', 'Platinum Package Chardonnay', 135.99)}
               >
                 2019 Chardonnay
               </div>platinum
@@ -169,13 +171,13 @@ export default function WineClub() {
                   src={ppMix}
                   alt="We The People Wine Club: Diamond Package Mix & Match"
                   className="platinum-img"
-                  onClick={() => handleWineClick('Platinum', 'ppMix', '', 'HALF & HALF', '6', 'Platinum Package Half & Half', 139.99)}
+                  onClick={() => handleWineClick(128, 'Platinum', 'ppMix', '', 'HALF & HALF', '6', 'Platinum Package Half & Half', 139.99)}
                 />
               </div>
 
               <div 
                 className="diamond-desc"
-                onClick={() => handleWineClick('Platinum', 'ppMix', '', 'HALF & HALF', '6', 'Platinum Package Half & Half', 139.99)}
+                onClick={() => handleWineClick(128, 'Platinum', 'ppMix', '', 'HALF & HALF', '6', 'Platinum Package Half & Half', 139.99)}
               >
                 Half & Half
               </div>
@@ -203,13 +205,13 @@ export default function WineClub() {
                   src={gpThreeCab}
                   alt="We The People Wine Club: Gold Package 2018 Cabernet Sauvignon"
                   className="gold-img"
-                  onClick={() => handleWineClick('Gold', 'gpThreeCab', '2018', 'CABERNET SAUVIGNON', '3', 'Gold Package Cabernet Sauvignon', 72.99)}
+                  onClick={() => handleWineClick(133, 'Gold', 'gpThreeCab', '2018', 'CABERNET SAUVIGNON', '3', 'Gold Package Cabernet Sauvignon', 72.99)}
                 />
               </div>
 
               <div 
                 className="gold-desc"
-                onClick={() => handleWineClick('Gold', 'gpThreeCab', '2018', 'CABERNET SAUVIGNON', '3', 'Gold Package Cabernet Sauvignon', 72.99)}
+                onClick={() => handleWineClick(133, 'Gold', 'gpThreeCab', '2018', 'CABERNET SAUVIGNON', '3', 'Gold Package Cabernet Sauvignon', 72.99)}
               >
                 2018 Cabernet Sauvignon
               </div>
@@ -219,13 +221,13 @@ export default function WineClub() {
                   src={gpThreeChard}
                   alt="We The People Wine Club: Gold Package 2019 Chardonnay"
                   className="gold-img"
-                  onClick={() => handleWineClick('Gold', 'gpThreeChard', '2019', 'CHARDONNAY', '3', 'Gold Package Chardonnay', 67.99)}
+                  onClick={() => handleWineClick(138, 'Gold', 'gpThreeChard', '2019', 'CHARDONNAY', '3', 'Gold Package Chardonnay', 67.99)}
                 />
               </div>
 
               <div 
                 className="gold-desc"
-                onClick={() => handleWineClick('Gold', 'gpThreeChard', '2019', 'CHARDONNAY', '3', 'Gold Package Chardonnay', 67.99)}
+                onClick={() => handleWineClick(138, 'Gold', 'gpThreeChard', '2019', 'CHARDONNAY', '3', 'Gold Package Chardonnay', 67.99)}
               >
                 2019 Chardonnay
               </div>
@@ -235,13 +237,13 @@ export default function WineClub() {
                   src={gpTwoCab}
                   alt="We The People Wine Club: Diamond Package Mix & Match"
                   className="gold-img"
-                  onClick={() => handleWineClick('Gold', 'gpTwoCab', '2/3', 'CABERNET SAUVIGNON', '3', 'Gold Package 2 Cabernet Sauvignon', 71.99)}
+                  onClick={() => handleWineClick(143, 'Gold', 'gpTwoCab', '2/3', 'CABERNET SAUVIGNON', '3', 'Gold Package 2 Cabernet Sauvignon', 71.99)}
                 />
               </div>
 
               <div 
                 className="gold-desc"
-                onClick={() => handleWineClick('Gold', 'gpTwoCab', '2/3', 'CABERNET SAUVIGNON', '3', 'Gold Package 2 Cabernet Sauvignon', 71.99)}
+                onClick={() => handleWineClick(143, 'Gold', 'gpTwoCab', '2/3', 'CABERNET SAUVIGNON', '3', 'Gold Package 2 Cabernet Sauvignon', 71.99)}
               >
                 2 / 3 Cabernet Sauvignon
               </div>
@@ -251,13 +253,13 @@ export default function WineClub() {
                   src={gpTwoChard}
                   alt="We The People Wine Club: Diamond Package Mix & Match"
                   className="gold-img"
-                  onClick={() => handleWineClick('Gold', 'gpTwoChard', '2/3', 'CHARDONNAY', '3', 'Gold Package 2 Chardonnay', 69.99)}
+                  onClick={() => handleWineClick(148, 'Gold', 'gpTwoChard', '2/3', 'CHARDONNAY', '3', 'Gold Package 2 Chardonnay', 69.99)}
                 />
               </div>
 
               <div 
                 className="gold-desc"
-                onClick={() => handleWineClick('Gold', 'gpTwoCab', '2/3', 'CHARDONNAY', '3', 'Gold Package 2 Cabernet Sauvignon', 69.99)}
+                onClick={() => handleWineClick(148, 'Gold', 'gpTwoCab', '2/3', 'CHARDONNAY', '3', 'Gold Package 2 Cabernet Sauvignon', 69.99)}
               >
                 2 / 3 Chardonnay
               </div>
@@ -268,6 +270,7 @@ export default function WineClub() {
       
       <WineClubModal 
         showModal={showModal}
+        productId={productId}
         packageLevel={packageLevel}
         packageType={packageType}
         wineTypeYear={wineTypeYear}

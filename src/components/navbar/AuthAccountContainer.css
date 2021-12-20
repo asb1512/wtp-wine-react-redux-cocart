@@ -3,12 +3,13 @@
   right: 0;
   width: 22vw;
   height: 35vh;
-  border-style: solid;
-  border-color: #222222;
-  border-width: 1px;
-  border-radius: 0 0 0 1rem;
+  margin: 1rem;
+  border: 1px solid #29333D;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.4);
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur( 12px );
+  -webkit-backdrop-filter: blur( 12px );
   z-index: 800;
   display: block;
   overflow: hidden;
@@ -18,5 +19,6 @@
   .auth-account-container {
     width: 100vw;
     height: 55vh;
+    margin: 0;
   }
 }

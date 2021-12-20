@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './WineClubModal.css';
+import { connect } from 'react-redux';
+import { addVariableProductToCart } from '../../actions/userCart';
 
 import diamond from '../../images/wine-club/diamond-icon.png';
 import platinum from '../../images/wine-club/chain-link-icon.png';
@@ -17,10 +19,10 @@ import gpThreeChard from '../../images/wine-club/gp-3-chard.png';
 
 
 
-export default function WineClubModal(props) {
+function WineClubModal(props) {
 
   const renderWineImg = () => {
-    switch(props.packageType) {
+    switch (props.packageType) {
       case 'dpCab':
         return dpCab
       case 'dpChard':
@@ -47,7 +49,7 @@ export default function WineClubModal(props) {
   }
 
   const renderPackageLevel = () => {
-    switch(props.packageLevel) {
+    switch (props.packageLevel) {
       case 'Diamond':
         return 'DIAMOND PACKAGE'
       case 'Platinum':
@@ -60,7 +62,7 @@ export default function WineClubModal(props) {
   }
 
   const renderPackageIcon = () => {
-    switch(props.packageLevel) {
+    switch (props.packageLevel) {
       case 'Diamond':
         return diamond
       case 'Platinum':
@@ -86,6 +88,19 @@ export default function WineClubModal(props) {
       setWineQuantity(newValue);
     }
   }
+
+  // handles form submit and select tag values
+  const [frequencyValue, setFrequencyValue] = useState('default');
+
+  const handleFrequencyChange = (event) => {
+    setFrequencyValue(event.target.value);
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addVariableProductToCart(props.productId, wineQuantity, frequencyValue);
+  }
+
 
   const renderModalContent = () => {
     return (
@@ -113,7 +128,7 @@ export default function WineClubModal(props) {
           </div>
 
           <div className="wcm-pkg-title">
-            {props.wineTypeYear} <br/> <span>{props.wineTypeName}</span>
+            {props.wineTypeYear} <br /> <span>{props.wineTypeName}</span>
           </div>
 
           <div className="wcm-pkg-subheading">{props.packageQuantity} BOTTLES</div>
@@ -122,42 +137,47 @@ export default function WineClubModal(props) {
             ${props.packagePrice} <span>per delivery</span>
           </div>
 
-          <select className="wcm-select">
-            <option>Choose a frequency</option>
-            <option>Monthly</option>
-            <option>Quarterly</option>
-          </select>
+          <form onSubmit={handleSubmit}>
+            <select 
+              className="wcm-select" 
+              value={frequencyValue}
+              onChange={handleFrequencyChange}
+            >
+              <option value="Default">Choose a frequency</option>
+              <option value="Monthly">Monthly</option>
+              <option value="Quarterly">Quarterly</option>
+            </select>
 
-          <div className="wcm-quantity-counter">
-            <div
-              className="minus-sign"
-              onClick={() => handleMinusWineQuantity()}
-            >
-              –
+            <div className="wcm-quantity-counter">
+              <div
+                className="minus-sign"
+                onClick={() => handleMinusWineQuantity()}
+              >
+                –
+              </div>
+              <div className="quantity-value">{wineQuantity}</div>
+              <div
+                className="plus-sign"
+                onClick={() => handlePlusWineQuantity()}
+              >
+                +
+              </div>
             </div>
-            <div className="quantity-value">{wineQuantity}</div>
-            <div
-              className="plus-sign"
-              onClick={() => handlePlusWineQuantity()}
+            <button
+              className="wcm-addtocart-btn"
             >
-              +
-            </div>
-          </div>
-          <button
-            className="wcm-addtocart-btn"
-          // onClick={() => handleAddCabToCart()}
-          >
-            ADD TO CART
-          </button>
+              ADD TO CART
+            </button>
+          </form>
         </div>
       </div>
     )
   }
 
   return (
-    <div 
+    <div
       className="wcm-bg"
-      style={props.showModal ? {} : {display: 'none'}}
+      style={props.showModal ? {} : { display: 'none' }}
     >
       <div className="wcm-cntr">
         {renderModalContent()}
@@ -165,3 +185,19 @@ export default function WineClubModal(props) {
     </div>
   )
 }
+
+const mapStateToProps = state => {
+  if (state.userCart) {
+    return {
+      cartKey: state.userCart.cart_key,
+    }
+  } else return {}
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addVariableProductToCart: (id, quantity, frequency, cartKey) => dispatch(addVariableProductToCart(id, quantity, frequency, cartKey))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WineClubModal);

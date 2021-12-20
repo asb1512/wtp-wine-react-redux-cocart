@@ -15,26 +15,26 @@
 }
 
 .mini-dashboard-link:hover {
-  background-color: #29333D;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .mini-dashboard-div {
   padding: 0 1.5rem;
   font-family: 'Work Sans', sans-serif;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 200;
   letter-spacing: 5px;
   transition: color .5s ease-in;
-  cursor: none;
+  cursor: pointer;
   justify-self: start;
   align-self: center;
   text-decoration: none;
 }
 
-.mini-dashboard-div:hover {
+/* .mini-dashboard-div:hover {
   color: #E40032;
   font-weight: 300;
-}
+} */
 
 .mini-dashboard-div:active {
   color: #E40032;

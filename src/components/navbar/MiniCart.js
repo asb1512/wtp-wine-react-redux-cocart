@@ -66,7 +66,7 @@ function MiniCart(props) {
 
   return (
     <animated.div className="minicart-container" style={cartStyle}>
-      <div className="minicart-title">YOUR CART</div>
+      <div className="minicart-title">Your Cart</div>
 
       <div className="minicart-items">
         {renderMiniCartContent()}
