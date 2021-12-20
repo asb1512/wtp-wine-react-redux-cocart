@@ -1,7 +1,7 @@
 import React from 'react';
 import './GiftCards.css';
 
-import giftCard from '../../images/gift-cards/wtp-wine-gift-card.png';
+import giftCard from '../../images/gift-cards/wtp-wine-giftcard-wide.png';
 
 
 

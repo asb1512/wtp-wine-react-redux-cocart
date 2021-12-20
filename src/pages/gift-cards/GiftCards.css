@@ -30,15 +30,25 @@
 .gift-cards-img {
   justify-self: center;
   align-self: center;
+  max-width: 70%;
+  background-color: transparent;
+  box-shadow: 0px 30px 100px -10px rgba(255, 255, 255, 0.1);
+  transition: box-shadow .3s ease-in-out;
+}
+
+.gift-cards-img:hover {
+  box-shadow: 0px 30px 100px -10px rgba(255, 255, 255, 0.3);
 }
 
 .gift-cards-options-cntr {
-  justify-self: center;
+  justify-self: start;
   align-self: center;
   width: 65%;
   height: 50%;
+  padding-left: 7rem;
   display: grid;
   grid-template-columns: 75% 25%;
+  border-left: 1px solid #F3F3F7;
 }
 
 .gift-cards-options-cntr > div {
@@ -51,15 +61,29 @@
 }
 
 .gift-cards-options-cntr > button {
-  justify-self: end;
+  justify-self: center;
   align-self: center;
-  width: 60%;
-  height: 70%;
+  width: 100%;
+  height: 50%;
+  background-color: transparent;
+  border: 1px solid #F3F3F7;
+  border-radius: 1000px;
   font-family: 'Work-Sans', sans-serif;
   font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 2px;
+  color: #F3F3F7;
+  transition: background-color .3s ease-in-out;
+}
+
+.gift-cards-options-cntr > button:hover {
+  background-color: #F3F3F7;
   color: #E40032;
+}
+
+.gift-cards-options-cntr > button:active {
+  background-color: #686E78;
+  color: #000;
 }
 
 @media only screen and (max-width: 768px) {
