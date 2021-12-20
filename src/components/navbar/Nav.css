@@ -81,7 +81,7 @@
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5);
   color: #fff;
   z-index: 900;
-  cursor: default;
+  cursor: pointer;
 }
 
 .side-nav-content {
@@ -110,10 +110,9 @@
   font-family: 'Work Sans', sans-serif;
   text-decoration: none;
   color: #fff;
-  cursor: none;
   transition: background .25s ease-in-out;
   transition: color .25s ease-in;
-  cursor: none;
+  cursor: pointer;
 }
 
 .side-nav-link:hover {
