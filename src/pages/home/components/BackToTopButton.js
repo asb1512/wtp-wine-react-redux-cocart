@@ -7,7 +7,7 @@ export default function BackToTopButton(props) {
         viewBox="0 0 166.854 166.854"
         stroke='#F3F3F7'
         className="btt-btn"
-        onClick={props.handleClick()}
+        onClick={() => props.handleClick()}
       >
         <g>
           <circle
