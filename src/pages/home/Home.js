@@ -46,9 +46,6 @@ export default function Home(props) {
 
   const handlePage1Click = () => {
     parallax.current.scrollTo(1);
-    setCabTitle(true);
-    setParaNav(true);
-    setPageFocus('cab');
   };
 
   const cabStyle = useSpring({
@@ -142,8 +139,7 @@ export default function Home(props) {
             offset={1}
             speed={1}
           >
-            <BackToTopButton handleClick={handleBttBtnClick} />
-
+            
             <animated.div
               style={cabStyle}
               className="parallax-cab-style"
@@ -153,15 +149,24 @@ export default function Home(props) {
           <ParallaxLayer
             offset={props.width > 768 ? 1.4 : 1.62}
             speed={2.2}
-            style={{zIndex: '1000'}}
+            style={{
+              height: props.width > 768 ? '60vh' : '38vh',
+              zIndex: '1000'
+            }}
           >
             <CabDesc toggle={showCabTitle} width={props.width} />
+
+            <BackToTopButton handleClick={handleBttBtnClick} />
+
           </ParallaxLayer>
 
           <ParallaxLayer
             offset={1.1}
             speed={1}
             className="parallax-layer"
+            style={{
+              height: '90vh',
+            }}
           >
             <img
               src={cabernet}
@@ -185,9 +190,14 @@ export default function Home(props) {
           <ParallaxLayer
             offset={props.width > 768 ? 2.3 : 2.44}
             speed={2.2}
-            style={{ zIndex: '1000' }}
+            style={{
+              height: props.width > 768 ? '70vh' : '56vh',
+              zIndex: '1000' 
+            }}
           >
             <ChardDesc toggle={showChardTitle} />
+
+            <BackToTopButton handleClick={handleBttBtnClick} />
           </ParallaxLayer>
 
           <ParallaxLayer
@@ -207,9 +217,9 @@ export default function Home(props) {
             offset={3}
             speed={1}
           >
+
             <animated.div
               className="parallax-brand-style"
-              // style={videoStyle}
             >
               <img
                 src={wtpLogoWhite}
@@ -225,13 +235,17 @@ export default function Home(props) {
           >
 
             <h1 className="parallax-heading">MEET THE BRAND</h1>
+
           </ParallaxLayer>
 
           <ParallaxLayer
             offset={3.4}
             speed={1}
-
+            style={{
+              height: '60vh',
+            }}
           >
+            <BackToTopButton handleClick={handleBttBtnClick} />
 
             <ReactPlayer
               url="https://www.youtube.com/watch?v=LamRwl5Z2qk"
