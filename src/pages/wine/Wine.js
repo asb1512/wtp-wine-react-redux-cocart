@@ -12,7 +12,7 @@ import chard from '../../images/wine/chardonnay.png';
 
 function Wine(props) {
 
-  const parallax = useRef(null)
+  const parallax = useRef(null);
 
   const [showCabBg, setCabBg] = useState(false);
   const cabBgStyle = useSpring({
