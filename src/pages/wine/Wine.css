@@ -268,7 +268,7 @@
   font-size: 2rem;
   font-weight: 200;
   color: #F3F3F7;
-  cursor: none;
+  cursor: pointer;
   transition: background .3s ease-in-out;
   transition: color .3s ease-in-out;
 }
