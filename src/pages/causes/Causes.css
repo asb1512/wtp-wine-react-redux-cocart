@@ -12,7 +12,7 @@
   margin: 2rem auto 0 auto;
   font-family: 'Work Sans', sans-serif;
   font-size: 4rem;
-  font-weight: 100;
+  font-weight: 200;
   color: #F3F3F7;
 }
 
@@ -38,4 +38,18 @@
 .causes-wwf:hover {
   box-shadow: 0px 30px 100px -10px rgba(102, 102, 102, 0.4);
   transform: scale(1.02);
+}
+
+@media only screen and (max-width: 560px) {
+  .causes-title {
+    font-size: 3.1rem;
+  }
+
+  .causes-content {
+    max-width: 85%;
+  }
+
+  .causes-wwf:active {
+    border: 1px solid #29333D;
+  }
 }
