@@ -1,5 +1,5 @@
 .btt-btn-cntr {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   margin: 4rem 3rem;
@@ -152,6 +152,16 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .btt-btn-cntr {
+    top: 0;
+    bottom: auto;
+    margin: 1rem;
+  }
+
+  .btt-btn {
+    width: 2rem;
+  }
+
   .welcome-button {
     margin: 4rem auto 7rem auto;
     padding: 1rem 1.5rem;
