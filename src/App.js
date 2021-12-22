@@ -26,6 +26,7 @@ import Error401 from './pages/error/Error401';
 import OrderSuccess from './pages/checkout/OrderSuccess';
 import GiftCards from './pages/gift-cards/GiftCards';
 import WineClub from './pages/wine-club/WineClub';
+import Causes from './pages/causes/Causes';
 
 
 
@@ -60,6 +61,10 @@ function App(props) {
 
         <Route exact path="/about">
           <About />
+        </Route>
+
+        <Route exact path="/causes">
+          <Causes />
         </Route>
 
         <Route exact path ="/wine">

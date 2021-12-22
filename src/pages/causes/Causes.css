@@ -1,0 +1,41 @@
+.causes-bg {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100vw;
+  height: 90vh;
+  background-color: #000;
+}
+
+.causes-title {
+  max-width: 50%;
+  margin: 2rem auto 0 auto;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 4rem;
+  font-weight: 100;
+  color: #F3F3F7;
+}
+
+.causes-content {
+  max-width: 50%;
+  margin: 2rem auto;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+  color: rgb(192, 192, 192);
+  z-index: 1000;
+}
+
+.causes-wwf {
+  max-width: 100%;
+  border-radius: 30px;
+  box-shadow: 0px 30px 100px -10px rgba(255, 255, 255, 0);
+  transition: box-shadow .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+}
+
+.causes-wwf:hover {
+  box-shadow: 0px 30px 100px -10px rgba(102, 102, 102, 0.4);
+  transform: scale(1.02);
+}
