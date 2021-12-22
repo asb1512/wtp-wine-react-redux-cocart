@@ -6,8 +6,8 @@
   height: 100vh;
   background: rgba( 0, 0, 0, 0.6 );
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  backdrop-filter: blur( 15px );
-  -webkit-backdrop-filter: blur( 5px );
+  backdrop-filter: blur( 30px );
+  -webkit-backdrop-filter: blur( 30px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   z-index: 5000;
 }
@@ -18,7 +18,7 @@
   height: 70%;
   padding: 2.5rem 3rem 3rem 3rem;
   margin: 15vh auto;
-  background: rgba(255, 255, 255, 0.37);
+  background: rgba(255, 255, 255, 0.45);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -116,7 +116,7 @@
 
 .wcm-pkg-price > span {
   font-size: 1.8rem;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: normal;
   color: #D9DAE4;
 }
@@ -148,7 +148,7 @@
   padding: 1rem 2rem;
   font-family: 'Work Sans', sans-serif;
   font-size: 2rem;
-  font-weight: 200;
+  font-weight: 300;
   color: #29333D;
   cursor: pointer;
   transition: background .3s ease-in-out;

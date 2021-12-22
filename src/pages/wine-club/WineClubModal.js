@@ -6,7 +6,7 @@ import { addVariableProductToCart } from '../../actions/userCart';
 import diamond from '../../images/wine-club/diamond-icon.png';
 import platinum from '../../images/wine-club/chain-link-icon.png';
 import gold from '../../images/wine-club/gold-bar-icon.png';
-import dpCab from '../../images/wine-club/dp-cab.png';
+import dpCab from '../../images/wine-club/dp-cab-2.png';
 import dpChard from '../../images/wine-club/dp-chard.png';
 import dpMix from '../../images/wine-club/dp-mix.png';
 import ppCab from '../../images/wine-club/pp-cab.png';
