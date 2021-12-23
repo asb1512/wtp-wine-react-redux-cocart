@@ -88,7 +88,7 @@ export default function Home(props) {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={props.width > 768 ? 1.4 : 1.62}
+            offset={props.width > 768 ? 1.26 : 1.62}
             speed={2.2}
             style={{
               height: props.width > 768 ? '60vh' : '38vh',
@@ -129,7 +129,7 @@ export default function Home(props) {
             offset={props.width > 768 ? 2.3 : 2.44}
             speed={2.2}
             style={{
-              height: props.width > 768 ? '70vh' : '56vh',
+              height: props.width > 768 ? '60vh' : '56vh',
               zIndex: '1000' 
             }}
           >
@@ -179,6 +179,7 @@ export default function Home(props) {
             speed={1}
             style={{
               height: '60vh',
+              zIndex: '1500',
             }}
           >
             <BackToTopButton handleClick={handleBttBtnClick} />
