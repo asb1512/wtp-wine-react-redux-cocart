@@ -75,6 +75,7 @@
   letter-spacing: 2px;
   color: #F3F3F7;
   transition: background-color .3s ease-in-out;
+  cursor: pointer;
 }
 
 .gift-cards-options-cntr > button:hover {
