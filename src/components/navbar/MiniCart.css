@@ -5,10 +5,12 @@
   top: 10vh;
   right: 0;
   margin: 1rem 1.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(77, 77, 77, 0.3);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+  backdrop-filter: blur( 15px );
+  -webkit-backdrop-filter: blur( 15px );
   z-index: 900;
   cursor: default;
   overflow: hidden;
@@ -23,7 +25,7 @@
   font-size: 2.7rem;
   font-weight: 300;
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(77, 77, 77, 0.3);
   border-radius: 10px;
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
@@ -94,11 +96,13 @@
 }
 
 .minicart-no-items {
-  padding-top: 1rem;
+  padding-top: 2rem;
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
   text-align: center;
-  color: #686E78;
-  font-size: 1.6rem;
+  color: #F3F3F7;
+  font-size: 1.4rem;
 }
 
 .minicart-options {
@@ -130,7 +134,7 @@
   font-size: 2rem;
   font-weight: 200;
   text-align: center;
-  color: #29333D;
+  color: #D9DAE4;
 }
 
 .minicart-checkout {
@@ -138,7 +142,7 @@
   width: auto;
   margin: 1rem;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(77, 77, 77, 0.3);
   border-radius: 10px;
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
