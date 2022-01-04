@@ -18,7 +18,7 @@
   height: 70%;
   padding: 2.5rem 3rem 3rem 3rem;
   margin: 15vh auto;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(73, 73, 73, 0.3);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -87,7 +87,7 @@
   font-size: 2.8rem;
   font-weight: 300;
   line-height: 2.5rem;
-  color: #29333D;
+  color: #E40032;
 }
 
 .wcm-pkg-title > span {
@@ -111,7 +111,7 @@
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: -1px;
-  color: #29333D;
+  color: #E40032;
 }
 
 .wcm-pkg-price > span {
