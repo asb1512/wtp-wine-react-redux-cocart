@@ -17,8 +17,8 @@
 
 @media only screen and (max-width: 768px) {
   .auth-account-container {
-    width: 100vw;
+    width: 96vw;
     height: 55vh;
-    margin: 0;
+    margin: 1vh 2vw;
   }
 }

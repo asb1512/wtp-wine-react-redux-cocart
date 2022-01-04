@@ -69,24 +69,26 @@
 .side-nav {
   position: fixed;
   width: 20vw;
-  height: 90vh;
+  height: 84vh;
   top: 10vh;
   right: 0;
-  background-color: #000;
-  opacity: 0.95;
-  backdrop-filter: blur(10rem);
-  border-style: solid;
-  border-width: 0 0 0 5px;
-  border-color: #686E78;
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5);
+  margin: 3vh 1.5vw;
+  background: rgba(77, 77, 77, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  backdrop-filter: blur( 15px );
+  -webkit-backdrop-filter: blur( 15px );
   color: #fff;
   z-index: 900;
+  overflow: hidden;
   cursor: pointer;
 }
 
 .side-nav-content {
   height: 100%;
   text-decoration: none;
+  overflow: hidden;
 }
 
 .side-nav-item {
@@ -101,7 +103,9 @@
 }
 
 .side-nav-item:hover {
-  background-color: #29333D;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur( 15px );
+  -webkit-backdrop-filter: blur( 15px );
   font-weight: 300;
   color: #E40032;
 }
@@ -154,7 +158,7 @@
 
   /* side nav */
   .side-nav {
-    width: 100vw;
+    width: 96vw;
     box-shadow: none;
   }
 
