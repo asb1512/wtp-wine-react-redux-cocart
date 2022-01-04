@@ -30,9 +30,9 @@
 .causes-wwf {
   max-width: 100%;
   border-radius: 30px;
-  box-shadow: 0px 30px 100px -10px rgba(255, 255, 255, 0);
-  transition: box-shadow .3s ease-in-out;
-  transition: transform .3s ease-in-out;
+  box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.4);
+  transition: box-shadow .5s ease-in-out;
+  transition: transform .5s ease-in-out;
 }
 
 .causes-wwf:hover {
