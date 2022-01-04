@@ -4,6 +4,7 @@
   bottom: 0;
   display: inline-grid;
   grid-template-columns: repeat(3, 33.33%);
+  margin: 0 5%;
 }
 
 .social-icons > a > img {
