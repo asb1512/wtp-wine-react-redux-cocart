@@ -39,7 +39,13 @@
   background-color: rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: .5rem;
-  color: #000;
+  color: #D9DAE4;
+}
+
+.auth-input:focus {
+  outline: none !important;
+  border: solid 1px #F3F3F7;
+  color: #F3F3F7;
 }
 
 /* .MuiOutlinedInput-input:active {
