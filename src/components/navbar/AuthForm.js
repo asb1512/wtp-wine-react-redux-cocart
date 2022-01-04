@@ -60,7 +60,7 @@ function AuthForm(props) {
         }}
       />
 
-      <h3 className="auth-heading">LOGIN/REGISTER</h3>
+      <h3 className="auth-heading">LOGIN / REGISTER</h3>
 
       <form className="auth-form" onSubmit={handleAuthFormSubmit}>
         <div className="auth-group">
