@@ -146,7 +146,6 @@
   border-radius: 10px;
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
-  border-radius: 10px;
   justify-content: center;
   transition: background .3s ease-in-out;
   cursor: pointer;
