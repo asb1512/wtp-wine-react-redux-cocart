@@ -32,7 +32,7 @@ export default function Home(props) {
   }
 
   const handlePage1Click = () => {
-    parallax.current.scrollTo(1);
+    parallax.current.scrollTo(.95);
   };
 
   const renderWtpLogo = () => {
