@@ -13,6 +13,7 @@ function MiniCart(props) {
 
   const cartStyle = useSpring({
     right: props.toggle ? '0%' : props.width > 768 ? '-47%' : '-100%',
+    opacity: props.toggle ? 1 : 0,
   })
 
   const addDecimalToSubtotal = () => {

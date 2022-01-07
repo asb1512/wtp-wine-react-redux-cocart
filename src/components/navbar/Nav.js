@@ -24,6 +24,7 @@ const Nav = (props) => {
 
   const sideNavStyle = useSpring({
     right: isOpen ? '0%' : props.width > 768 ? '-30%' : '-100%',
+    opacity: isOpen ? 1 : 0,
   })
 
   const emailStyle = useSpring({

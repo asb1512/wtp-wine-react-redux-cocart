@@ -22,6 +22,7 @@ function AuthAccountContainer(props) {
 
   const containerStyle = useSpring({
     top: props.toggle ? '10vh' : '-75vh',
+    opacity: props.toggle ? 1 : 0,
   })
 
   if (props.userLoggedIn) {
