@@ -1,5 +1,4 @@
 import axios from 'axios';
-import toast from 'react-hot-toast';
 
 export function validateUserToken(token, email) {
   return function (dispatch) {
@@ -21,7 +20,7 @@ export function validateUserToken(token, email) {
           .then(resp => {
             console.log("Customer ID retrieval:", resp)
             dispatch({ type: "SET_USER_INFO", resp })
-            
+
             // retrieve customer's orders
             axios.get(`${process.env.REACT_APP_BASE_URL}/wp-json/wc/v3/orders?customer=${resp.data[0].id}&consumer_key=${process.env.REACT_APP_CONSUMER_KEY}&consumer_secret=${process.env.REACT_APP_CONSUMER_SECRET}`)
 
@@ -88,8 +87,7 @@ export function authenticateUser(ui, pw) {
       })
       .catch(error => {
         console.log("Authentication error:", error.message)
-        dispatch({ type: "AUTHENTICATION_ERROR", error })
-        toast.error("Invalid login credentials. Please try again.")
+        dispatch({ type: "TOAST_FAILURE", message: "Invalid login credentials. Please try again." })
       })
   }
 }
