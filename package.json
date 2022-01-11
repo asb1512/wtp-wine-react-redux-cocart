@@ -6,7 +6,6 @@
     "@cocart/cocart-rest-api": "^1.1.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
-    "@mui/material": "^5.2.0",
     "@react-spring/parallax": "^9.3.0",
     "@stripe/react-stripe-js": "^1.6.0",
     "@stripe/stripe-js": "^1.21.1",
