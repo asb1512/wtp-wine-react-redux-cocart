@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { authenticateUser } from '../../actions/authenticateUser';
 
 import { Toaster } from 'react-hot-toast';
-import TextField from '@mui/material/TextField';
 
 import './AuthForm.css';
 
