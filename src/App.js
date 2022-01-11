@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { validateUserToken } from './actions/authenticateUser';
 import { retrieveUserCart } from './actions/userCart';
 import { useCookies } from 'react-cookie';
+import toast, { Toaster } from 'react-hot-toast';
 
 import Nav from './components/navbar/Nav';
 import Home from './pages/home/Home';
@@ -46,12 +47,31 @@ function App(props) {
       props.retrieveUserCart(cookies["wtpwCk"])
     }
   })
-
   console.log("Cookies accessed from App:", cookies)
+
+  const notifySuccess = () => {
+    if (props.toastSuccess.display) {
+      toast.success(props.toastSuccess.message)
+    }
+  }
+
+  const notifyFailure = () => {
+    if (props.toastFailure.display) {
+      toast.error(props.toastFailure.message)
+    }
+  }
+
+
 
   return (
     <Router>
       <Nav width={width} />
+
+      <Toaster 
+        toastOptions={{
+          duration: 4000,
+        }}
+      />
 
       <Switch>
 
@@ -152,6 +172,8 @@ const mapStateToProps = (state) => {
   return {
     userLoggedIn: state.userLoggedIn,
     userCart: state.userCart ? state.userCart : null,
+    toastSuccess: state.toastSuccess ? state.toastSuccess : null,
+    toastFailure: state.toastFailure ? state.toastFailure : null,
   }
 }
 
