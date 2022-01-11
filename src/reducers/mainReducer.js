@@ -4,6 +4,14 @@ const defaultState = {
   validationLoading: false,
   cartLoading: false,
   checkoutLoading: false,
+  toastSuccess: {
+    display: false,
+    message: '',
+  },
+  toastFailure: {
+    display: false,
+    message: '',
+  }
 };
 
 export default function mainReducer(state = defaultState, action) {
@@ -57,13 +65,6 @@ export default function mainReducer(state = defaultState, action) {
       return {
         ...state,
         currentError: action.error.message,
-      }
-
-    case "AUTHENTICATION_ERROR":
-      return {
-        ...state,
-        currentError: "Invalid login credentials. Please try again.",
-        userLoading: false,
       }
 
     case "LOGOUT_USER":
@@ -133,6 +134,28 @@ export default function mainReducer(state = defaultState, action) {
         currentUser: {
           ...state.currentUser,
           orderCheckout: action.resp.data,
+        }
+      }
+
+
+
+
+    // pertaining to toast notifications
+    case "TOAST_SUCCESS":
+      return {
+        ...state,
+        toastSuccess: {
+          display: true,
+          message: action.message
+        }
+      }
+
+    case "TOAST_FAILURE":
+      return {
+        ...state,
+        toastFailure: {
+          display: true,
+          message: action.message
         }
       }
 
