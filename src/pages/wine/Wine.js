@@ -296,14 +296,14 @@ function Wine(props) {
               <div className="chard-quantity-counter">
                 <div
                   className="minus-sign"
-                  onClick={() => handleMinusChardQuantity()}
+                  onClick={handleMinusChardQuantity}
                 >
                   –
                 </div>
-                <div className="quantity-value">{cabQuantity}</div>
+                <div className="quantity-value">{chardQuantity}</div>
                 <div
                   className="plus-sign"
-                  onClick={() => handlePlusChardQuantity()}
+                  onClick={handlePlusChardQuantity}
                 >
                   +
                 </div>
