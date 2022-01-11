@@ -46,20 +46,12 @@ export function removeItemFromCart(itemKey, cartKey, token) {
 
     return axios.delete(`${process.env.REACT_APP_BASE_URL}/wp-json/cocart/v2/cart/item/${itemKey}?cart_key=${cartKey}`, config)
       .then(resp => {
-        dispatch({type: "SET_USER_CART", resp})
-        toast.success("Item successfully removed from cart", {
-          style: {
-            zIndex: '3000',
-          },
-        })
+        dispatch({ type: "SET_USER_CART", resp })
+        dispatch({ type: "TOAST_SUCCESS", message: 'Successfully added to cart' })
       })
       .catch(error => {
         console.log("removeItemFromCart error reached")
-        toast("An unknown error occurred. Please try again or refresh this page.", {
-          style: {
-            zIndex: '5000',
-          }
-        })
+        dispatch({ type: "TOAST_FAILURE", message: 'Request failed. Please try again.'})
       })
   }
 }
@@ -91,7 +83,7 @@ export function clearCart(cartKey) {
 
     return axios.post(`${process.env.REACT_APP_BASE_URL}/wp-json/cocart/v2/cart/clear?cart_key=${cartKey}`)
       .then(resp => {
-        
+
       })
       .catch(error => {
 
