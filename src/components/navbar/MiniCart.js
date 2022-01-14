@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { connect } from 'react-redux';
 import { removeItemFromCart } from '../../actions/userCart';
@@ -11,11 +11,13 @@ import './MiniCart.css';
 
 function MiniCart(props) {
 
+  // animates entry/exit into viewport
   const cartStyle = useSpring({
     right: props.toggle ? '0%' : props.width > 768 ? '-47%' : '-100%',
     opacity: props.toggle ? 1 : 0,
   })
 
+  // Amounts are treated in cents by Stripe, adds decimal point
   const addDecimalToSubtotal = () => {
     if (props.cartItems && props.cartItems.length > 0) {
       let splitPrice = props.cartTotals.subtotal.split('')
@@ -25,12 +27,50 @@ function MiniCart(props) {
     } else return '0.00';
   }
 
+  // pertaining to checkout 'button'
+  const [disableCheckout, setDisableCheckout] = useState(true);
+  const [checkoutHover, setCheckoutHover] = useState(false);
+  const checkoutStyle = useSpring({
+    background: disableCheckout ? 
+      'rgba(24, 24, 24, 0.4)' : 
+      checkoutHover ?
+        'rgba(77, 77, 77, 0.4)' :
+        '',
+    color: disableCheckout ? '#29333D' : '#29333D',
+  })
+  const checkoutLinkStyle = useSpring({
+    color: disableCheckout ? 
+      '#29333D' :
+      checkoutHover ? 
+      '#E40032' :
+      '#F3F3F7',
+  })
+
+  const handleCheckoutMouseEnter = () => {
+    if (!disableCheckout) {
+      setCheckoutHover(true);
+    }
+  }
+  const handleCheckoutMouseLeave = () => {
+    if (!disableCheckout) {
+      setCheckoutHover(false);
+    }
+  }
+  const handleCheckoutClick = () => {
+    if (!disableCheckout) {
+      props.setCartOpen(false);
+    }
+  }
+
+  // handles single-item deletion from user cart
   const handleItemDeletion = (itemKey) => {
     props.removeItemFromCart(itemKey, props.userCart.cart_key, props.currentUser.token)
   }
 
+  // renders inner content based on the existence of user cart
   const renderMiniCartContent = () => {
     if (props.cartItems && props.cartItems.length > 0) {
+      setDisableCheckout(false);
       return (
         <>
           {props.cartItems?.map(item => {
@@ -59,11 +99,17 @@ function MiniCart(props) {
     } else {
       return (
         <>
-          <div className="minicart-no-items">There are no items in your cart.</div>
+          <div 
+            className="minicart-no-items"
+          >
+            There are no items in your cart.
+          </div>
         </>
       )
     }
   }
+
+
 
   return (
     <animated.div className="minicart-container" style={cartStyle}>
@@ -81,15 +127,21 @@ function MiniCart(props) {
           </div>
         </div>
 
-        <div className="minicart-checkout">
-          <Link 
-            to="/order-summary" 
-            className="minicart-link"
-            onClick={() => props.setCartOpen(false)}
+        <Link
+          to={disableCheckout ? '#' : '/order-summary'}
+          className="minicart-link"
+          style={checkoutLinkStyle}
+          onClick={handleCheckoutClick}
+        >
+          <animated.div 
+            className="minicart-checkout"
+            style={checkoutStyle}
+            onMouseEnter={handleCheckoutMouseEnter}
+            onMouseLeave={handleCheckoutMouseLeave}
           >
             CHECKOUT
-          </Link>
-        </div>
+          </animated.div>
+        </Link>
       </div>
     </animated.div>
   )
