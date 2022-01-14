@@ -95,7 +95,7 @@
   background: rgba(77, 77, 77, 0.3);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: none;
   backdrop-filter: blur( 15px );
   -webkit-backdrop-filter: blur( 15px );
   font-family: 'Work Sans';
@@ -108,6 +108,11 @@
   justify-self: center;
   align-self: center;
   margin-left: .5rem;
+}
+
+.orders-table-row > div:nth-child(1) {
+  font-weight: 700;
+  color: #E40032;
 }
 
 .address-container {
