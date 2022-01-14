@@ -84,6 +84,9 @@
 }
 
 .address-title {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px #686E78;
   font-size: 3rem;
   font-weight: 100;
 }
