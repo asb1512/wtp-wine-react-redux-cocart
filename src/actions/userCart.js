@@ -11,6 +11,7 @@ export function retrieveUserCart(cartKey) {
         dispatch({ type: "SET_USER_CART", resp })
       })
       .catch(error => {
+        dispatch({ type: "TOAST_FAILURE", mesage: "Unable to retrieve cart."})
         console.log("retrieveUserCart error:", error)
       })
   }
